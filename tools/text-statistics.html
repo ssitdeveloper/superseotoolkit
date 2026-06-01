@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Text Statistics | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar"><a href="/" class="logo">SuperSEOToolkit</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container"><h1>Text Statistics</h1></div>
+  </section>
+
+  <section style="padding: 2rem 0;">
+    <div class="container container-sm">
+      <textarea id="text" placeholder="Paste text here..." style="min-height: 200px;"></textarea>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        <div class="card"><h4>Characters</h4><p id="chars" style="font-size: 1.5rem; color: var(--primary-color); margin: 0;">0</p></div>
+        <div class="card"><h4>Words</h4><p id="words" style="font-size: 1.5rem; color: var(--primary-color); margin: 0;">0</p></div>
+        <div class="card"><h4>Sentences</h4><p id="sentences" style="font-size: 1.5rem; color: var(--primary-color); margin: 0;">0</p></div>
+        <div class="card"><h4>Paragraphs</h4><p id="paragraphs" style="font-size: 1.5rem; color: var(--primary-color); margin: 0;">0</p></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const text = document.getElementById('text');
+    text.addEventListener('input', () => {
+      const t = text.value;
+      document.getElementById('chars').textContent = t.length;
+      document.getElementById('words').textContent = t.trim() ? t.trim().split(/\s+/).length : 0;
+      document.getElementById('sentences').textContent = t.split(/[.!?]+/).filter(x => x.trim()).length;
+      document.getElementById('paragraphs').textContent = t.split(/\n\n+/).filter(x => x.trim()).length;
+    });
+  </script>
+</body>
+</html>

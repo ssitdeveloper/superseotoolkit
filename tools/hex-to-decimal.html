@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Hex to Decimal | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">SuperSEOToolkit</a>
+        <nav><ul><li><a href="/#tools">Tools</a></li></ul></nav>
+        <div class="nav-controls"><button id="theme-toggle" class="theme-toggle"><svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg><svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79"/></svg></button></div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container">
+      <h1>Hex to Decimal Converter</h1>
+    </div>
+  </section>
+
+  <section style="padding: 2rem 0;">
+    <div class="container container-sm">
+      <div class="tool-interface">
+        <div class="input-section">
+          <h3>Hexadecimal</h3>
+          <input type="text" id="hex" placeholder="FF" value="FF">
+        </div>
+        <div class="output-section">
+          <h3>Decimal</h3>
+          <input type="text" id="decimal" readonly>
+          <button class="copy-btn" onclick="copyToClipboard('decimal')">Copy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const hex = document.getElementById('hex');
+    const decimal = document.getElementById('decimal');
+    hex.addEventListener('input', () => {
+      try {
+        decimal.value = parseInt(hex.value, 16).toString();
+      } catch(e) {
+        decimal.value = '';
+      }
+    });
+    hex.dispatchEvent(new Event('input'));
+  </script>
+</body>
+</html>

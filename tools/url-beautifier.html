@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>URL Beautifier | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar"><a href="/" class="logo">SuperSEOToolkit</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container"><h1>URL Beautifier</h1></div>
+  </section>
+
+  <section style="padding: 2rem 0;">
+    <div class="container container-sm">
+      <div class="tool-interface">
+        <div class="input-section"><h3>URL</h3><input type="text" id="input" placeholder="https://example.com/page?id=1&name=test"></div>
+        <div class="output-section"><h3>Formatted</h3><textarea id="output" readonly></textarea><button class="copy-btn" onclick="copyToClipboard('output')">Copy</button></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+
+    input.addEventListener('input', () => {
+      try {
+        const url = new URL(input.value);
+        let result = `Protocol: ${url.protocol}\nHostname: ${url.hostname}\nPath: ${url.pathname}\n\nParameters:\n`;
+        url.searchParams.forEach((v, k) => result += `  ${k} = ${v}\n`);
+        output.value = result;
+      } catch(e) {
+        output.value = '';
+      }
+    });
+  </script>
+</body>
+</html>

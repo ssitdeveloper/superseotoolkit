@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Random MAC Address | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar"><a href="/" class="logo">SuperSEOToolkit</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container"><h1>Random MAC Address Generator</h1></div>
+  </section>
+
+  <section style="padding: 2rem 0;">
+    <div class="container container-sm">
+      <button class="btn btn-primary btn-lg" onclick="generate()">Generate MAC Address</button>
+      <div style="margin-top: 2rem; text-align: center;">
+        <input type="text" id="mac" readonly style="font-size: 1.25rem; font-weight: 600; padding: 1rem; text-align: center;">
+        <button class="btn btn-secondary" style="margin-top: 1rem;" onclick="copyToClipboard('mac')">Copy</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function generate() {
+      const mac = [...Array(6)].map(() => Math.floor(Math.random() * 256).toString(16).padStart(2, '0').toUpperCase()).join(':');
+      document.getElementById('mac').value = mac;
+    }
+    generate();
+  </script>
+</body>
+</html>

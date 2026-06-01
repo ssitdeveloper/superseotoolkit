@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert decimal numbers to binary format instantly.">
+  <meta name="title" content="Decimal to Binary Converter - SuperSEOToolkit">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Decimal to Binary Converter | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/#tools">Tools</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-controls">
+          <button id="theme-toggle" class="theme-toggle" title="Toggle dark mode">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 3rem 0;">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/#tools">Tools</a> <span>/</span> <span>Decimal to Binary</span>
+      </div>
+      <h1>Decimal to Binary Converter</h1>
+      <p>Convert decimal numbers to binary format instantly</p>
+    </div>
+  </section>
+
+  <section style="padding: 3rem 0;">
+    <div class="container container-sm">
+      <div class="tool-interface">
+        <div class="input-section">
+          <h3>Decimal Number</h3>
+          <div class="form-group">
+            <input type="number" id="decimal-input" placeholder="Enter a decimal number (e.g., 255)" value="255">
+          </div>
+        </div>
+
+        <div class="output-section">
+          <h3>Binary Result</h3>
+          <div class="form-group" style="position: relative;">
+            <textarea id="binary-output" readonly placeholder="Binary result will appear here..."></textarea>
+            <button class="copy-btn" onclick="copyToClipboard('binary-output')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg> Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: var(--bg-light-tertiary); border-radius: 0.75rem; dark-mode: background var(--bg-dark-tertiary);">
+        <h3>How to Use</h3>
+        <ol style="margin-left: 1.5rem; margin-bottom: 0;">
+          <li>Enter a decimal number in the input field</li>
+          <li>The binary equivalent will be generated automatically</li>
+          <li>Click the "Copy" button to copy the result</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const decimalInput = document.getElementById('decimal-input');
+    const binaryOutput = document.getElementById('binary-output');
+
+    function convertDecimalToBinary() {
+      const decimal = parseInt(decimalInput.value, 10);
+      if (isNaN(decimal)) {
+        binaryOutput.value = '';
+        return;
+      }
+      binaryOutput.value = Math.abs(decimal).toString(2);
+    }
+
+    decimalInput.addEventListener('input', convertDecimalToBinary);
+    convertDecimalToBinary();
+  </script>
+</body>
+</html>

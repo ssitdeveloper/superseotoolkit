@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Morse Code Converter | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar"><a href="/" class="logo">SuperSEOToolkit</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container"><h1>Morse Code Converter</h1></div>
+  </section>
+
+  <section style="padding: 2rem 0;">
+    <div class="container container-sm">
+      <div class="tool-interface">
+        <div class="input-section"><h3>Text</h3><input type="text" id="text" placeholder="Hello"></div>
+        <div class="output-section"><h3>Morse Code</h3><textarea id="morse" readonly></textarea><button class="copy-btn" onclick="copyToClipboard('morse')">Copy</button></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const morseCode = { 'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..', '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '.': '.-.-.-', ',': '--..--', '?': '..--..', "'": '.----.', '!': '-.-.--', '/': '-..-.', '(': '-.--.', ')': '-.--.-', '&': '.-...', ':': '---...', ';': '-.-.-.', '=': '-...-', '+': '.-.-.', '-': '-....-', '_': '..--.-', '"': '.-..-.', '$': '...-..-', '@': '.--.-.' };
+    const text = document.getElementById('text');
+    const morse = document.getElementById('morse');
+    text.addEventListener('input', () => {
+      morse.value = text.value.toUpperCase().split('').map(c => morseCode[c] || (c === ' ' ? ' / ' : '')).join(' ');
+    });
+  </script>
+</body>
+</html>

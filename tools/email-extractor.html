@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Email Extractor | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar"><a href="/" class="logo">SuperSEOToolkit</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container"><h1>Email Extractor</h1></div>
+  </section>
+
+  <section style="padding: 2rem 0;">
+    <div class="container container-sm">
+      <div class="tool-interface">
+        <div class="input-section"><h3>Input Text</h3><textarea id="input"></textarea></div>
+        <div class="output-section"><h3>Emails Found</h3><textarea id="output" readonly></textarea><button class="copy-btn" onclick="copyToClipboard('output')">Copy</button></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+    input.addEventListener('input', () => {
+      const emails = input.value.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g) || [];
+      output.value = [...new Set(emails)].join('\n');
+    });
+  </script>
+</body>
+</html>

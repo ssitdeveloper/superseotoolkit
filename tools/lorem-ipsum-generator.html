@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Lorem Ipsum Generator | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar"><a href="/" class="logo">SuperSEOToolkit</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container"><h1>Lorem Ipsum Generator</h1></div>
+  </section>
+
+  <section style="padding: 2rem 0;">
+    <div class="container container-sm">
+      <div class="form-group">
+        <label>Number of Paragraphs</label>
+        <input type="number" id="count" value="3" min="1" max="50">
+      </div>
+      <button class="btn btn-primary" onclick="generate()">Generate</button>
+      <textarea id="output" style="margin-top: 1.5rem; min-height: 300px;" readonly></textarea>
+      <button class="copy-btn" style="position: absolute; top: 1rem; right: 1rem;" onclick="copyToClipboard('output')">Copy</button>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+    function generate() {
+      const count = parseInt(document.getElementById('count').value, 10);
+      const output = Array(count).fill(lorem).join('\n\n');
+      document.getElementById('output').value = output;
+    }
+    generate();
+  </script>
+</body>
+</html>

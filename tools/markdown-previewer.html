@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Markdown Previewer | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar"><a href="/" class="logo">SuperSEOToolkit</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container"><h1>Markdown Previewer</h1></div>
+  </section>
+
+  <section style="padding: 2rem 0;">
+    <div class="container container-sm">
+      <div class="tool-interface">
+        <div class="input-section"><h3>Markdown</h3><textarea id="input"># Hello\n\nThis is **bold** and *italic*.</textarea></div>
+        <div class="output-section"><h3>Preview</h3><div id="output" style="background: var(--bg-light-tertiary); padding: 1rem; border-radius: 0.5rem; min-height: 200px;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+
+    function preview() {
+      let md = input.value;
+      md = md.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
+      md = md.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
+      md = md.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
+      md = md.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      md = md.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      md = md.replace(/`(.*?)`/g, '<code>$1</code>');
+      md = md.replace(/\n/g, '<br>');
+      output.innerHTML = md;
+    }
+
+    input.addEventListener('input', preview);
+    preview();
+  </script>
+</body>
+</html>

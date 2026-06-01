@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Find & Replace | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar"><a href="/" class="logo">SuperSEOToolkit</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container"><h1>Find & Replace</h1></div>
+  </section>
+
+  <section style="padding: 2rem 0;">
+    <div class="container container-sm">
+      <div class="form-group">
+        <label>Find</label>
+        <input type="text" id="find" placeholder="Enter text to find">
+      </div>
+      <div class="form-group">
+        <label>Replace With</label>
+        <input type="text" id="replace" placeholder="Enter replacement text">
+      </div>
+      <div class="form-group">
+        <label>Text</label>
+        <textarea id="text" placeholder="Paste text here..."></textarea>
+      </div>
+      <button class="btn btn-primary" onclick="doReplace()">Replace All</button>
+      <textarea id="output" style="margin-top: 1rem;" readonly placeholder="Result will appear here..."></textarea>
+      <button class="copy-btn" onclick="copyToClipboard('output')">Copy</button>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function doReplace() {
+      const find = document.getElementById('find').value;
+      const replace = document.getElementById('replace').value;
+      const text = document.getElementById('text').value;
+      const output = document.getElementById('output');
+      output.value = text.split(find).join(replace);
+    }
+    document.getElementById('find').addEventListener('input', doReplace);
+    document.getElementById('replace').addEventListener('input', doReplace);
+    document.getElementById('text').addEventListener('input', doReplace);
+  </script>
+</body>
+</html>

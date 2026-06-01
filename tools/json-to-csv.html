@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>JSON to CSV | SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar"><a href="/" class="logo">SuperSEOToolkit</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container"><h1>JSON to CSV Converter</h1></div>
+  </section>
+
+  <section style="padding: 2rem 0;">
+    <div class="container container-sm">
+      <div class="tool-interface">
+        <div class="input-section"><h3>JSON</h3><textarea id="input" placeholder="[{\"name\": \"John\", \"age\": 30}]"></textarea></div>
+        <div class="output-section"><h3>CSV</h3><textarea id="output" readonly></textarea><button class="copy-btn" onclick="copyToClipboard('output')">Copy</button></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+
+    input.addEventListener('input', () => {
+      try {
+        const json = JSON.parse(input.value);
+        if (!Array.isArray(json)) return;
+        const headers = Object.keys(json[0]);
+        const csv = [headers.join(','), ...json.map(row => headers.map(h => row[h]).join(','))].join('\n');
+        output.value = csv;
+      } catch(e) {
+        output.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
