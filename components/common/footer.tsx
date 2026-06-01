@@ -1,23 +1,23 @@
 import Link from "next/link";
-import { Share2, Twitter, Mail, Code2 } from "lucide-react";
+import { Share2, ExternalLink, Mail, Code2 } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <footer className="border-t border-border bg-gradient-to-b from-background to-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold gradient-text">SuperSEO</h3>
-            <p className="text-muted-foreground text-sm">
-              Professional SEO tools for digital marketers and agencies.
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold gradient-primary">SuperSEOToolkit</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Enterprise-grade SEO intelligence trusted by 10,000+ agencies and marketers worldwide.
             </p>
             <div className="flex space-x-4">
               <a
                 href="#"
                 className="text-muted-foreground hover:text-accent transition-colors"
               >
-                <Twitter className="w-5 h-5" />
+                <ExternalLink className="w-5 h-5" />
               </a>
               <a
                 href="#"
@@ -134,28 +134,31 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-6 mb-12">
-          <h3 className="font-semibold mb-2">Subscribe to our newsletter</h3>
-          <p className="text-muted-foreground text-sm mb-4">
-            Get the latest SEO tips and tool updates delivered to your inbox.
-          </p>
-          <div className="flex gap-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 bg-card border border-border rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary"
-            />
-            <button className="btn-primary">Subscribe</button>
+        {/* CTA Box */}
+        <div className="bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/20 rounded-2xl p-10 mb-16">
+          <div className="max-w-2xl">
+            <h3 className="text-2xl font-bold mb-3">Ready to dominate search?</h3>
+            <p className="text-muted-foreground mb-6">
+              Join 10,000+ agencies getting real results with SuperSEOToolkit. Start your free analysis in 60 seconds.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link href="/tools" className="btn-primary py-3 px-8 font-semibold">
+                Launch Free Analysis
+              </Link>
+              <a href="#contact" className="btn-outline py-3 px-8 font-semibold">
+                Schedule Demo
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">
-            &copy; 2024 SuperSEOToolkit. All rights reserved.
-          </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+        <div className="border-t border-border-light pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-muted-foreground text-xs">
+            <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+            <p className="mt-2">SOC 2 Type II • GDPR Compliant • 99.99% Uptime SLA</p>
+          </div>
+          <div className="flex space-x-6 mt-6 md:mt-0">
             <Link
               href="/privacy"
               className="text-muted-foreground hover:text-accent transition-colors text-sm"
@@ -168,6 +171,12 @@ export function Footer() {
             >
               Terms
             </Link>
+            <a
+              href="mailto:support@superseotoolkit.com"
+              className="text-muted-foreground hover:text-accent transition-colors text-sm"
+            >
+              Support
+            </a>
           </div>
         </div>
       </div>

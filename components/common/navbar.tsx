@@ -21,7 +21,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border"
+          ? "bg-background/75 backdrop-blur-xl border-b border-border-light"
           : "bg-transparent"
       }`}
     >
@@ -30,45 +30,44 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-bold gradient-text transition-transform hover:scale-105"
+            className="text-xl font-bold gradient-primary transition-all hover:scale-105 duration-200"
           >
-            SuperSEO
+            SuperSEOToolkit
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             <Link
               href="/tools"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
             >
               Tools
             </Link>
             <Link
-              href="/categories"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Categories
-            </Link>
-            <Link
               href="/blog"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
             >
-              Blog
+              Resources
             </Link>
             <Link
               href="/about"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
             >
-              About
+              Enterprise
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
+            >
+              Contact
             </Link>
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="p-2 hover:bg-card rounded-lg transition-colors">
-              <Search className="w-5 h-5 text-muted-foreground" />
-            </button>
-            <button className="btn-primary">Start Analyzing</button>
+          <div className="hidden md:flex items-center space-x-3">
+            <Link href="/tools" className="btn-primary py-2 px-6 text-sm font-semibold">
+              Launch Free Analysis
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

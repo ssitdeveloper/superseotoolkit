@@ -8,38 +8,38 @@ import { SectionHeader } from "@/components/common/section-header";
 export function TrustedMetricsSection() {
   const metrics = [
     {
-      value: 50000,
+      value: 10000,
       suffix: "+",
-      label: "Active Users",
-      description: "Marketers and agencies worldwide",
+      label: "Agencies & Consultants",
+      description: "Delivering results for their clients daily",
     },
     {
-      value: 1000000,
-      suffix: "+",
-      label: "Analyses Run",
-      description: "SEO audits completed annually",
+      value: 500,
+      suffix: "M+",
+      label: "Ranking Keywords Tracked",
+      description: "Real-time SEO intelligence",
     },
     {
-      value: 150,
-      suffix: "+",
-      label: "Features",
-      description: "Comprehensive SEO toolset",
+      value: 98,
+      suffix: "%",
+      label: "Accuracy Rate",
+      description: "Enterprise-grade data quality",
     },
     {
-      value: 99,
-      suffix: ".9%",
-      label: "Uptime",
-      description: "Industry-leading reliability",
+      value: 500,
+      suffix: "M+",
+      label: "Revenue Influenced",
+      description: "Quantified client impact annually",
     },
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
+    <section className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
-          eyebrow="Our Impact"
-          title="Trusted by Industry Leaders"
-          description="Join thousands of professionals who use SuperSEOToolkit to dominate search rankings"
+          eyebrow="Proven Performance"
+          title="Enterprise Results at Scale"
+          description="The data-driven platform that powers the world's most successful SEO teams"
           centered
         />
 

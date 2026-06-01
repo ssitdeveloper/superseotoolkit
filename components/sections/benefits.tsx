@@ -7,50 +7,50 @@ import { SectionHeader } from "@/components/common/section-header";
 export function BenefitsSection() {
   const benefits = [
     {
-      title: "Enterprise-Grade Accuracy",
+      title: "40% Faster Rankings",
       description:
-        "Get insights powered by the latest SEO algorithms and best practices",
+        "Discover high-impact opportunities that competitors miss. Our clients see ranking improvements in weeks, not months.",
+      icon: "📈",
+    },
+    {
+      title: "$2M Average Client Impact",
+      description:
+        "Quantify real revenue impact for each client project. ROI tracking that justifies premium pricing.",
+      icon: "💰",
+    },
+    {
+      title: "Competitive Edge Detection",
+      description:
+        "Uncover gaps in competitor strategies and capture untapped ranking opportunities before they do.",
       icon: "🎯",
     },
     {
-      title: "Real-Time Data",
+      title: "Automate Reporting",
       description:
-        "Monitor changes instantly with live tracking and notifications",
-      icon: "⚡",
+        "White-label dashboards and automated reports save 10+ hours per client weekly.",
+      icon: "⏱️",
     },
     {
-      title: "Actionable Recommendations",
+      title: "Enterprise-Grade Accuracy",
       description:
-        "Clear, prioritized steps to improve your search rankings immediately",
-      icon: "✨",
+        "98% data accuracy with real-time updates. No outdated metrics holding you back.",
+      icon: "✓",
     },
     {
-      title: "Competitor Analysis",
+      title: "Priority Expert Support",
       description:
-        "Benchmark against competitors and discover untapped opportunities",
-      icon: "🏆",
-    },
-    {
-      title: "Easy Integration",
-      description:
-        "Connect with your favorite marketing tools and workflows seamlessly",
-      icon: "🔗",
-    },
-    {
-      title: "24/7 Support",
-      description:
-        "Get help whenever you need it from our expert support team",
-      icon: "💬",
+        "Dedicated account managers for enterprise plans. Direct access to our SEO research team.",
+      icon: "👥",
     },
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-card/30">
+    <section className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
-          eyebrow="Why Choose Us"
-          title="Powerful Benefits"
-          description="Everything you need to dominate search rankings"
+          eyebrow="Proven Outcomes"
+          title="Why Leading Agencies Trust SuperSEOToolkit"
+          description="Real metrics that drive real business value. See what agencies are achieving."
           centered
         />
 

@@ -2,12 +2,15 @@ import { Navbar } from "@/components/common/navbar";
 import { Footer } from "@/components/common/footer";
 import { HeroSection } from "@/components/sections/hero";
 import { TrustedMetricsSection } from "@/components/sections/trusted-metrics";
+import { FeaturedClientsSection } from "@/components/sections/featured-clients";
 import { FeaturedToolsSection } from "@/components/sections/featured-tools";
-import { CategoriesSection } from "@/components/sections/categories-section";
-import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { BenefitsSection } from "@/components/sections/benefits";
+import { CaseStudiesSection } from "@/components/sections/case-studies";
+import { HowItWorksSection } from "@/components/sections/how-it-works";
+import { CategoriesSection } from "@/components/sections/categories-section";
 import { BlogSection } from "@/components/sections/blog-section";
 import { FAQSection } from "@/components/sections/faq-section";
+import { SecurityTrustSection } from "@/components/sections/security-trust";
 import { CTASection } from "@/components/sections/cta-section";
 import {
   generateOrganizationSchema,
@@ -56,13 +59,15 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <FeaturedClientsSection />
         <TrustedMetricsSection />
         <FeaturedToolsSection />
-        <CategoriesSection />
-        <HowItWorksSection />
         <BenefitsSection />
+        <CaseStudiesSection />
+        <HowItWorksSection />
         <BlogSection />
         <FAQSection />
+        <SecurityTrustSection />
         <CTASection />
       </main>
       <Footer />

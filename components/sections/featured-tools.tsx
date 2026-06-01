@@ -14,9 +14,9 @@ export function FeaturedToolsSection() {
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
-          eyebrow="Our Tools"
-          title="Featured Tools"
-          description="Start with our most popular SEO analysis and optimization tools"
+          eyebrow="Enterprise Capabilities"
+          title="Professional-Grade SEO Tools"
+          description="Industry-leading intelligence that powers 10,000+ agencies. Each tool is built for accuracy and speed."
           centered
         />
 
@@ -68,8 +68,8 @@ export function FeaturedToolsSection() {
 
         {/* View All CTA */}
         <div className="text-center mt-16">
-          <Link href="/tools" className="btn-primary text-lg px-8 py-3">
-            View All Tools
+          <Link href="/tools" className="btn-primary text-lg px-8 py-3 font-semibold">
+            Explore Complete Toolkit →
           </Link>
         </div>
       </div>

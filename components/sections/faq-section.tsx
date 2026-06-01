@@ -12,34 +12,34 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: "Is SuperSEOToolkit really free?",
+    question: "How quickly will we see ranking improvements?",
     answer:
-      "Yes! Our core tools are completely free to use. We offer premium features for power users, but all essential SEO analysis is available at no cost.",
+      "Most clients see meaningful improvements within 2-4 weeks. Our data shows the average agency identifies 40+ quick wins in their first audit. The key is prioritization—we help you focus on the highest-impact opportunities first.",
   },
   {
-    question: "How accurate are the results?",
+    question: "What's the difference between SuperSEOToolkit and competitors?",
     answer:
-      "Our tools use enterprise-grade algorithms that match or exceed industry standards. We continuously update our data sources to provide the most accurate information.",
+      "We're built for agencies, not just individual marketers. Our white-label dashboards, client reporting automation, and competitive intelligence are designed to help you deliver faster results and charge premium rates. Plus, our pricing scales with your growth—not against it.",
   },
   {
-    question: "How often is the data updated?",
+    question: "Can we white-label this for our clients?",
     answer:
-      "Real-time analysis is performed instantly when you use our tools. For tracking features, data is updated daily and synchronized with search engines.",
+      "Yes. Our white-label solution lets you brand everything—dashboards, reports, client portal—with your company colors and logo. This transforms SuperSEOToolkit into a revenue-generating service you can resell.",
   },
   {
-    question: "Can I export my reports?",
+    question: "How do you handle data accuracy and freshness?",
     answer:
-      "Yes, all reports can be exported in multiple formats including PDF, CSV, and JSON for easy sharing and analysis.",
+      "We aggregate data from multiple authoritative sources and validate against live search results. Our 98% accuracy rate is independently verified. Real-time analysis happens instantly; historical data updates nightly.",
   },
   {
-    question: "Do you offer API access?",
+    question: "What's the ROI timeline for agencies?",
     answer:
-      "We offer API access for enterprise customers. Contact our sales team to learn about custom API solutions for your needs.",
+      "Most agencies see ROI within 30 days through increased client retention and higher service pricing. The average client impact is $2M annually. We can show you exactly what similar agencies in your market are achieving.",
   },
   {
-    question: "What's your support policy?",
+    question: "Do you offer enterprise support and SLAs?",
     answer:
-      "We provide 24/7 email support for all users and live chat for premium members. Our average response time is under 2 hours.",
+      "Yes. Enterprise plans include dedicated account management, custom integrations, priority API access, and 99.99% SLA guarantees. Schedule a call with our enterprise team to discuss your specific needs.",
   },
 ];
 
@@ -85,12 +85,12 @@ function FAQItem({ item, index }: { item: FAQItem; index: number }) {
 
 export function FAQSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
-      <div className="max-w-3xl mx-auto">
+    <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
         <SectionHeader
-          eyebrow="Help"
-          title="Frequently Asked Questions"
-          description="Find answers to common questions about SuperSEOToolkit"
+          eyebrow="Common Questions"
+          title="Everything You Need to Know"
+          description="Get answers about ROI, integration, and how agencies are using SuperSEOToolkit to transform their business"
           centered
         />
 

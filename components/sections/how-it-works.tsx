@@ -9,37 +9,41 @@ export function HowItWorksSection() {
   const steps = [
     {
       number: "01",
-      title: "Enter Your Website",
-      description: "Paste your website URL and let us scan your site thoroughly",
-      icon: "🌐",
+      title: "Scan Your Site",
+      description: "Upload your domain. We analyze 100+ SEO factors in 60 seconds.",
+      icon: "🔍",
+      outcome: "Identify technical issues costing you rankings",
     },
     {
       number: "02",
-      title: "Get Instant Analysis",
-      description: "Receive comprehensive SEO audit results in seconds",
-      icon: "⚡",
+      title: "Get Competitive Intelligence",
+      description: "See exactly what your competitors rank for that you don't.",
+      icon: "🎯",
+      outcome: "Discover $100K+ in untapped keyword opportunities",
     },
     {
       number: "03",
-      title: "Implement Changes",
-      description: "Follow our actionable recommendations to improve rankings",
-      icon: "🚀",
+      title: "Prioritized Roadmap",
+      description: "We rank opportunities by impact and difficulty. Quick wins first.",
+      icon: "📋",
+      outcome: "Double-check your ranking progress monthly",
     },
     {
       number: "04",
-      title: "Track Progress",
-      description: "Monitor improvements and track keyword rankings over time",
-      icon: "📊",
+      title: "Monitor & Scale",
+      description: "Track rankings, traffic, and revenue impact in real-time.",
+      icon: "📈",
+      outcome: "Prove ROI and justify premium pricing to clients",
     },
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
-          eyebrow="Process"
-          title="How It Works"
-          description="Simple, powerful SEO analysis in four easy steps"
+          eyebrow="Getting Started"
+          title="Start Dominating Search in 4 Steps"
+          description="From initial audit to competitive domination—this is how agencies win with SuperSEOToolkit"
           centered
         />
 
@@ -56,20 +60,25 @@ export function HowItWorksSection() {
               variants={itemVariants}
               className="relative"
             >
-              <div className="card-base h-full flex flex-col">
+              <div className="card-base h-full flex flex-col group hover:border-accent/50">
                 {/* Step Number */}
-                <div className="text-5xl font-bold text-primary/20 mb-4">
+                <div className="text-5xl font-bold text-primary/15 mb-4 group-hover:text-primary/25 transition-colors">
                   {step.number}
                 </div>
 
                 {/* Icon */}
-                <div className="text-5xl mb-4">{step.icon}</div>
+                <div className="text-4xl mb-4">{step.icon}</div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-sm flex-grow">
+                <h3 className="text-lg font-bold mb-2 group-hover:text-accent transition-colors">{step.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4">
                   {step.description}
                 </p>
+
+                {/* Outcome */}
+                <div className="mt-auto pt-4 border-t border-border">
+                  <p className="text-accent font-semibold text-sm">✓ {step.outcome}</p>
+                </div>
               </div>
 
               {/* Arrow to next step */}

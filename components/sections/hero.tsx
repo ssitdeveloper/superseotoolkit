@@ -23,9 +23,9 @@ export function HeroSection() {
         >
           {/* Eyebrow */}
           <motion.div variants={fadeInUp} className="inline-block">
-            <div className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20">
-              <span className="text-sm font-semibold text-accent">
-                🚀 The Platform for SEO Success
+            <div className="px-3.5 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 backdrop-blur-sm">
+              <span className="text-xs font-semibold text-accent tracking-wide uppercase">
+                ⭐ Enterprise-Grade SEO Intelligence
               </span>
             </div>
           </motion.div>
@@ -33,51 +33,53 @@ export function HeroSection() {
           {/* Headline */}
           <motion.div variants={fadeInUp}>
             <h1 className="text-balance text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-              Professional SEO Tools for{" "}
-              <span className="gradient-text">Serious Marketers</span>
+              Dominate Search Rankings with{" "}
+              <span className="gradient-primary">Precision SEO Tools</span>
             </h1>
           </motion.div>
 
           {/* Subheadline */}
           <motion.p
             variants={fadeInUp}
-            className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light"
           >
-            Analyze, monitor, and optimize your website rankings with
-            enterprise-grade SEO tools. Trusted by digital marketers and
-            agencies worldwide.
+            Unlock hidden ranking opportunities and outrank competitors with our AI-powered SEO suite. Used by 10,000+ agencies to drive millions in client revenue.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
             variants={fadeInUp}
-            className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+            className="flex flex-col sm:flex-row gap-4 justify-center pt-6"
           >
-            <Link href="/tools" className="btn-primary text-lg px-8 py-3">
-              Start Analyzing
+            <Link href="/tools" className="btn-primary text-lg px-10 py-3.5 font-semibold">
+              Launch Free Analysis →
             </Link>
-            <button className="btn-secondary text-lg px-8 py-3">
-              Explore Tools
-            </button>
+            <a href="#features" className="btn-secondary text-lg px-10 py-3.5 font-semibold">
+              See What&apos;s Possible
+            </a>
           </motion.div>
 
-          {/* Trust Badge */}
+          {/* Trust Section */}
           <motion.div
             variants={fadeInUp}
-            className="pt-8 border-t border-border/50"
+            className="pt-10 border-t border-border"
           >
-            <p className="text-sm text-muted-foreground mb-4">
-              Trusted by over 50,000 professionals
-            </p>
-            <div className="flex justify-center gap-8 items-center flex-wrap">
-              {["Google", "Ahrefs", "SEMrush", "Moz"].map((brand) => (
-                <div
-                  key={brand}
-                  className="text-muted-foreground font-semibold opacity-60"
-                >
-                  {brand}
-                </div>
-              ))}
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">
+                Trusted by Industry Leaders
+              </p>
+              <div className="flex justify-center gap-6 items-center flex-wrap">
+                {[
+                  { name: "Used by 10K+", desc: "SEO Professionals" },
+                  { name: "$500M+", desc: "in Client Revenue" },
+                  { name: "98%", desc: "Customer Satisfaction" },
+                ].map((stat) => (
+                  <div key={stat.name} className="text-center">
+                    <div className="font-bold text-accent text-lg">{stat.name}</div>
+                    <div className="text-xs text-muted-foreground">{stat.desc}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </motion.div>
