@@ -22,9 +22,9 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 pb-20">
+      <main className="pt-24 pb-16 lg:pb-20">
         {/* Hero */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20">
+        <section className="px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h1>
             <p className="text-xl text-muted-foreground">
@@ -34,11 +34,11 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Info & Form */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20 bg-card/50">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <section className="px-4 sm:px-6 lg:px-8 py-14 lg:py-16 bg-card/50">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold mb-12">Contact Information</h2>
+              <h2 className="text-3xl font-bold mb-10">Contact Information</h2>
               <div className="space-y-8">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
@@ -74,7 +74,7 @@ export default function ContactPage() {
               </div>
 
               {/* Response Time */}
-              <div className="mt-12 p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg border border-primary/20">
+              <div className="mt-10 p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg border border-primary/20">
                 <h3 className="font-semibold mb-2">Response Time</h3>
                 <p className="text-muted-foreground text-sm">
                   We typically respond to all inquiries within 24 hours.
@@ -84,7 +84,7 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="card-base">
-              <h2 className="text-3xl font-bold mb-8">Send us a Message</h2>
+              <h2 className="text-3xl font-bold mb-7">Send us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-semibold mb-2">
@@ -159,9 +159,9 @@ export default function ContactPage() {
         </section>
 
         {/* FAQ */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20">
+        <section className="px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Quick FAQ</h2>
+            <h2 className="text-3xl font-bold mb-10 text-center">Quick FAQ</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="card-base">
                 <h3 className="font-bold mb-2">What&apos;s the response time?</h3>

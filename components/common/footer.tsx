@@ -4,8 +4,8 @@ import { Share2, ExternalLink, Mail, Code2 } from "lucide-react";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-gradient-to-b from-background to-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-18">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold gradient-primary">SuperSEOToolkit</h3>
@@ -135,10 +135,10 @@ export function Footer() {
         </div>
 
         {/* CTA Box */}
-        <div className="bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/20 rounded-2xl p-10 mb-16">
+        <div className="bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/20 rounded-2xl p-8 md:p-10 mb-12">
           <div className="max-w-2xl">
             <h3 className="text-2xl font-bold mb-3">Ready to dominate search?</h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-5">
               Join 10,000+ agencies getting real results with SuperSEOToolkit. Start your free analysis in 60 seconds.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -153,7 +153,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border-light pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-border-light pt-7 flex flex-col md:flex-row justify-between items-center">
           <div className="text-muted-foreground text-xs">
             <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
             <p className="mt-2">SOC 2 Type II • GDPR Compliant • 99.99% Uptime SLA</p>
