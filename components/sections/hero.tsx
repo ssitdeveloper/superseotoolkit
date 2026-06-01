@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center relative overflow-hidden">
+    <section className="pt-28 pb-16 md:pt-32 md:pb-20 px-4 sm:px-6 lg:px-8 min-h-[92vh] lg:min-h-screen flex items-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl opacity-20"></div>
@@ -87,7 +87,7 @@ export function HeroSection() {
         {/* Scroll Indicator */}
         <motion.div
           variants={fadeInUp}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="hidden lg:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}

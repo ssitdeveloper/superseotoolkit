@@ -36,43 +36,43 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden lg:flex lg:items-center lg:gap-8 xl:gap-10">
             <Link
               href="/tools"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium leading-none"
             >
               Tools
             </Link>
             <Link
               href="/blog"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium leading-none"
             >
               Resources
             </Link>
             <Link
               href="/about"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium leading-none"
             >
               Enterprise
             </Link>
             <Link
               href="/contact"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium leading-none"
             >
               Contact
             </Link>
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            <Link href="/tools" className="btn-primary py-2 px-6 text-sm font-semibold">
+          <div className="hidden lg:flex lg:items-center lg:gap-3">
+            <Link href="/tools" className="btn-primary py-2 px-5 text-sm font-semibold whitespace-nowrap">
               Launch Free Analysis
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 hover:bg-card rounded-lg transition-colors"
+            className="lg:hidden p-2 hover:bg-card rounded-lg transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
@@ -86,7 +86,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div className="lg:hidden bg-background border-b border-border">
           <div className="px-4 py-4 space-y-4">
             <Link
               href="/tools"
@@ -95,24 +95,26 @@ export function Navbar() {
               Tools
             </Link>
             <Link
-              href="/categories"
-              className="block text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Categories
-            </Link>
-            <Link
               href="/blog"
               className="block text-muted-foreground hover:text-foreground transition-colors"
             >
-              Blog
+              Resources
             </Link>
             <Link
               href="/about"
               className="block text-muted-foreground hover:text-foreground transition-colors"
             >
-              About
+              Enterprise
             </Link>
-            <button className="btn-primary w-full">Start Analyzing</button>
+            <Link
+              href="/contact"
+              className="block text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Contact
+            </Link>
+            <Link href="/tools" className="btn-primary w-full text-center block">
+              Launch Free Analysis
+            </Link>
           </div>
         </div>
       )}
