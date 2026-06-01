@@ -36,7 +36,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex lg:items-center lg:gap-8 xl:gap-10">
+          <div className="hidden md:flex md:items-center md:gap-6 lg:gap-8 xl:gap-10">
             <Link
               href="/tools"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium leading-none"
@@ -64,7 +64,7 @@ export function Navbar() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex lg:items-center lg:gap-3">
+          <div className="hidden md:flex md:items-center md:gap-3">
             <Link href="/tools" className="btn-primary py-2 px-5 text-sm font-semibold whitespace-nowrap">
               Launch Free Analysis
             </Link>
@@ -72,7 +72,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 hover:bg-card rounded-lg transition-colors"
+            className="md:hidden p-2 hover:bg-card rounded-lg transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
@@ -86,7 +86,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-background border-b border-border">
+        <div className="md:hidden bg-background border-b border-border">
           <div className="px-4 py-4 space-y-4">
             <Link
               href="/tools"
