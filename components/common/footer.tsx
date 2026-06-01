@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Share2, Twitter, Linkedin, Code2 } from "lucide-react";
+import { Share2, Twitter, Mail, Code2 } from "lucide-react";
 
 export function Footer() {
   return (
@@ -23,7 +23,7 @@ export function Footer() {
                 href="#"
                 className="text-muted-foreground hover:text-accent transition-colors"
               >
-                <Linkedin className="w-5 h-5" />
+                <Mail className="w-5 h-5" />
               </a>
               <a
                 href="#"
