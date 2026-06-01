@@ -21,8 +21,8 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/75 backdrop-blur-xl border-b border-border-light"
-          : "bg-transparent"
+          ? "bg-background/85 backdrop-blur-xl border-b border-border-light"
+          : "bg-background/55 backdrop-blur-md border-b border-border/50"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +30,7 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-bold gradient-primary transition-all hover:scale-105 duration-200"
+            className="text-2xl font-bold gradient-primary transition-all hover:scale-105 duration-200"
           >
             SuperSEOToolkit
           </Link>
@@ -39,25 +39,25 @@ export function Navbar() {
           <div className="hidden md:flex md:items-center md:gap-6 lg:gap-8 xl:gap-10">
             <Link
               href="/tools"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium leading-none"
+              className="text-base text-muted-foreground hover:text-foreground transition-colors font-semibold leading-none"
             >
               Tools
             </Link>
             <Link
               href="/blog"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium leading-none"
+              className="text-base text-muted-foreground hover:text-foreground transition-colors font-semibold leading-none"
             >
               Resources
             </Link>
             <Link
               href="/about"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium leading-none"
+              className="text-base text-muted-foreground hover:text-foreground transition-colors font-semibold leading-none"
             >
               Enterprise
             </Link>
             <Link
               href="/contact"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium leading-none"
+              className="text-base text-muted-foreground hover:text-foreground transition-colors font-semibold leading-none"
             >
               Contact
             </Link>
