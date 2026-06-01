@@ -119,6 +119,10 @@ nav a:hover {
   background: transparent;
 }
 
+.section-light {
+  background: linear-gradient(180deg, rgba(248, 251, 255, 0.96), rgba(244, 248, 255, 0.94));
+}
+
 .hero h1,
 h1,
 h2,
@@ -347,6 +351,25 @@ body.dark-mode main li,
 body.dark-mode main label,
 body.dark-mode main .text-muted {
   color: #cdd7ea;
+}
+
+body.dark-mode .text-slate-900,
+body.dark-mode .text-slate-800,
+body.dark-mode .text-slate-700,
+body.dark-mode .text-slate-600,
+body.dark-mode .text-slate-500 {
+  color: #dbe7ff !important;
+}
+
+body.dark-mode .text-cobalt {
+  color: #9fc0ff !important;
+}
+
+body.dark-mode .glass-light,
+body.dark-mode .bg-white,
+body.dark-mode [class*='bg-white/'] {
+  background: linear-gradient(155deg, rgba(17, 26, 48, 0.9), rgba(17, 26, 48, 0.8)) !important;
+  border-color: rgba(125, 162, 255, 0.28) !important;
 }
 
 body.dark-mode .card {
