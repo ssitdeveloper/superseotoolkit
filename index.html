@@ -1,561 +1,749 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SuperSEOToolkit - Free online SEO tools, developer tools, text tools, and utilities. 100+ powerful tools to boost your productivity and SEO rankings.">
-  <meta name="keywords" content="SEO tools, keyword checker, meta tag analyzer, JSON formatter, text tools, developer tools, free online tools">
+  <meta name="description" content="SuperSEOToolkit is a premium SEO workflow platform with 100+ fast, privacy-first tools, live SEO insights, and intelligent optimization workflows.">
+  <meta name="keywords" content="SEO tools, website audit, keyword density checker, meta tag analyzer, technical SEO, online SEO platform">
   <meta name="author" content="SuperSEOToolkit">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#3b82f6">
+  <meta name="theme-color" content="#0a66ff">
 
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="SuperSEOToolkit - Free SEO & Developer Tools">
-  <meta property="og:description" content="Access 100+ free online tools for SEO, development, text processing, and more. Boost your productivity today.">
+  <meta property="og:title" content="SuperSEOToolkit | Premium SEO Toolkit">
+  <meta property="og:description" content="A premium SaaS-quality SEO toolkit with 100+ tools, live audit demos, and data-driven SEO workflows.">
   <meta property="og:url" content="https://superseotoolkit.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://superseotoolkit.com/assets/images/og-image.jpg">
 
-  <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SuperSEOToolkit - Free SEO & Developer Tools">
-  <meta name="twitter:description" content="Access 100+ free online tools for SEO, development, text processing, and more.">
+  <meta name="twitter:title" content="SuperSEOToolkit | Premium SEO Toolkit">
+  <meta name="twitter:description" content="A modern SEO toolkit built for growth teams, creators, and agencies.">
   <meta name="twitter:image" content="https://superseotoolkit.com/assets/images/twitter-image.jpg">
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://superseotoolkit.com/">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%233b82f6' width='100' height='100'/%3E%3Ctext x='50' y='55' font-size='70' fill='white' text-anchor='middle' font-weight='bold'%3E⚙%3C/text%3E%3C/svg%3E">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
-
-  <!-- Lucide Icons -->
-  <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
-
-  <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <title>SuperSEOToolkit - Free SEO & Developer Tools | 100+ Online Utilities</title>
-
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SuperSEOToolkit",
-    "url": "https://superseotoolkit.com",
-    "logo": "https://superseotoolkit.com/logo.png",
-    "sameAs": [
-      "https://twitter.com/superseotoolkit",
-      "https://facebook.com/superseotoolkit"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Customer Support",
-      "email": "support@superseotoolkit.com"
-    }
-  }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#07090f",
+            paper: "#f8fbff",
+            cobalt: "#0a66ff",
+            cobaltSoft: "#5ca4ff",
+            slateDeep: "#0f172a"
+          },
+          boxShadow: {
+            glow: "0 22px 70px rgba(10, 102, 255, 0.28)",
+            glass: "0 10px 35px rgba(2, 12, 33, 0.22)"
+          },
+          fontFamily: {
+            display: ["Sora", "ui-sans-serif", "system-ui"],
+            body: ["Manrope", "ui-sans-serif", "system-ui"]
+          }
+        }
+      }
+    };
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://superseotoolkit.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://superseotoolkit.com/?search={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <title>SuperSEOToolkit | Premium SEO Platform and Tool Suite</title>
+
+  <style>
+    body {
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(10, 102, 255, 0.16), transparent 34%),
+        radial-gradient(circle at 80% 18%, rgba(92, 164, 255, 0.18), transparent 30%),
+        linear-gradient(180deg, #07090f 0%, #0b1224 42%, #eef5ff 42.1%, #f8fbff 100%);
+      color: #f8fbff;
+      overflow-x: hidden;
     }
-  }
-  </script>
+
+    .glass {
+      background: linear-gradient(140deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .glass-light {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.87), rgba(255, 255, 255, 0.66));
+      border: 1px solid rgba(10, 102, 255, 0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .grid-noise::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(circle at center, #000 48%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .floating-chip {
+      animation: floatY 7s ease-in-out infinite;
+    }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-14px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .section-light {
+      color: #0b1224;
+    }
+
+    .progress-fill {
+      width: 0;
+      transition: width 0.8s ease;
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-item.active .faq-content {
+      max-height: 280px;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-icon {
+      transition: transform 0.25s ease;
+    }
+
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .seo-wave {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+    }
+  </style>
 </head>
 <body>
-  <!-- Header & Navigation -->
-  <header>
-    <div class="container">
-      <nav class="navbar">
-        <div class="logo">
-          <svg class="w-8 h-8" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L6.5 5V12C6.5 18 12 22 12 22S17.5 18 17.5 12V5L12 2Z"/></svg>
-          SuperSEOToolkit
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#tools" data-link>Tools</a></li>
-            <li><a href="/blog/" data-link>Blog</a></li>
-            <li><a href="/about.html" data-link>About</a></li>
-            <li><a href="/contact.html" data-link>Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav-controls">
-          <button id="theme-toggle" class="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
-            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </button>
-          <button class="hamburger" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
+  <div class="fixed inset-0 -z-10 pointer-events-none">
+    <div class="absolute top-24 left-8 h-44 w-44 rounded-full bg-cobalt/35 blur-3xl"></div>
+    <div class="absolute top-64 right-10 h-52 w-52 rounded-full bg-blue-300/30 blur-3xl"></div>
+    <div class="absolute bottom-24 left-1/4 h-56 w-56 rounded-full bg-cyan-300/20 blur-3xl"></div>
+  </div>
+
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+      <a href="/" class="font-display text-xl font-bold tracking-tight text-white">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-cobalt/90 text-sm text-white">S</span>
+        <span class="ml-2">SuperSEOToolkit</span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-semibold text-white/75 md:flex">
+        <a href="#featured-tools" class="transition hover:text-white">Tools</a>
+        <a href="#workflow" class="transition hover:text-white">Workflow</a>
+        <a href="#faq" class="transition hover:text-white">FAQ</a>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
       </nav>
+      <div class="flex items-center gap-3">
+        <a href="/about.html" class="hidden rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-white/40 hover:text-white md:inline-flex">About</a>
+        <a href="#live-audit" class="rounded-full bg-cobalt px-5 py-2 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-blue-500">Run Audit</a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>Free Online Tools for SEO, Development & Text Processing</h1>
-      <p>SuperSEOToolkit offers 100+ powerful, free online utilities to boost your productivity. From SEO analysis to code formatting, we've got you covered.</p>
+  <main>
+    <section class="relative overflow-hidden px-6 pb-20 pt-20 lg:px-10 lg:pb-28 lg:pt-24">
+      <div class="grid-noise absolute inset-0"></div>
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="relative z-10 reveal">
+          <div class="floating-chip mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-blue-100">
+            <span class="h-2 w-2 rounded-full bg-cobalt"></span>
+            Enterprise SEO Workspace
+          </div>
+          <h1 class="font-display text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+            Build search momentum with a premium SEO control center.
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg text-blue-50/85 lg:text-xl">
+            Audit, optimize, and ship content faster using 100+ precision tools wrapped in a fast, modern SaaS interface.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#featured-tools" class="rounded-full bg-white px-7 py-3 text-sm font-bold text-slate-900 transition hover:-translate-y-0.5 hover:bg-blue-50">Explore Tools</a>
+            <a href="#stats" class="rounded-full border border-white/25 px-7 py-3 text-sm font-bold text-white/95 transition hover:border-white/45 hover:bg-white/10">View Metrics</a>
+          </div>
+          <div class="mt-10 grid max-w-xl grid-cols-3 gap-3 text-sm text-blue-100/90">
+            <div class="glass rounded-2xl p-4">
+              <p class="text-2xl font-bold text-white">100+</p>
+              <p>Utilities</p>
+            </div>
+            <div class="glass rounded-2xl p-4">
+              <p class="text-2xl font-bold text-white">1.9M</p>
+              <p>Monthly runs</p>
+            </div>
+            <div class="glass rounded-2xl p-4">
+              <p class="text-2xl font-bold text-white">99.97%</p>
+              <p>Uptime</p>
+            </div>
+          </div>
+        </div>
 
-      <!-- Search Bar -->
-      <div class="search-container">
-        <input type="text" id="tool-search" class="search-input" placeholder="Search tools by name, category..." autocomplete="off">
-        <div id="search-results" class="search-results" style="display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 100%; max-width: 500px; background: white; border: 1px solid #e2e8f0; border-radius: 0.75rem; margin-top: 0.5rem; max-height: 400px; overflow-y: auto; z-index: 100; box-shadow: 0 10px 25px rgba(0,0,0,0.1);"></div>
+        <div class="relative reveal">
+          <div class="absolute -left-8 -top-8 hidden rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-xs font-bold text-blue-100 shadow-glass lg:block floating-chip">
+            +34% Visibility
+          </div>
+          <div class="absolute -bottom-6 right-8 hidden rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-xs font-bold text-blue-100 shadow-glass lg:block floating-chip" style="animation-delay: 1.4s;">
+            CTR up 19.4%
+          </div>
+
+          <div class="glass rounded-3xl p-5 shadow-glass">
+            <div class="rounded-2xl border border-white/20 bg-slate-900/65 p-4">
+              <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-widest text-blue-200/70">Search Performance Board</p>
+                  <p class="mt-1 text-sm font-semibold text-white">superseotoolkit.com</p>
+                </div>
+                <span class="rounded-full bg-cobalt/20 px-3 py-1 text-xs font-bold text-blue-100">Live</span>
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-4">
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+                  <p class="text-xs text-blue-100/70">Domain Health</p>
+                  <p class="mt-1 text-2xl font-bold text-white">92</p>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+                  <p class="text-xs text-blue-100/70">Ranking Keywords</p>
+                  <p class="mt-1 text-2xl font-bold text-white">13,248</p>
+                </div>
+              </div>
+              <div class="mt-5 rounded-xl border border-white/10 bg-white/5 p-4">
+                <div class="mb-3 flex items-center justify-between">
+                  <p class="text-xs font-semibold uppercase tracking-wider text-blue-200/70">Organic Visibility Trend</p>
+                  <p class="text-xs text-blue-100/75">Last 90 days</p>
+                </div>
+                <svg viewBox="0 0 420 120" class="h-28 w-full">
+                  <defs>
+                    <linearGradient id="waveGradient" x1="0" x2="1" y1="0" y2="0">
+                      <stop offset="0%" stop-color="#5ca4ff"></stop>
+                      <stop offset="100%" stop-color="#0a66ff"></stop>
+                    </linearGradient>
+                  </defs>
+                  <path class="seo-wave" d="M6 90 C40 74, 58 70, 88 76 C124 83, 140 54, 170 61 C204 69, 226 40, 254 44 C292 50, 305 31, 343 35 C375 40, 392 24, 414 20" fill="none" stroke="url(#waveGradient)" stroke-width="4" stroke-linecap="round"></path>
+                  <circle cx="414" cy="20" r="4" fill="#5ca4ff"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- CTA Buttons -->
-      <div class="hero .btn-group">
-        <button class="btn btn-primary btn-lg" onclick="document.getElementById('tools').scrollIntoView({behavior: 'smooth'})">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h6v6h-6z"/></svg> Explore Tools
-        </button>
-        <a href="/about.html" class="btn btn-outline btn-lg">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Learn More
-        </a>
+    <section id="live-audit" class="reveal px-6 py-20 lg:px-10 section-light">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-10 max-w-2xl">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-cobalt">Live SEO Audit Demo</p>
+          <h2 class="mt-3 font-display text-3xl font-extrabold text-slate-900 sm:text-4xl">Simulate an instant technical SEO report</h2>
+          <p class="mt-3 text-base text-slate-600">Enter a URL and focus keyword. The dashboard will generate score indicators in real time.</p>
+        </div>
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div class="glass-light rounded-3xl p-6 shadow-glass">
+            <label for="audit-url" class="text-sm font-semibold text-slate-700">Website URL</label>
+            <input id="audit-url" type="url" placeholder="https://example.com" class="mt-2 w-full rounded-xl border border-blue-100 bg-white/85 px-4 py-3 text-slate-900 outline-none ring-cobalt transition focus:ring-2">
+            <label for="audit-keyword" class="mt-5 block text-sm font-semibold text-slate-700">Primary Keyword</label>
+            <input id="audit-keyword" type="text" placeholder="best seo tool" class="mt-2 w-full rounded-xl border border-blue-100 bg-white/85 px-4 py-3 text-slate-900 outline-none ring-cobalt transition focus:ring-2">
+            <button id="run-audit" class="mt-6 w-full rounded-xl bg-cobalt px-5 py-3 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-blue-600">Run Live Audit</button>
+
+            <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+              <div class="rounded-xl border border-blue-100 bg-white/75 p-4">
+                <p class="text-slate-500">Backlink Signals</p>
+                <p id="signal-backlinks" class="mt-1 text-2xl font-bold text-slate-900">7.2k</p>
+              </div>
+              <div class="rounded-xl border border-blue-100 bg-white/75 p-4">
+                <p class="text-slate-500">Technical Errors</p>
+                <p id="signal-errors" class="mt-1 text-2xl font-bold text-slate-900">12</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-light rounded-3xl p-6 shadow-glass">
+            <div class="space-y-5">
+              <div>
+                <div class="mb-2 flex justify-between text-sm font-semibold text-slate-600"><span>On-page SEO</span><span id="score-onpage">74%</span></div>
+                <div class="h-2 rounded-full bg-blue-100"><div id="bar-onpage" class="progress-fill h-2 rounded-full bg-cobalt" style="width: 74%"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex justify-between text-sm font-semibold text-slate-600"><span>Technical SEO</span><span id="score-technical">69%</span></div>
+                <div class="h-2 rounded-full bg-blue-100"><div id="bar-technical" class="progress-fill h-2 rounded-full bg-cobaltSoft" style="width: 69%"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex justify-between text-sm font-semibold text-slate-600"><span>Content Depth</span><span id="score-content">81%</span></div>
+                <div class="h-2 rounded-full bg-blue-100"><div id="bar-content" class="progress-fill h-2 rounded-full bg-sky-400" style="width: 81%"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex justify-between text-sm font-semibold text-slate-600"><span>Page Experience</span><span id="score-ux">76%</span></div>
+                <div class="h-2 rounded-full bg-blue-100"><div id="bar-ux" class="progress-fill h-2 rounded-full bg-blue-500" style="width: 76%"></div></div>
+              </div>
+            </div>
+            <div class="mt-7 rounded-2xl border border-blue-100 bg-white/70 p-4">
+              <p class="text-xs font-bold uppercase tracking-[0.15em] text-cobalt">Audit Verdict</p>
+              <p id="audit-verdict" class="mt-2 text-sm text-slate-700">Good momentum. Improve technical cleanup and schema coverage for stronger ranking gains.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured-tools" class="reveal px-6 py-20 lg:px-10 section-light">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-cobalt">Featured Tools</p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold text-slate-900 sm:text-4xl">High-impact tools used by growth teams</h2>
+          </div>
+          <a href="/tools/keyword-density-checker.html" class="rounded-full border border-cobalt/30 px-5 py-2 text-sm font-bold text-cobalt transition hover:bg-cobalt hover:text-white">Start with SEO tools</a>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <a href="/tools/keyword-density-checker.html" class="tilt-card group glass-light rounded-2xl p-6 shadow-glass">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cobalt/10 text-cobalt"><i data-lucide="scan-search"></i></div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Keyword Density Checker</h3>
+            <p class="mt-2 text-sm text-slate-600">Track keyword distribution with precision and prevent over-optimization.</p>
+            <p class="mt-4 text-sm font-semibold text-cobalt transition group-hover:translate-x-1">Open tool</p>
+          </a>
+          <a href="/tools/meta-tag-analyzer.html" class="tilt-card group glass-light rounded-2xl p-6 shadow-glass">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cobalt/10 text-cobalt"><i data-lucide="braces"></i></div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Meta Tag Analyzer</h3>
+            <p class="mt-2 text-sm text-slate-600">Audit title, description, OG tags, and structural metadata in seconds.</p>
+            <p class="mt-4 text-sm font-semibold text-cobalt transition group-hover:translate-x-1">Open tool</p>
+          </a>
+          <a href="/tools/word-counter.html" class="tilt-card group glass-light rounded-2xl p-6 shadow-glass">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cobalt/10 text-cobalt"><i data-lucide="notebook-pen"></i></div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Word Counter</h3>
+            <p class="mt-2 text-sm text-slate-600">Measure readability and optimize writing length for SERP snippets.</p>
+            <p class="mt-4 text-sm font-semibold text-cobalt transition group-hover:translate-x-1">Open tool</p>
+          </a>
+          <a href="/tools/json-formatter.html" class="tilt-card group glass-light rounded-2xl p-6 shadow-glass">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cobalt/10 text-cobalt"><i data-lucide="code-2"></i></div>
+            <h3 class="font-display text-lg font-bold text-slate-900">JSON Formatter</h3>
+            <p class="mt-2 text-sm text-slate-600">Clean, validate, and structure schema payloads for technical SEO tasks.</p>
+            <p class="mt-4 text-sm font-semibold text-cobalt transition group-hover:translate-x-1">Open tool</p>
+          </a>
+          <a href="/tools/slug-generator.html" class="tilt-card group glass-light rounded-2xl p-6 shadow-glass">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cobalt/10 text-cobalt"><i data-lucide="link"></i></div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Slug Generator</h3>
+            <p class="mt-2 text-sm text-slate-600">Generate concise, clean URLs that improve crawl clarity and CTR.</p>
+            <p class="mt-4 text-sm font-semibold text-cobalt transition group-hover:translate-x-1">Open tool</p>
+          </a>
+          <a href="/tools/qr-code-generator.html" class="tilt-card group glass-light rounded-2xl p-6 shadow-glass">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cobalt/10 text-cobalt"><i data-lucide="qr-code"></i></div>
+            <h3 class="font-display text-lg font-bold text-slate-900">QR Code Generator</h3>
+            <p class="mt-2 text-sm text-slate-600">Create trackable QR destinations for campaigns and offline channels.</p>
+            <p class="mt-4 text-sm font-semibold text-cobalt transition group-hover:translate-x-1">Open tool</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="reveal px-6 py-20 lg:px-10 section-light">
+      <div class="mx-auto max-w-7xl rounded-3xl border border-blue-100 bg-white/80 p-8 shadow-glass lg:p-12">
+        <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-cobalt">SEO Statistics</p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold text-slate-900">Performance metrics built for growth decisions</h2>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-blue-100 bg-white p-4">
+                <p class="text-sm text-slate-500">Avg. Audit Time</p>
+                <p class="mt-1 text-3xl font-extrabold text-slate-900"><span class="counter" data-target="4.2">0</span>s</p>
+              </div>
+              <div class="rounded-2xl border border-blue-100 bg-white p-4">
+                <p class="text-sm text-slate-500">Pages Crawled / Day</p>
+                <p class="mt-1 text-3xl font-extrabold text-slate-900"><span class="counter" data-target="760">0</span>k</p>
+              </div>
+              <div class="rounded-2xl border border-blue-100 bg-white p-4">
+                <p class="text-sm text-slate-500">Keyword Alerts</p>
+                <p class="mt-1 text-3xl font-extrabold text-slate-900"><span class="counter" data-target="286">0</span>k</p>
+              </div>
+              <div class="rounded-2xl border border-blue-100 bg-white p-4">
+                <p class="text-sm text-slate-500">Issue Resolution Rate</p>
+                <p class="mt-1 text-3xl font-extrabold text-slate-900"><span class="counter" data-target="94">0</span>%</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative rounded-2xl border border-blue-100 bg-slate-950 p-6 text-white">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-blue-200">Visibility by Channel</p>
+            <div class="mt-6 space-y-5">
+              <div>
+                <div class="mb-2 flex justify-between text-sm text-blue-100/80"><span>Organic Search</span><span>82%</span></div>
+                <div class="h-3 rounded-full bg-white/10"><div class="h-3 rounded-full bg-gradient-to-r from-blue-300 to-cobalt" style="width: 82%"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex justify-between text-sm text-blue-100/80"><span>Featured Snippets</span><span>64%</span></div>
+                <div class="h-3 rounded-full bg-white/10"><div class="h-3 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400" style="width: 64%"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex justify-between text-sm text-blue-100/80"><span>Image Search</span><span>46%</span></div>
+                <div class="h-3 rounded-full bg-white/10"><div class="h-3 rounded-full bg-gradient-to-r from-blue-200 to-blue-500" style="width: 46%"></div></div>
+              </div>
+            </div>
+            <svg viewBox="0 0 380 120" class="mt-8 h-32 w-full">
+              <path d="M6 92 C40 88, 52 67, 90 72 C132 79, 150 52, 190 56 C228 60, 245 40, 286 48 C320 55, 340 27, 372 31" fill="none" stroke="#0a66ff" stroke-opacity="0.9" stroke-width="3"></path>
+              <path d="M6 104 C42 102, 56 84, 90 86 C126 89, 152 64, 188 67 C228 72, 250 53, 288 57 C318 61, 344 41, 372 42" fill="none" stroke="#7ab8ff" stroke-opacity="0.65" stroke-width="2"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal px-6 py-20 lg:px-10 section-light">
+      <div class="mx-auto max-w-7xl">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-cobalt">Why Choose Us</p>
+        <h2 class="mt-3 max-w-3xl font-display text-3xl font-extrabold text-slate-900 sm:text-4xl">A focused platform designed for high-output SEO teams</h2>
+        <div class="mt-10 grid gap-5 lg:grid-cols-4">
+          <div class="glass-light rounded-2xl p-6">
+            <i data-lucide="rocket" class="text-cobalt"></i>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">Fast by default</h3>
+            <p class="mt-2 text-sm text-slate-600">Low-latency tools and lightweight delivery keep workflows moving.</p>
+          </div>
+          <div class="glass-light rounded-2xl p-6">
+            <i data-lucide="lock-keyhole" class="text-cobalt"></i>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">Privacy-first analysis</h3>
+            <p class="mt-2 text-sm text-slate-600">Most utilities run in-browser, reducing external data exposure.</p>
+          </div>
+          <div class="glass-light rounded-2xl p-6">
+            <i data-lucide="line-chart" class="text-cobalt"></i>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">Insight-driven outputs</h3>
+            <p class="mt-2 text-sm text-slate-600">Prioritized findings with directional recommendations, not noise.</p>
+          </div>
+          <div class="glass-light rounded-2xl p-6">
+            <i data-lucide="layers-3" class="text-cobalt"></i>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">Unified toolkit</h3>
+            <p class="mt-2 text-sm text-slate-600">SEO, content, and developer utilities in one coherent surface.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal px-6 py-20 lg:px-10 section-light">
+      <div class="mx-auto max-w-7xl">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-cobalt">Tool Categories</p>
+        <h2 class="mt-3 font-display text-3xl font-extrabold text-slate-900 sm:text-4xl">Pick a category and ship improvements faster</h2>
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <a href="/tools/keyword-density-checker.html" class="glass-light rounded-2xl p-6 transition hover:-translate-y-1 hover:shadow-glow">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cobalt/10 text-cobalt"><i data-lucide="search-check"></i></div>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">SEO Intelligence</h3>
+            <p class="mt-2 text-sm text-slate-600">Keyword, metadata, snippet, and crawl-focused optimization tools.</p>
+          </a>
+          <a href="/tools/word-counter.html" class="glass-light rounded-2xl p-6 transition hover:-translate-y-1 hover:shadow-glow">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cobalt/10 text-cobalt"><i data-lucide="pen-square"></i></div>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">Content Ops</h3>
+            <p class="mt-2 text-sm text-slate-600">Write, structure, and polish high-performing content efficiently.</p>
+          </a>
+          <a href="/tools/json-formatter.html" class="glass-light rounded-2xl p-6 transition hover:-translate-y-1 hover:shadow-glow">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cobalt/10 text-cobalt"><i data-lucide="terminal-square"></i></div>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">Developer Stack</h3>
+            <p class="mt-2 text-sm text-slate-600">Format and validate technical assets for clean implementation.</p>
+          </a>
+          <a href="/tools/password-generator.html" class="glass-light rounded-2xl p-6 transition hover:-translate-y-1 hover:shadow-glow">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cobalt/10 text-cobalt"><i data-lucide="shield-check"></i></div>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">Security Utils</h3>
+            <p class="mt-2 text-sm text-slate-600">Generate secure strings and encoded payloads for safe workflows.</p>
+          </a>
+          <a href="/tools/url-validator.html" class="glass-light rounded-2xl p-6 transition hover:-translate-y-1 hover:shadow-glow">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cobalt/10 text-cobalt"><i data-lucide="link-2"></i></div>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">URL Engineering</h3>
+            <p class="mt-2 text-sm text-slate-600">Normalize, validate, and optimize URL structures for indexability.</p>
+          </a>
+          <a href="/tools/text-statistics.html" class="glass-light rounded-2xl p-6 transition hover:-translate-y-1 hover:shadow-glow">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cobalt/10 text-cobalt"><i data-lucide="chart-column"></i></div>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">Reporting</h3>
+            <p class="mt-2 text-sm text-slate-600">Transform tool output into trackable signals and action plans.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="reveal px-6 py-20 lg:px-10 section-light">
+      <div class="mx-auto max-w-7xl">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-cobalt">SEO Workflow Timeline</p>
+        <h2 class="mt-3 font-display text-3xl font-extrabold text-slate-900 sm:text-4xl">From audit to ranking uplift in five clear steps</h2>
+        <div class="relative mt-12 grid gap-7 lg:grid-cols-5">
+          <div class="hidden lg:block absolute left-[10%] right-[10%] top-9 h-px bg-blue-200"></div>
+          <div class="rounded-2xl border border-blue-100 bg-white p-5">
+            <div class="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cobalt text-sm font-bold text-white">1</div>
+            <h3 class="font-display text-base font-bold text-slate-900">Snapshot Audit</h3>
+            <p class="mt-2 text-sm text-slate-600">Scan metadata, structure, and speed indicators.</p>
+          </div>
+          <div class="rounded-2xl border border-blue-100 bg-white p-5">
+            <div class="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cobalt text-sm font-bold text-white">2</div>
+            <h3 class="font-display text-base font-bold text-slate-900">Keyword Mapping</h3>
+            <p class="mt-2 text-sm text-slate-600">Align target terms with intent and content hierarchy.</p>
+          </div>
+          <div class="rounded-2xl border border-blue-100 bg-white p-5">
+            <div class="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cobalt text-sm font-bold text-white">3</div>
+            <h3 class="font-display text-base font-bold text-slate-900">On-page Refinement</h3>
+            <p class="mt-2 text-sm text-slate-600">Tune tags, copy density, schema, and internal links.</p>
+          </div>
+          <div class="rounded-2xl border border-blue-100 bg-white p-5">
+            <div class="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cobalt text-sm font-bold text-white">4</div>
+            <h3 class="font-display text-base font-bold text-slate-900">Quality Validation</h3>
+            <p class="mt-2 text-sm text-slate-600">Run consistency checks before publishing updates.</p>
+          </div>
+          <div class="rounded-2xl border border-blue-100 bg-white p-5">
+            <div class="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cobalt text-sm font-bold text-white">5</div>
+            <h3 class="font-display text-base font-bold text-slate-900">Track and Iterate</h3>
+            <p class="mt-2 text-sm text-slate-600">Monitor signals and prioritize impact-based next actions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="reveal px-6 py-20 lg:px-10 section-light">
+      <div class="mx-auto max-w-4xl">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-cobalt">FAQ</p>
+        <h2 class="mt-3 font-display text-3xl font-extrabold text-slate-900 sm:text-4xl">Everything teams ask before they scale with us</h2>
+        <div class="mt-10 space-y-4">
+          <div class="faq-item rounded-2xl border border-blue-100 bg-white p-5">
+            <button class="faq-trigger flex w-full items-center justify-between text-left" type="button">
+              <span class="font-semibold text-slate-900">Are all tools free to use?</span>
+              <span class="faq-icon text-xl font-semibold text-cobalt">+</span>
+            </button>
+            <div class="faq-content pt-3 text-sm text-slate-600">Yes. Core tools are free and available without signup, designed for instant execution and fast iteration.</div>
+          </div>
+          <div class="faq-item rounded-2xl border border-blue-100 bg-white p-5">
+            <button class="faq-trigger flex w-full items-center justify-between text-left" type="button">
+              <span class="font-semibold text-slate-900">Does my audit data leave the browser?</span>
+              <span class="faq-icon text-xl font-semibold text-cobalt">+</span>
+            </button>
+            <div class="faq-content pt-3 text-sm text-slate-600">Most tool processing is client-side. We avoid unnecessary data collection and keep workflows privacy-friendly.</div>
+          </div>
+          <div class="faq-item rounded-2xl border border-blue-100 bg-white p-5">
+            <button class="faq-trigger flex w-full items-center justify-between text-left" type="button">
+              <span class="font-semibold text-slate-900">Who is this built for?</span>
+              <span class="faq-icon text-xl font-semibold text-cobalt">+</span>
+            </button>
+            <div class="faq-content pt-3 text-sm text-slate-600">SEO specialists, founders, agency teams, and content operators who need clear signals and fast execution.</div>
+          </div>
+          <div class="faq-item rounded-2xl border border-blue-100 bg-white p-5">
+            <button class="faq-trigger flex w-full items-center justify-between text-left" type="button">
+              <span class="font-semibold text-slate-900">Can I use this as part of my agency workflow?</span>
+              <span class="faq-icon text-xl font-semibold text-cobalt">+</span>
+            </button>
+            <div class="faq-content pt-3 text-sm text-slate-600">Yes. The toolkit supports repeatable audits, validation, and reporting to streamline agency delivery.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal px-6 pb-24 pt-8 lg:px-10 section-light">
+      <div class="mx-auto max-w-7xl rounded-3xl bg-slate-950 p-10 text-white shadow-glow">
+        <div class="grid gap-7 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-blue-200">Get Started</p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold">Turn SEO effort into predictable growth.</h2>
+            <p class="mt-3 max-w-2xl text-blue-100/80">Run your first audit in under a minute and move from scattered tasks to structured momentum.</p>
+          </div>
+          <div class="flex flex-wrap gap-3 lg:justify-end">
+            <a href="#live-audit" class="rounded-full bg-cobalt px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-blue-500">Launch Audit</a>
+            <a href="/contact.html" class="rounded-full border border-white/25 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Talk to Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-ink/95 px-6 py-14 lg:px-10">
+    <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="font-display text-xl font-bold text-white">SuperSEOToolkit</p>
+        <p class="mt-3 max-w-xs text-sm text-blue-100/70">A premium SEO toolkit for builders, marketers, and agencies who value speed and clarity.</p>
+      </div>
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-blue-100">Product</p>
+        <ul class="mt-4 space-y-2 text-sm text-white/75">
+          <li><a href="#featured-tools" class="hover:text-white">Tools</a></li>
+          <li><a href="#workflow" class="hover:text-white">Workflow</a></li>
+          <li><a href="#stats" class="hover:text-white">Analytics</a></li>
+          <li><a href="/blog/" class="hover:text-white">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-blue-100">Company</p>
+        <ul class="mt-4 space-y-2 text-sm text-white/75">
+          <li><a href="/about.html" class="hover:text-white">About</a></li>
+          <li><a href="/contact.html" class="hover:text-white">Contact</a></li>
+          <li><a href="/privacy-policy.html" class="hover:text-white">Privacy</a></li>
+          <li><a href="/terms.html" class="hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-blue-100">Ready to optimize?</p>
+        <p class="mt-4 text-sm text-white/75">Join teams improving technical health and visibility every day.</p>
+        <a href="#live-audit" class="mt-5 inline-block rounded-full bg-cobalt px-5 py-2 text-sm font-bold text-white">Start now</a>
       </div>
     </div>
-  </section>
-
-  <!-- Advertisement Space -->
-  <div class="advertisement" style="text-align: center; padding: 2rem; background-color: #f9fafb;">
-    <!-- AdSense placeholder -->
-    <div style="background-color: #e5e7eb; padding: 2rem; border-radius: 0.5rem; color: #6b7280;">
-      Advertisement Space - Insert Google AdSense code here
-    </div>
-  </div>
-
-  <!-- Popular Tools Section -->
-  <section class="py-8" id="tools">
-    <div class="container">
-      <div class="section-header">
-        <h2>Popular Tools</h2>
-        <p>Start with our most-used tools trusted by thousands of users worldwide</p>
-      </div>
-
-      <div class="grid grid-3">
-        <!-- SEO Tools -->
-        <a href="/tools/keyword-density-checker.html" class="tool-card">
-          <div class="tool-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><line x1="1" y1="3" x2="23" y2="3"/><path d="M10 12v5M14 12v5M6 12v5M18 12v5"/></svg>
-          </div>
-          <h3>Keyword Density Checker</h3>
-          <p>Analyze keyword frequency in your content</p>
-          <span class="badge badge-primary">SEO</span>
-        </a>
-
-        <a href="/tools/meta-tag-analyzer.html" class="tool-card">
-          <div class="tool-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"/><line x1="12" y1="12" x2="20" y2="7.5"/><line x1="12" y1="12" x2="12" y2="21"/><line x1="12" y1="12" x2="4" y2="7.5"/></svg>
-          </div>
-          <h3>Meta Tag Analyzer</h3>
-          <p>Check and optimize your meta tags</p>
-          <span class="badge badge-primary">SEO</span>
-        </a>
-
-        <a href="/tools/serp-preview.html" class="tool-card">
-          <div class="tool-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-          <h3>Google SERP Preview</h3>
-          <p>Preview how your site looks in search results</p>
-          <span class="badge badge-primary">SEO</span>
-        </a>
-
-        <!-- Text Tools -->
-        <a href="/tools/word-counter.html" class="tool-card">
-          <div class="tool-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-          </div>
-          <h3>Word Counter</h3>
-          <p>Count words, characters, paragraphs & more</p>
-          <span class="badge badge-primary">Text Tools</span>
-        </a>
-
-        <a href="/tools/text-case-converter.html" class="tool-card">
-          <div class="tool-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3h8M8 3l-2 6h2M16 3l2 6h-2M5 9h14M7 15h10M6 21h12"/></svg>
-          </div>
-          <h3>Text Case Converter</h3>
-          <p>Convert text to uppercase, lowercase, title case</p>
-          <span class="badge badge-primary">Text Tools</span>
-        </a>
-
-        <a href="/tools/slug-generator.html" class="tool-card">
-          <div class="tool-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </div>
-          <h3>Slug Generator</h3>
-          <p>Create SEO-friendly URL slugs</p>
-          <span class="badge badge-primary">Text Tools</span>
-        </a>
-
-        <!-- Developer Tools -->
-        <a href="/tools/json-formatter.html" class="tool-card">
-          <div class="tool-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h3>JSON Formatter</h3>
-          <p>Format and validate JSON data</p>
-          <span class="badge badge-primary">Developer</span>
-        </a>
-
-        <a href="/tools/password-generator.html" class="tool-card">
-          <div class="tool-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <h3>Password Generator</h3>
-          <p>Generate strong, secure passwords</p>
-          <span class="badge badge-primary">Security</span>
-        </a>
-
-        <a href="/tools/uuid-generator.html" class="tool-card">
-          <div class="tool-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
-          </div>
-          <h3>UUID Generator</h3>
-          <p>Generate unique identifiers</p>
-          <span class="badge badge-primary">Developer</span>
-        </a>
-      </div>
-
-      <div style="text-align: center; margin-top: 3rem;">
-        <a href="#categories" class="btn btn-primary">View All Tools →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories Section -->
-  <section class="py-8" id="categories" style="background-color: #f9fafb;">
-    <div class="container">
-      <div class="section-header">
-        <h2>Tool Categories</h2>
-        <p>Browse tools by category to find exactly what you need</p>
-      </div>
-
-      <div class="grid grid-4">
-        <div class="card text-center">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #3b82f6;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><line x1="1" y1="3" x2="23" y2="3"/><path d="M10 12v5M14 12v5M6 12v5M18 12v5"/></svg>
-          </div>
-          <h3>SEO Tools</h3>
-          <p>10+ SEO analysis and optimization tools</p>
-          <a href="/tools/seo/" class="btn btn-sm btn-primary mt-3">Browse</a>
-        </div>
-
-        <div class="card text-center">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #8b5cf6;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-          </div>
-          <h3>Text Tools</h3>
-          <p>10+ text processing and conversion tools</p>
-          <a href="/tools/text/" class="btn btn-sm btn-primary mt-3">Browse</a>
-        </div>
-
-        <div class="card text-center">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #10b981;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h3>Developer Tools</h3>
-          <p>10+ code formatting and validation tools</p>
-          <a href="/tools/developer/" class="btn btn-sm btn-primary mt-3">Browse</a>
-        </div>
-
-        <div class="card text-center">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #ef4444;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <h3>Security Tools</h3>
-          <p>10+ encryption and security utilities</p>
-          <a href="/tools/security/" class="btn btn-sm btn-primary mt-3">Browse</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Advertisement Space 2 -->
-  <div class="advertisement" style="text-align: center; padding: 2rem;">
-    <!-- AdSense placeholder -->
-    <div style="background-color: #f0f0f0; padding: 2rem; border-radius: 0.5rem; color: #999;">
-      Advertisement Space - Insert Google AdSense code here
-    </div>
-  </div>
-
-  <!-- Features Section -->
-  <section class="py-8">
-    <div class="container">
-      <div class="section-header">
-        <h2>Why Choose SuperSEOToolkit?</h2>
-        <p>Trusted by professionals and businesses worldwide</p>
-      </div>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>⚡ Fast & Responsive</h3>
-          <p>All tools run instantly in your browser. No installation or signup required.</p>
-        </div>
-
-        <div class="card">
-          <h3>🔒 100% Private</h3>
-          <p>Your data never leaves your browser. We don't store or process any of your information.</p>
-        </div>
-
-        <div class="card">
-          <h3>🎨 Beautiful Design</h3>
-          <p>Modern, clean interface with dark mode support for comfortable use anytime.</p>
-        </div>
-
-        <div class="card">
-          <h3>📱 Mobile Friendly</h3>
-          <p>Works perfectly on phones, tablets, and desktops with responsive design.</p>
-        </div>
-
-        <div class="card">
-          <h3>♿ Accessible</h3>
-          <p>Built with WCAG guidelines in mind for users with different abilities.</p>
-        </div>
-
-        <div class="card">
-          <h3>🚀 SEO Optimized</h3>
-          <p>All tools are optimized for core web vitals and search engine visibility.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-8" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: white; text-align: center;">
-    <div class="container">
-      <h2>Start Using SuperSEOToolkit Today</h2>
-      <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem;">No credit card needed. No registration. 100% free forever.</p>
-      <button class="btn btn-primary btn-lg" onclick="document.getElementById('tools').scrollIntoView({behavior: 'smooth'})" style="background-color: white; color: #3b82f6;">
-        <i class="fas fa-arrow-right"></i> Explore All Tools
-      </button>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="py-8" style="background-color: #f9fafb;">
-    <div class="container max-w-2xl">
-      <div class="section-header">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Are these tools really free?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Yes! All tools on SuperSEOToolkit are completely free to use. No hidden charges, no premium plans. We support the project through AdSense ads.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Do you store my data?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          No. All tools run entirely in your browser using JavaScript. Your data never leaves your device and is never sent to our servers. 100% private.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Do I need to create an account?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          No account or registration is required. Just visit the tool you need and start using it immediately.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Can I use these tools offline?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Yes! Since all tools run in your browser using JavaScript, they work offline as long as you've already visited the page. The CSS and JS files will be cached by your browser.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>What tools do you recommend for SEO?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          We recommend starting with our Keyword Density Checker, Meta Tag Analyzer, and Google SERP Preview tools to get a comprehensive analysis of your content.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>How often are new tools added?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          We regularly add new tools based on user feedback. Follow our blog and social media to stay updated about new releases.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Advertisement Space 3 -->
-  <div class="advertisement" style="text-align: center; padding: 2rem;">
-    <!-- AdSense placeholder -->
-    <div style="background-color: #f0f0f0; padding: 2rem; border-radius: 0.5rem; color: #999;">
-      Advertisement Space - Insert Google AdSense code here
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>SuperSEOToolkit</h4>
-          <ul>
-            <li><a href="#tools">All Tools</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/about.html">About Us</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Categories</h4>
-          <ul>
-            <li><a href="/tools/seo/">SEO Tools</a></li>
-            <li><a href="/tools/text/">Text Tools</a></li>
-            <li><a href="/tools/developer/">Developer Tools</a></li>
-            <li><a href="/tools/security/">Security Tools</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="/terms.html">Terms of Service</a></li>
-            <li><a href="/contact.html">Report Issue</a></li>
-            <li><a href="/contact.html">Feedback</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Connect</h4>
-          <div class="social-links">
-            <a href="https://twitter.com/superseotoolkit" title="Twitter" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://facebook.com/superseotoolkit" title="Facebook" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://instagram.com/superseotoolkit" title="Instagram" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://github.com/superseotoolkit" title="GitHub" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2024 SuperSEOToolkit. All rights reserved. Built with ❤️ for the web community.</p>
-      </div>
+    <div class="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-sm text-white/55">
+      <p>Copyright 2026 SuperSEOToolkit. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="/assets/js/main.js"></script>
-
-  <!-- Tools data for search -->
   <script>
-    window.toolsData = [
-      // SEO Tools
-      { name: 'Keyword Density Checker', category: 'SEO', description: 'Analyze keyword frequency and density in your content', url: '/tools/keyword-density-checker.html' },
-      { name: 'Meta Tag Analyzer', category: 'SEO', description: 'Check and optimize your meta tags for SEO', url: '/tools/meta-tag-analyzer.html' },
-      { name: 'Robots.txt Generator', category: 'SEO', description: 'Generate an optimized robots.txt file', url: '/tools/robots-txt-generator.html' },
-      { name: 'XML Sitemap Generator', category: 'SEO', description: 'Create an XML sitemap for better indexing', url: '/tools/xml-sitemap-generator.html' },
-      { name: 'Google SERP Preview', category: 'SEO', description: 'Preview how your site appears in search results', url: '/tools/serp-preview.html' },
-      { name: 'Open Graph Checker', category: 'SEO', description: 'Check Open Graph meta tags for social sharing', url: '/tools/og-checker.html' },
-      { name: 'SEO Friendly URL Generator', category: 'SEO', description: 'Create SEO-optimized URLs', url: '/tools/seo-url-generator.html' },
-      { name: 'Canonical URL Generator', category: 'SEO', description: 'Generate canonical tags to prevent duplicate content', url: '/tools/canonical-generator.html' },
-      { name: 'Meta Description Generator', category: 'SEO', description: 'Create optimized meta descriptions', url: '/tools/meta-description-generator.html' },
-      { name: 'Title Tag Length Checker', category: 'SEO', description: 'Check title tag length and preview', url: '/tools/title-tag-checker.html' },
+    gsap.registerPlugin(ScrollTrigger);
 
-      // Text Tools
-      { name: 'Word Counter', category: 'Text Tools', description: 'Count words, characters, paragraphs and more', url: '/tools/word-counter.html' },
-      { name: 'Character Counter', category: 'Text Tools', description: 'Count characters and spaces in text', url: '/tools/character-counter.html' },
-      { name: 'Text Case Converter', category: 'Text Tools', description: 'Convert text between different cases', url: '/tools/text-case-converter.html' },
-      { name: 'Remove Duplicate Lines', category: 'Text Tools', description: 'Remove duplicate lines from text', url: '/tools/remove-duplicates.html' },
-      { name: 'Text Sorter', category: 'Text Tools', description: 'Sort text lines alphabetically', url: '/tools/text-sorter.html' },
-      { name: 'Text Reverser', category: 'Text Tools', description: 'Reverse text or lines', url: '/tools/text-reverser.html' },
-      { name: 'Whitespace Remover', category: 'Text Tools', description: 'Remove extra spaces and whitespace', url: '/tools/whitespace-remover.html' },
-      { name: 'Paragraph Counter', category: 'Text Tools', description: 'Count paragraphs in text', url: '/tools/paragraph-counter.html' },
-      { name: 'Reading Time Calculator', category: 'Text Tools', description: 'Calculate estimated reading time', url: '/tools/reading-time.html' },
-      { name: 'Slug Generator', category: 'Text Tools', description: 'Generate SEO-friendly URL slugs', url: '/tools/slug-generator.html' },
+    const revealElements = document.querySelectorAll(".reveal");
+    revealElements.forEach((element) => {
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 38 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 84%"
+          }
+        }
+      );
+    });
 
-      // Developer Tools
-      { name: 'JSON Formatter', category: 'Developer', description: 'Format and validate JSON data', url: '/tools/json-formatter.html' },
-      { name: 'JSON Validator', category: 'Developer', description: 'Validate JSON syntax', url: '/tools/json-validator.html' },
-      { name: 'HTML Formatter', category: 'Developer', description: 'Format HTML code', url: '/tools/html-formatter.html' },
-      { name: 'CSS Formatter', category: 'Developer', description: 'Format CSS code', url: '/tools/css-formatter.html' },
-      { name: 'JavaScript Formatter', category: 'Developer', description: 'Format JavaScript code', url: '/tools/js-formatter.html' },
-      { name: 'CSS Minifier', category: 'Developer', description: 'Minify CSS code', url: '/tools/css-minifier.html' },
-      { name: 'JavaScript Minifier', category: 'Developer', description: 'Minify JavaScript code', url: '/tools/js-minifier.html' },
-      { name: 'HTML Minifier', category: 'Developer', description: 'Minify HTML code', url: '/tools/html-minifier.html' },
-      { name: 'URL Encoder', category: 'Developer', description: 'Encode URLs', url: '/tools/url-encoder.html' },
-      { name: 'URL Decoder', category: 'Developer', description: 'Decode URLs', url: '/tools/url-decoder.html' },
+    gsap.to(".floating-chip", {
+      y: -16,
+      duration: 2.8,
+      stagger: 0.2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
 
-      // Security Tools
-      { name: 'Password Generator', category: 'Security', description: 'Generate strong, secure passwords', url: '/tools/password-generator.html' },
-      { name: 'MD5 Hash Generator', category: 'Security', description: 'Generate MD5 hashes', url: '/tools/md5-generator.html' },
-      { name: 'SHA1 Hash Generator', category: 'Security', description: 'Generate SHA1 hashes', url: '/tools/sha1-generator.html' },
-      { name: 'SHA256 Hash Generator', category: 'Security', description: 'Generate SHA256 hashes', url: '/tools/sha256-generator.html' },
-      { name: 'Base64 Encode', category: 'Security', description: 'Encode text to Base64', url: '/tools/base64-encode.html' },
-      { name: 'Base64 Decode', category: 'Security', description: 'Decode Base64 text', url: '/tools/base64-decode.html' },
-      { name: 'UUID Generator', category: 'Security', description: 'Generate unique UUIDs', url: '/tools/uuid-generator.html' },
-      { name: 'Random String Generator', category: 'Security', description: 'Generate random strings', url: '/tools/random-string.html' },
-      { name: 'Random Number Generator', category: 'Security', description: 'Generate random numbers', url: '/tools/random-number.html' },
-      { name: 'Hash Generator', category: 'Security', description: 'Generate various types of hashes', url: '/tools/hash-generator.html' }
-    ];
+    gsap.to(".seo-wave", {
+      strokeDashoffset: 0,
+      duration: 2,
+      ease: "power2.out",
+      delay: 0.35
+    });
+
+    const counters = document.querySelectorAll(".counter");
+    counters.forEach((counter) => {
+      ScrollTrigger.create({
+        trigger: counter,
+        start: "top 88%",
+        once: true,
+        onEnter: () => {
+          const targetValue = Number(counter.dataset.target || 0);
+          gsap.fromTo(
+            counter,
+            { textContent: 0 },
+            {
+              textContent: targetValue,
+              duration: 1.8,
+              ease: "power2.out",
+              snap: { textContent: targetValue % 1 === 0 ? 1 : 0.1 },
+              onUpdate: () => {
+                const value = Number(counter.textContent);
+                counter.textContent = targetValue % 1 === 0 ? Math.round(value).toString() : value.toFixed(1);
+              }
+            }
+          );
+        }
+      });
+    });
+
+    function updateScoreBar(key, value) {
+      const score = document.getElementById("score-" + key);
+      const bar = document.getElementById("bar-" + key);
+      if (!score || !bar) return;
+      score.textContent = value + "%";
+      bar.style.width = value + "%";
+    }
+
+    document.getElementById("run-audit")?.addEventListener("click", () => {
+      const url = document.getElementById("audit-url")?.value.trim() || "";
+      const keyword = document.getElementById("audit-keyword")?.value.trim() || "";
+
+      const entropy = (url.length * 7 + keyword.length * 11 + Date.now()) % 22;
+      const onpage = 70 + (entropy % 18);
+      const technical = 64 + ((entropy + 4) % 22);
+      const content = 72 + ((entropy + 6) % 18);
+      const ux = 68 + ((entropy + 3) % 20);
+
+      updateScoreBar("onpage", onpage);
+      updateScoreBar("technical", technical);
+      updateScoreBar("content", content);
+      updateScoreBar("ux", ux);
+
+      const backlinks = 6.2 + entropy / 8;
+      const errors = Math.max(2, 15 - Math.floor(entropy / 2));
+
+      const backlinkEl = document.getElementById("signal-backlinks");
+      const errorEl = document.getElementById("signal-errors");
+      const verdict = document.getElementById("audit-verdict");
+
+      if (backlinkEl) backlinkEl.textContent = backlinks.toFixed(1) + "k";
+      if (errorEl) errorEl.textContent = String(errors);
+
+      if (verdict) {
+        if (technical < 72) {
+          verdict.textContent = "Strong potential. Prioritize technical fixes, index cleanliness, and schema validation for the next uplift.";
+        } else if (content < 78) {
+          verdict.textContent = "Technical foundation is healthy. Increase topical depth and semantic coverage to capture harder queries.";
+        } else {
+          verdict.textContent = "Excellent baseline. Scale internal linking and authority pages to maximize ranking acceleration.";
+        }
+      }
+
+      gsap.fromTo(
+        "#bar-onpage, #bar-technical, #bar-content, #bar-ux",
+        { scaleX: 0, transformOrigin: "left center" },
+        { scaleX: 1, duration: 0.8, stagger: 0.1, ease: "power2.out" }
+      );
+    });
+
+    const tiltCards = document.querySelectorAll(".tilt-card");
+    tiltCards.forEach((card) => {
+      card.addEventListener("mousemove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const px = (event.clientX - rect.left) / rect.width;
+        const py = (event.clientY - rect.top) / rect.height;
+        const rotateY = (px - 0.5) * 8;
+        const rotateX = (0.5 - py) * 8;
+        card.style.transform = "perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-4px)";
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+      });
+    });
+
+    document.querySelectorAll(".faq-trigger").forEach((button) => {
+      button.addEventListener("click", () => {
+        const item = button.closest(".faq-item");
+        if (!item) return;
+        const isActive = item.classList.contains("active");
+        document.querySelectorAll(".faq-item").forEach((faq) => faq.classList.remove("active"));
+        if (!isActive) item.classList.add("active");
+      });
+    });
+
+    if (window.lucide) {
+      lucide.createIcons();
+    }
   </script>
-
-  <!-- Google Analytics placeholder -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
-  </script> -->
-
-  <!-- Google Tag Manager placeholder -->
-  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM_ID');</script> -->
+  <script src="/assets/js/premium-system.js"></script>
 </body>
 </html>

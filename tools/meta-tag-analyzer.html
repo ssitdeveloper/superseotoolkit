@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,13 +8,14 @@
   <link rel="canonical" href="https://superseotoolkit.com/tools/meta-tag-analyzer.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/premium-system.css">
   <title>Meta Tag Analyzer - Free Online Tool</title>
 </head>
 <body>
   <header>
     <div class="container">
       <nav class="navbar">
-        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <a href="/" class="logo">âš™ï¸ SuperSEOToolkit</a>
         <nav>
           <ul>
             <li><a href="/">Home</a></li>
@@ -23,7 +24,7 @@
           </ul>
         </nav>
         <div class="flex gap-2">
-          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button id="theme-toggle" class="theme-toggle">ðŸŒ™</button>
           <button class="hamburger"><span></span><span></span><span></span></button>
         </div>
       </nav>
@@ -137,7 +138,7 @@
           </span>
         </div>
         <p style="color: #666;">${analysis.title}</p>
-        <p style="font-size: 0.9rem; color: #999;">Status: ${analysis.titleOk ? '✓ Good' : '⚠ Needs improvement'}</p>
+        <p style="font-size: 0.9rem; color: #999;">Status: ${analysis.titleOk ? 'âœ“ Good' : 'âš  Needs improvement'}</p>
       </div>`;
 
       // Meta Description
@@ -149,7 +150,7 @@
           </span>
         </div>
         <p style="color: #666;">${analysis.description || 'Not found'}</p>
-        <p style="font-size: 0.9rem; color: #999;">Status: ${analysis.descriptionOk ? '✓ Good' : '⚠ Needs improvement'}</p>
+        <p style="font-size: 0.9rem; color: #999;">Status: ${analysis.descriptionOk ? 'âœ“ Good' : 'âš  Needs improvement'}</p>
       </div>`;
 
       // H1 Count
@@ -160,14 +161,14 @@
             ${analysis.h1Count}
           </span>
         </div>
-        <p style="font-size: 0.9rem; color: #999;">Status: ${analysis.h1Ok ? '✓ Good (exactly 1)' : '⚠ Should be exactly 1'}</p>
+        <p style="font-size: 0.9rem; color: #999;">Status: ${analysis.h1Ok ? 'âœ“ Good (exactly 1)' : 'âš  Should be exactly 1'}</p>
       </div>`;
 
       // Viewport
       html += `<div style="margin-bottom: 1.5rem;">
         <strong>Viewport Meta Tag</strong>
         <span class="badge ${analysis.viewport ? 'badge-success' : 'badge-warning'}">
-          ${analysis.viewport ? '✓ Found' : '✗ Missing'}
+          ${analysis.viewport ? 'âœ“ Found' : 'âœ— Missing'}
         </span>
       </div>`;
 
@@ -181,9 +182,9 @@
       html += `<div style="margin-bottom: 1.5rem;">
         <strong>Open Graph Tags</strong>
         <p style="font-size: 0.9rem; color: #666;">
-          og:title: ${analysis.ogTitle ? '✓' : '✗'}<br>
-          og:image: ${analysis.ogImageOk ? '✓' : '✗'}<br>
-          Status: ${analysis.ogImageOk ? '✓ Good' : '⚠ Missing or incomplete'}
+          og:title: ${analysis.ogTitle ? 'âœ“' : 'âœ—'}<br>
+          og:image: ${analysis.ogImageOk ? 'âœ“' : 'âœ—'}<br>
+          Status: ${analysis.ogImageOk ? 'âœ“ Good' : 'âš  Missing or incomplete'}
         </p>
       </div>`;
 
@@ -191,5 +192,6 @@
       document.getElementById('analysis-result').innerHTML = html;
     }
   </script>
+  <script src="/assets/js/premium-system.js"></script>
 </body>
 </html>
