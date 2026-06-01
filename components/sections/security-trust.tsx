@@ -38,7 +38,7 @@ export function SecurityTrustSection() {
           viewport={{ once: true }}
           className="grid md:grid-cols-4 gap-8"
         >
-          {features.map((feature, idx) => {
+          {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <motion.div

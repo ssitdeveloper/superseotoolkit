@@ -7,7 +7,6 @@ import { FeaturedToolsSection } from "@/components/sections/featured-tools";
 import { BenefitsSection } from "@/components/sections/benefits";
 import { CaseStudiesSection } from "@/components/sections/case-studies";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
-import { CategoriesSection } from "@/components/sections/categories-section";
 import { BlogSection } from "@/components/sections/blog-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { SecurityTrustSection } from "@/components/sections/security-trust";

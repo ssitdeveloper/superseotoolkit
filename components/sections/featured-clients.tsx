@@ -47,7 +47,7 @@ export function FeaturedClientsSection() {
 
           {/* Client Cards */}
           <div className="grid md:grid-cols-3 gap-6">
-            {clients.map((client, idx) => (
+            {clients.map((client) => (
               <motion.div
                 key={client.name}
                 variants={fadeInUp}

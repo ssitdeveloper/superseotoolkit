@@ -69,7 +69,7 @@ export function CaseStudiesSection() {
 
           {/* Case Study Cards */}
           <div className="grid md:grid-cols-3 gap-6">
-            {studies.map((study, idx) => (
+            {studies.map((study) => (
               <motion.div
                 key={study.title}
                 variants={fadeInUp}
