@@ -23,7 +23,7 @@ export default function ToolsPage() {
       <Navbar />
       <main className="pt-24 pb-16 lg:pb-20">
         {/* Header */}
-        <section className="px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="max-w-7xl mx-auto">
             <SectionHeader
               eyebrow="Tools"
@@ -47,7 +47,7 @@ export default function ToolsPage() {
         </section>
 
         {/* Filters */}
-        <section className="px-4 sm:px-6 lg:px-8 py-7 border-y border-border">
+        <section className="px-4 sm:px-6 lg:px-8 py-6 border-y border-border">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap gap-3">
               <button

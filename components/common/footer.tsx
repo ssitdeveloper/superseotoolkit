@@ -4,7 +4,7 @@ import { Share2, ExternalLink, Mail, Code2 } from "lucide-react";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-gradient-to-b from-background to-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-18">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="space-y-6">

@@ -29,7 +29,7 @@ export function SecurityTrustSection() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-border">
+    <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={staggerContainer}

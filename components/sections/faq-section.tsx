@@ -85,7 +85,7 @@ function FAQItem({ item, index }: { item: FAQItem; index: number }) {
 
 export function FAQSection() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8">
+    <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <SectionHeader
           eyebrow="Common Questions"

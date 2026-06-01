@@ -24,7 +24,7 @@ export default function ContactPage() {
       <Navbar />
       <main className="pt-24 pb-16 lg:pb-20">
         {/* Hero */}
-        <section className="px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h1>
             <p className="text-xl text-muted-foreground">
@@ -34,7 +34,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Info & Form */}
-        <section className="px-4 sm:px-6 lg:px-8 py-14 lg:py-16 bg-card/50">
+        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20 bg-card/50">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Information */}
             <div>
@@ -159,7 +159,7 @@ export default function ContactPage() {
         </section>
 
         {/* FAQ */}
-        <section className="px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-10 text-center">Quick FAQ</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
