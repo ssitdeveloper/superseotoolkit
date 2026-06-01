@@ -9,27 +9,41 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/premium-system.css">
-  <title>QR Code Generator - Free Online Tool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:"#07090f",cobalt:"#0a66ff"},boxShadow:{glow:"0 22px 70px rgba(10,102,255,0.28)"},fontFamily:{display:["Sora","ui-sans-serif","system-ui"]}}}}}</script>  <title>QR Code Generator - Free Online Tool</title>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav class="navbar">
-        <a href="/" class="logo">âš™ï¸ SuperSEOToolkit</a>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/about.html">About</a></li>
-          </ul>
-        </nav>
-        <div class="flex gap-2">
-          <button id="theme-toggle" class="theme-toggle">ðŸŒ™</button>
-          <button class="hamburger"><span></span><span></span><span></span></button>
-        </div>
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+      <a href="/" class="font-display text-xl font-bold tracking-tight text-white">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-cobalt/90 text-sm text-white">S</span>
+        <span class="ml-2">SuperSEOToolkit</span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-semibold text-white/75 md:flex">
+        <a href="/tools/" class="transition hover:text-white">Tools</a>
+        <a href="/#workflow" class="transition hover:text-white">Workflow</a>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="/about.html" class="hidden rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-white/40 hover:text-white md:inline-flex">About</a>
+        <a href="/tools/" class="hidden rounded-full bg-cobalt px-5 py-2 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-blue-500 md:inline-flex">Browse Tools</a>
+        <button id="mobile-menu-btn" class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 text-white md:hidden" aria-label="Toggle menu">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden border-t border-white/10 bg-ink/90 px-6 py-4 md:hidden">
+      <nav class="flex flex-col gap-3 text-sm font-semibold text-white/80">
+        <a href="/tools/" class="transition hover:text-white">Tools</a>
+        <a href="/#workflow" class="transition hover:text-white">Workflow</a>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+        <a href="/about.html" class="transition hover:text-white">About</a>
+        <a href="/tools/" class="mt-2 inline-block rounded-full bg-cobalt px-5 py-2 text-center text-sm font-bold text-white">Browse Tools</a>
       </nav>
     </div>
   </header>
+  <script>(function(){var b=document.getElementById('mobile-menu-btn'),m=document.getElementById('mobile-menu'),mi=document.getElementById('menu-icon'),ci=document.getElementById('close-icon');b.addEventListener('click',function(){var h=m.classList.toggle('hidden');mi.classList.toggle('hidden',!h);ci.classList.toggle('hidden',h);});})();</script>
 
   <div class="container">
     <div class="breadcrumb mt-4">
