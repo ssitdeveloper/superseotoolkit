@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all live tools on SuperSEOToolkit. Access SEO, text, developer, and utility tools from one page.">
+  <meta name="keywords" content="seo tools list, online developer tools, text tools, free utilities">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/premium-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:"#07090f",cobalt:"#0a66ff"},boxShadow:{glow:"0 22px 70px rgba(10,102,255,0.28)"},fontFamily:{display:["Sora","ui-sans-serif","system-ui"]}}}}</script>
+  <title>All Tools | SuperSEOToolkit</title>
+</head>
+<body>
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+      <a href="/" class="font-display text-xl font-bold tracking-tight text-white">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-cobalt/90 text-sm text-white">S</span>
+        <span class="ml-2">SuperSEOToolkit</span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-semibold text-white/75 md:flex">
+        <a href="/tools/" class="transition hover:text-white">Tools</a>
+        <a href="/#workflow" class="transition hover:text-white">Workflow</a>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="/about.html" class="hidden rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-white/40 hover:text-white md:inline-flex">About</a>
+        <a href="/#live-audit" class="rounded-full bg-cobalt px-5 py-2 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-blue-500">Run Audit</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <p class="badge">Complete Tool Library</p>
+      <h1>All live tools in one place</h1>
+      <p>Use search or browse the full grid below. Every card opens a dedicated tool page.</p>
+    </div>
+  </section>
+
+  <main class="container" style="margin-bottom: 3rem;">
+    <section class="card" style="margin-bottom: 1rem;">
+      <div class="grid" style="gap: 1rem; grid-template-columns: 1.4fr auto; align-items: center;">
+        <div>
+          <label for="tool-filter" class="form-label">Find a tool</label>
+          <input id="tool-filter" type="text" placeholder="Search by tool name..." style="width: 100%;">
+        </div>
+        <div style="text-align: right;">
+          <p class="text-muted" style="margin-bottom: 0.35rem;">Currently live</p>
+          <p id="tool-count" style="font-size: 1.7rem; font-weight: 800; line-height: 1;">46</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div id="tools-grid" class="grid grid-3 gap-3"></div>
+      <p id="empty-state" class="text-muted" style="display:none; margin-top: 1rem;">No matching tools found.</p>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-ink/95 px-6 py-14 lg:px-10">
+    <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="font-display text-xl font-bold text-white">SuperSEOToolkit</p>
+        <p class="mt-3 max-w-xs text-sm text-blue-100/70">A premium SEO toolkit for builders, marketers, and agencies who value speed and clarity.</p>
+      </div>
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-blue-100">Product</p>
+        <ul class="mt-4 space-y-2 text-sm text-white/75">
+          <li><a href="/tools/" class="hover:text-white">Tools</a></li>
+          <li><a href="/#workflow" class="hover:text-white">Workflow</a></li>
+          <li><a href="/#stats" class="hover:text-white">Analytics</a></li>
+          <li><a href="/blog/" class="hover:text-white">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-blue-100">Company</p>
+        <ul class="mt-4 space-y-2 text-sm text-white/75">
+          <li><a href="/about.html" class="hover:text-white">About</a></li>
+          <li><a href="/contact.html" class="hover:text-white">Contact</a></li>
+          <li><a href="/privacy-policy.html" class="hover:text-white">Privacy</a></li>
+          <li><a href="/terms.html" class="hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-blue-100">Ready to optimize?</p>
+        <p class="mt-4 text-sm text-white/75">Join teams improving technical health and visibility every day.</p>
+        <a href="/#live-audit" class="mt-5 inline-block rounded-full bg-cobalt px-5 py-2 text-sm font-bold text-white">Start now</a>
+      </div>
+    </div>
+    <div class="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-sm text-white/55">
+      <p>Copyright 2026 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const tools = [
+      { title: 'Atbash Cipher', url: '/tools/atbash-cipher.html' },
+      { title: 'Base64 Encode', url: '/tools/base64-encode.html' },
+      { title: 'Binary To Decimal', url: '/tools/binary-to-decimal.html' },
+      { title: 'Caesar Cipher', url: '/tools/caesar-cipher.html' },
+      { title: 'Color Converter', url: '/tools/color-converter.html' },
+      { title: 'Css Minifier', url: '/tools/css-minifier.html' },
+      { title: 'Csv To Json', url: '/tools/csv-to-json.html' },
+      { title: 'Decimal To Binary', url: '/tools/decimal-to-binary.html' },
+      { title: 'Decimal To Hex', url: '/tools/decimal-to-hex.html' },
+      { title: 'Email Extractor', url: '/tools/email-extractor.html' },
+      { title: 'Email Validator', url: '/tools/email-validator.html' },
+      { title: 'Find Replace', url: '/tools/find-replace.html' },
+      { title: 'Hex To Decimal', url: '/tools/hex-to-decimal.html' },
+      { title: 'Html Formatter', url: '/tools/html-formatter.html' },
+      { title: 'Html Minifier', url: '/tools/html-minifier.html' },
+      { title: 'Js Minifier', url: '/tools/js-minifier.html' },
+      { title: 'Json Formatter', url: '/tools/json-formatter.html' },
+      { title: 'Json To Csv', url: '/tools/json-to-csv.html' },
+      { title: 'Keyword Density Checker', url: '/tools/keyword-density-checker.html' },
+      { title: 'Lorem Ipsum Generator', url: '/tools/lorem-ipsum-generator.html' },
+      { title: 'Markdown Previewer', url: '/tools/markdown-previewer.html' },
+      { title: 'Md5 Generator', url: '/tools/md5-generator.html' },
+      { title: 'Meta Tag Analyzer', url: '/tools/meta-tag-analyzer.html' },
+      { title: 'Morse Code Converter', url: '/tools/morse-code-converter.html' },
+      { title: 'Password Generator', url: '/tools/password-generator.html' },
+      { title: 'Phone Validator', url: '/tools/phone-validator.html' },
+      { title: 'Qr Code Generator', url: '/tools/qr-code-generator.html' },
+      { title: 'Random Mac Address', url: '/tools/random-mac-address.html' },
+      { title: 'Random Number Generator', url: '/tools/random-number-generator.html' },
+      { title: 'Random String Generator', url: '/tools/random-string-generator.html' },
+      { title: 'Remove Duplicates', url: '/tools/remove-duplicates.html' },
+      { title: 'Rot13 Converter', url: '/tools/rot13-converter.html' },
+      { title: 'Sha1 Generator', url: '/tools/sha1-generator.html' },
+      { title: 'Sha256 Generator', url: '/tools/sha256-generator.html' },
+      { title: 'Slug Generator', url: '/tools/slug-generator.html' },
+      { title: 'Temperature Converter', url: '/tools/temperature-converter.html' },
+      { title: 'Text Case Converter', url: '/tools/text-case-converter.html' },
+      { title: 'Text Reverser', url: '/tools/text-reverser.html' },
+      { title: 'Text Sorter', url: '/tools/text-sorter.html' },
+      { title: 'Text Statistics', url: '/tools/text-statistics.html' },
+      { title: 'Url Beautifier', url: '/tools/url-beautifier.html' },
+      { title: 'Url Encoder', url: '/tools/url-encoder.html' },
+      { title: 'Url Validator', url: '/tools/url-validator.html' },
+      { title: 'Uuid Generator', url: '/tools/uuid-generator.html' },
+      { title: 'Whitespace Remover', url: '/tools/whitespace-remover.html' },
+      { title: 'Word Counter', url: '/tools/word-counter.html' }
+    ];
+
+    const toolCount = document.getElementById('tool-count');
+    const grid = document.getElementById('tools-grid');
+    const filterInput = document.getElementById('tool-filter');
+    const emptyState = document.getElementById('empty-state');
+
+    function renderTools(list) {
+      grid.innerHTML = list.map((tool) => `
+        <a href="${tool.url}" class="card" style="text-decoration: none; border-color: rgba(31, 111, 255, 0.22);">
+          <h3 style="margin: 0 0 0.5rem; color: #081632; font-size: 1.05rem;">${tool.title}</h3>
+          <p class="text-muted" style="margin: 0;">Open tool</p>
+        </a>
+      `).join('');
+      toolCount.textContent = list.length;
+      emptyState.style.display = list.length ? 'none' : 'block';
+    }
+
+    filterInput.addEventListener('input', (event) => {
+      const query = event.target.value.trim().toLowerCase();
+      if (!query) {
+        renderTools(tools);
+        return;
+      }
+      const filtered = tools.filter((tool) => tool.title.toLowerCase().includes(query));
+      renderTools(filtered);
+    });
+
+    renderTools(tools);
+  </script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/premium-system.js"></script>
+</body>
+</html>

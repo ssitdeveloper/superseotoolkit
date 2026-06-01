@@ -10,25 +10,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/premium-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:"#07090f",cobalt:"#0a66ff"},boxShadow:{glow:"0 22px 70px rgba(10,102,255,0.28)"},fontFamily:{display:["Sora","ui-sans-serif","system-ui"]}}}}</script>
   <title>What Is Keyword Density? | SuperSEOToolkit Blog</title>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav class="navbar">
-        <a href="/" class="logo">SuperSEOToolkit</a>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/tools/keyword-density-checker.html">Tool</a></li>
-          </ul>
-        </nav>
-        <div class="flex gap-2">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-          <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        </div>
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+      <a href="/" class="font-display text-xl font-bold tracking-tight text-white">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-cobalt/90 text-sm text-white">S</span>
+        <span class="ml-2">SuperSEOToolkit</span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-semibold text-white/75 md:flex">
+        <a href="/tools/" class="transition hover:text-white">Tools</a>
+        <a href="/#workflow" class="transition hover:text-white">Workflow</a>
+        <a href="/blog/" class="transition hover:text-white">Blog</a>
       </nav>
+      <div class="flex items-center gap-3">
+        <a href="/about.html" class="hidden rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-white/40 hover:text-white md:inline-flex">About</a>
+        <a href="/#live-audit" class="rounded-full bg-cobalt px-5 py-2 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-blue-500">Run Audit</a>
+      </div>
     </div>
   </header>
 
@@ -81,27 +82,38 @@
     </article>
   </main>
 
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-section">
-        <h4>SuperSEOToolkit</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/about.html">About</a></li>
+  <footer class="border-t border-white/10 bg-ink/95 px-6 py-14 lg:px-10">
+    <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="font-display text-xl font-bold text-white">SuperSEOToolkit</p>
+        <p class="mt-3 max-w-xs text-sm text-blue-100/70">A premium SEO toolkit for builders, marketers, and agencies who value speed and clarity.</p>
+      </div>
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-blue-100">Product</p>
+        <ul class="mt-4 space-y-2 text-sm text-white/75">
+          <li><a href="/tools/" class="hover:text-white">Tools</a></li>
+          <li><a href="/#workflow" class="hover:text-white">Workflow</a></li>
+          <li><a href="/#stats" class="hover:text-white">Analytics</a></li>
+          <li><a href="/blog/" class="hover:text-white">Blog</a></li>
         </ul>
       </div>
-      <div class="footer-section">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="/privacy-policy.html">Privacy</a></li>
-          <li><a href="/terms.html">Terms</a></li>
-          <li><a href="/acceptable-use.html">Acceptable Use</a></li>
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-blue-100">Company</p>
+        <ul class="mt-4 space-y-2 text-sm text-white/75">
+          <li><a href="/about.html" class="hover:text-white">About</a></li>
+          <li><a href="/contact.html" class="hover:text-white">Contact</a></li>
+          <li><a href="/privacy-policy.html" class="hover:text-white">Privacy</a></li>
+          <li><a href="/terms.html" class="hover:text-white">Terms</a></li>
         </ul>
+      </div>
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-blue-100">Ready to optimize?</p>
+        <p class="mt-4 text-sm text-white/75">Join teams improving technical health and visibility every day.</p>
+        <a href="/#live-audit" class="mt-5 inline-block rounded-full bg-cobalt px-5 py-2 text-sm font-bold text-white">Start now</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 SuperSEOToolkit. All rights reserved.</p>
+    <div class="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-sm text-white/55">
+      <p>Copyright 2026 SuperSEOToolkit. All rights reserved.</p>
     </div>
   </footer>
 
