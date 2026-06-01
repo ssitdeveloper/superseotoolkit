@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Random Number Generator. Generate random numbers, sequences, and lists instantly.">
+  <meta name="keywords" content="random number generator, random numbers, random sequence">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/random-number-generator.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Random Number Generator - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>Random Number Generator</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>Random Number Generator</h1>
+      <p class="text-muted">Generate random numbers, sequences, and lists for various purposes.</p>
+
+      <div class="card mt-4">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div class="form-group">
+            <label for="min-number">Minimum:</label>
+            <input type="number" id="min-number" value="1" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem;">
+          </div>
+          <div class="form-group">
+            <label for="max-number">Maximum:</label>
+            <input type="number" id="max-number" value="100" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem;">
+          </div>
+          <div class="form-group">
+            <label for="count-number">Quantity:</label>
+            <input type="number" id="count-number" value="10" min="1" max="1000" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem;">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="allow-duplicates">
+            <span>Allow Duplicates</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="sort-results">
+            <span>Sort Results</span>
+          </label>
+        </div>
+
+        <button class="btn btn-primary w-full" onclick="generateRandomNumbers()">
+          <i class="fas fa-dice"></i> Generate Numbers
+        </button>
+
+        <div id="number-results" style="margin-top: 1rem;"></div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Use Cases</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li>Lottery number selection</li>
+          <li>Random sampling</li>
+          <li>Game mechanics</li>
+          <li>Testing and QA</li>
+          <li>Statistics and surveys</li>
+          <li>Random selection from a range</li>
+        </ul>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Features</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li>Custom min and max range</li>
+          <li>Generate multiple numbers at once</li>
+          <li>Optional duplicate prevention</li>
+          <li>Sort results in ascending order</li>
+          <li>Copy all results to clipboard</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function generateRandomNumbers() {
+      const min = parseInt(document.getElementById('min-number').value);
+      const max = parseInt(document.getElementById('max-number').value);
+      const count = parseInt(document.getElementById('count-number').value);
+      const allowDuplicates = document.getElementById('allow-duplicates').checked;
+      const sortResults = document.getElementById('sort-results').checked;
+
+      if (min > max) {
+        showAlert('Minimum must be less than maximum', 'error');
+        return;
+      }
+
+      let numbers = [];
+      const range = max - min + 1;
+
+      if (!allowDuplicates && count > range) {
+        showAlert(`Cannot generate ${count} unique numbers between ${min} and ${max}`, 'error');
+        return;
+      }
+
+      for (let i = 0; i < count; i++) {
+        let num;
+        if (allowDuplicates) {
+          num = Math.floor(Math.random() * (max - min + 1)) + min;
+        } else {
+          do {
+            num = Math.floor(Math.random() * (max - min + 1)) + min;
+          } while (numbers.includes(num));
+        }
+        numbers.push(num);
+      }
+
+      if (sortResults) {
+        numbers.sort((a, b) => a - b);
+      }
+
+      let html = `<div style="background-color: #f9fafb; padding: 1rem; border-radius: 0.5rem;">
+        <button class="btn btn-small" onclick="copyNumbers()" style="margin-bottom: 1rem;">
+          <i class="fas fa-copy"></i> Copy All
+        </button>
+        <textarea id="all-numbers" readonly style="width: 100%; height: 150px; padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem; font-family: monospace; resize: vertical;">${numbers.join(', ')}</textarea>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+          Generated ${count} ${allowDuplicates ? '' : 'unique'} number(s) between ${min} and ${max}
+        </p>
+      </div>`;
+
+      document.getElementById('number-results').innerHTML = html;
+      showAlert('Numbers generated successfully!', 'success');
+    }
+
+    function copyNumbers() {
+      const textarea = document.getElementById('all-numbers');
+      textarea.select();
+      document.execCommand('copy');
+      showAlert('Copied to clipboard!', 'success');
+    }
+  </script>
+</body>
+</html>

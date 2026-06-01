@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free UUID Generator. Generate unique identifiers (UUID v4) for your applications and databases.">
+  <meta name="keywords" content="UUID generator, unique identifier, UUID v4, GUID generator">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/uuid-generator.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>UUID Generator - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>UUID Generator</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>UUID Generator</h1>
+      <p class="text-muted">Generate unique identifiers (UUIDs) for databases, applications, and other systems. Each UUID is globally unique.</p>
+
+      <div class="card mt-4">
+        <div class="form-group">
+          <label for="uuid-count">Number of UUIDs to Generate</label>
+          <input type="number" id="uuid-count" value="1" min="1" max="100">
+        </div>
+
+        <button class="btn btn-primary w-full mb-3" onclick="generateUUIDs()">
+          <i class="fas fa-sparkles"></i> Generate UUIDs
+        </button>
+      </div>
+
+      <div id="uuids-result"></div>
+
+      <div class="card mt-4">
+        <h3>About UUIDs</h3>
+        <p>A UUID (Universally Unique Identifier) is a 128-bit number used to uniquely identify information in computer systems. Our generator creates UUID v4 (random) identifiers.</p>
+
+        <h4 style="margin-top: 1.5rem;">Format</h4>
+        <p style="font-family: monospace; background-color: #f0f0f0; padding: 1rem; border-radius: 0.5rem;">
+          550e8400-e29b-41d4-a716-446655440000
+        </p>
+        <p>Each UUID consists of 32 hexadecimal characters separated by hyphens, organized into groups of 8-4-4-4-12.</p>
+
+        <h4 style="margin-top: 1.5rem;">Use Cases</h4>
+        <ul style="margin-left: 1.5rem;">
+          <li>Database record identifiers</li>
+          <li>API request/transaction IDs</li>
+          <li>Session tokens</li>
+          <li>Device identifiers</li>
+          <li>Distributed system IDs</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function generateUUIDs() {
+      const count = parseInt(document.getElementById('uuid-count').value);
+      if (count < 1 || count > 100) {
+        showAlert('Please enter a number between 1 and 100', 'warning');
+        return;
+      }
+
+      const generator = new UUIDGenerator();
+      const uuids = generator.generateMultiple(count);
+
+      let html = '<div class="card"><h3>Generated UUIDs</h3>';
+      html += '<div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">';
+      html += '<button class="btn btn-sm btn-primary" onclick="copyAllUUIDs()">Copy All</button>';
+      html += '<button class="btn btn-sm btn-outline" onclick="downloadUUIDs()">Download</button>';
+      html += '</div>';
+
+      html += '<div style="display: grid; gap: 0.5rem;">';
+      uuids.forEach(uuid => {
+        html += `<div style="display: flex; gap: 0.5rem; align-items: center; background-color: #f9fafb; padding: 0.75rem; border-radius: 0.5rem;">
+          <code style="flex: 1; font-family: monospace;">${uuid}</code>
+          <button class="btn btn-sm btn-outline" onclick="copySingleUUID('${uuid}')" title="Copy"><i class="fas fa-copy"></i></button>
+        </div>`;
+      });
+      html += '</div>';
+      html += '</div>';
+
+      document.getElementById('uuids-result').innerHTML = html;
+      window.lastUUIDs = uuids;
+    }
+
+    function copyAllUUIDs() {
+      if (!window.lastUUIDs || window.lastUUIDs.length === 0) {
+        showAlert('No UUIDs generated yet', 'warning');
+        return;
+      }
+      navigator.clipboard.writeText(window.lastUUIDs.join('\n')).then(() => {
+        showAlert('All UUIDs copied!', 'success');
+      });
+    }
+
+    function copySingleUUID(uuid) {
+      navigator.clipboard.writeText(uuid).then(() => {
+        showAlert('UUID copied!', 'success');
+      });
+    }
+
+    function downloadUUIDs() {
+      if (!window.lastUUIDs || window.lastUUIDs.length === 0) {
+        showAlert('No UUIDs generated yet', 'warning');
+        return;
+      }
+      const content = window.lastUUIDs.join('\n');
+      const blob = new Blob([content], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'uuids.txt';
+      a.click();
+    }
+  </script>
+</body>
+</html>

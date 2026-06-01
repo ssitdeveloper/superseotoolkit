@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Text Sorter Tool. Sort text lines alphabetically, numerically, or randomly instantly.">
+  <meta name="keywords" content="text sorter, sort lines, alphabetical sort, sort text">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/text-sorter.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Text Sorter - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>Text Sorter</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>Text Sorter</h1>
+      <p class="text-muted">Sort text lines alphabetically, numerically, reverse, or randomly.</p>
+
+      <div class="card mt-4">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div class="form-group">
+            <label for="sort-mode">Sort Mode:</label>
+            <select id="sort-mode" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem;">
+              <option value="ascending" selected>Ascending (A-Z)</option>
+              <option value="descending">Descending (Z-A)</option>
+              <option value="numeric">Numeric</option>
+              <option value="random">Random</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sort-case">Case Sensitive:</label>
+            <select id="sort-case" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem;">
+              <option value="false" selected>No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tool-interface">
+          <div class="input-section">
+            <label for="text-sorter-input" class="form-label">Enter Lines to Sort</label>
+            <textarea id="text-sorter-input" placeholder="Enter text, one item per line..."></textarea>
+            <button class="btn btn-primary w-full mt-2" onclick="sortText()">
+              <i class="fas fa-sort"></i> Sort Text
+            </button>
+          </div>
+
+          <div class="output-section">
+            <label class="form-label">Sorted Result</label>
+            <button class="copy-btn" data-target="text-sorter-output">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+            <textarea id="text-sorter-output" readonly></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Sort Methods</h3>
+
+        <div>
+          <h4>Ascending (A-Z)</h4>
+          <p style="font-family: monospace; background-color: #f9fafb; padding: 0.5rem; border-radius: 0.25rem;">
+            apple<br>banana<br>cherry
+          </p>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <h4>Descending (Z-A)</h4>
+          <p style="font-family: monospace; background-color: #f9fafb; padding: 0.5rem; border-radius: 0.25rem;">
+            cherry<br>banana<br>apple
+          </p>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <h4>Numeric</h4>
+          <p style="font-family: monospace; background-color: #f9fafb; padding: 0.5rem; border-radius: 0.25rem;">
+            1<br>5<br>10<br>20
+          </p>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Use Cases</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li>Alphabetize lists</li>
+          <li>Sort keywords for SEO</li>
+          <li>Organize data</li>
+          <li>Randomize surveys or quizzes</li>
+          <li>Remove duplicates (coming soon)</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function sortText() {
+      const input = document.getElementById('text-sorter-input').value;
+      if (!input) {
+        showAlert('Please enter text to sort', 'warning');
+        return;
+      }
+
+      const mode = document.getElementById('sort-mode').value;
+      const caseSensitive = document.getElementById('sort-case').value === 'true';
+
+      let lines = input.split('\n').filter(line => line.trim().length > 0);
+
+      if (mode === 'ascending') {
+        lines.sort((a, b) => {
+          if (!caseSensitive) {
+            a = a.toLowerCase();
+            b = b.toLowerCase();
+          }
+          return a.localeCompare(b);
+        });
+      } else if (mode === 'descending') {
+        lines.sort((a, b) => {
+          if (!caseSensitive) {
+            a = a.toLowerCase();
+            b = b.toLowerCase();
+          }
+          return b.localeCompare(a);
+        });
+      } else if (mode === 'numeric') {
+        lines.sort((a, b) => {
+          const numA = parseFloat(a);
+          const numB = parseFloat(b);
+          return numA - numB;
+        });
+      } else if (mode === 'random') {
+        lines.sort(() => Math.random() - 0.5);
+      }
+
+      document.getElementById('text-sorter-output').value = lines.join('\n');
+      showAlert('Text sorted successfully!', 'success');
+    }
+  </script>
+</body>
+</html>

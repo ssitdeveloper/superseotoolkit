@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SuperSEOToolkit - Free online SEO tools, developer tools, text tools, and utilities. 100+ powerful tools to boost your productivity and SEO rankings.">
+  <meta name="keywords" content="SEO tools, keyword checker, meta tag analyzer, JSON formatter, text tools, developer tools, free online tools">
+  <meta name="author" content="SuperSEOToolkit">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#3b82f6">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="SuperSEOToolkit - Free SEO & Developer Tools">
+  <meta property="og:description" content="Access 100+ free online tools for SEO, development, text processing, and more. Boost your productivity today.">
+  <meta property="og:url" content="https://superseotoolkit.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://superseotoolkit.com/assets/images/og-image.jpg">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SuperSEOToolkit - Free SEO & Developer Tools">
+  <meta name="twitter:description" content="Access 100+ free online tools for SEO, development, text processing, and more.">
+  <meta name="twitter:image" content="https://superseotoolkit.com/assets/images/twitter-image.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://superseotoolkit.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%233b82f6' width='100' height='100'/%3E%3Ctext x='50' y='55' font-size='70' fill='white' text-anchor='middle' font-weight='bold'%3E⚙%3C/text%3E%3C/svg%3E">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <title>SuperSEOToolkit - Free SEO & Developer Tools | 100+ Online Utilities</title>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SuperSEOToolkit",
+    "url": "https://superseotoolkit.com",
+    "logo": "https://superseotoolkit.com/logo.png",
+    "sameAs": [
+      "https://twitter.com/superseotoolkit",
+      "https://facebook.com/superseotoolkit"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "email": "support@superseotoolkit.com"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://superseotoolkit.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://superseotoolkit.com/?search={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">⚙️ SuperSEOToolkit</div>
+        <nav>
+          <ul>
+            <li><a href="#tools" data-link>Tools</a></li>
+            <li><a href="/blog/" data-link>Blog</a></li>
+            <li><a href="/about.html" data-link>About</a></li>
+            <li><a href="/contact.html" data-link>Contact</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+          <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Free Online Tools for SEO, Development & Text Processing</h1>
+      <p>SuperSEOToolkit offers 100+ powerful, free online utilities to boost your productivity. From SEO analysis to code formatting, we've got you covered.</p>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" id="tool-search" class="search-input" placeholder="🔍 Search tools by name, category..." autocomplete="off">
+        <div id="search-results" class="search-results" style="display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 100%; max-width: 500px; background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; margin-top: 0.5rem; max-height: 400px; overflow-y: auto; z-index: 100; box-shadow: 0 10px 25px rgba(0,0,0,0.1);"></div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="hero .btn-group">
+        <button class="btn btn-primary btn-lg" onclick="document.getElementById('tools').scrollIntoView({behavior: 'smooth'})">
+          <i class="fas fa-tools"></i> Explore Tools
+        </button>
+        <a href="/about.html" class="btn btn-outline btn-lg">
+          <i class="fas fa-info-circle"></i> Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advertisement Space -->
+  <div class="advertisement" style="text-align: center; padding: 2rem; background-color: #f9fafb;">
+    <!-- AdSense placeholder -->
+    <div style="background-color: #e5e7eb; padding: 2rem; border-radius: 0.5rem; color: #6b7280;">
+      Advertisement Space - Insert Google AdSense code here
+    </div>
+  </div>
+
+  <!-- Popular Tools Section -->
+  <section class="py-8" id="tools">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Tools</h2>
+        <p>Start with our most-used tools trusted by thousands of users worldwide</p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- SEO Tools -->
+        <a href="/tools/keyword-density-checker.html" class="tool-card">
+          <div class="tool-card-icon">📊</div>
+          <h3>Keyword Density Checker</h3>
+          <p>Analyze keyword frequency in your content</p>
+          <span class="category-badge">SEO</span>
+        </a>
+
+        <a href="/tools/meta-tag-analyzer.html" class="tool-card">
+          <div class="tool-card-icon">🏷️</div>
+          <h3>Meta Tag Analyzer</h3>
+          <p>Check and optimize your meta tags</p>
+          <span class="category-badge">SEO</span>
+        </a>
+
+        <a href="/tools/serp-preview.html" class="tool-card">
+          <div class="tool-card-icon">🔍</div>
+          <h3>Google SERP Preview</h3>
+          <p>Preview how your site looks in search results</p>
+          <span class="category-badge">SEO</span>
+        </a>
+
+        <!-- Text Tools -->
+        <a href="/tools/word-counter.html" class="tool-card">
+          <div class="tool-card-icon">📝</div>
+          <h3>Word Counter</h3>
+          <p>Count words, characters, paragraphs & more</p>
+          <span class="category-badge">Text Tools</span>
+        </a>
+
+        <a href="/tools/text-case-converter.html" class="tool-card">
+          <div class="tool-card-icon">🔤</div>
+          <h3>Text Case Converter</h3>
+          <p>Convert text to uppercase, lowercase, title case</p>
+          <span class="category-badge">Text Tools</span>
+        </a>
+
+        <a href="/tools/slug-generator.html" class="tool-card">
+          <div class="tool-card-icon">🔗</div>
+          <h3>Slug Generator</h3>
+          <p>Create SEO-friendly URL slugs</p>
+          <span class="category-badge">Text Tools</span>
+        </a>
+
+        <!-- Developer Tools -->
+        <a href="/tools/json-formatter.html" class="tool-card">
+          <div class="tool-card-icon">{ }</div>
+          <h3>JSON Formatter</h3>
+          <p>Format and validate JSON data</p>
+          <span class="category-badge">Developer</span>
+        </a>
+
+        <a href="/tools/password-generator.html" class="tool-card">
+          <div class="tool-card-icon">🔐</div>
+          <h3>Password Generator</h3>
+          <p>Generate strong, secure passwords</p>
+          <span class="category-badge">Security</span>
+        </a>
+
+        <a href="/tools/uuid-generator.html" class="tool-card">
+          <div class="tool-card-icon">🆔</div>
+          <h3>UUID Generator</h3>
+          <p>Generate unique identifiers</p>
+          <span class="category-badge">Developer</span>
+        </a>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="#categories" class="btn btn-primary">View All Tools →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="py-8" id="categories" style="background-color: #f9fafb;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Tool Categories</h2>
+        <p>Browse tools by category to find exactly what you need</p>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="card text-center">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+          <h3>SEO Tools</h3>
+          <p>10+ SEO analysis and optimization tools</p>
+          <a href="/tools/seo/" class="btn btn-sm btn-primary mt-3">Browse</a>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📝</div>
+          <h3>Text Tools</h3>
+          <p>10+ text processing and conversion tools</p>
+          <a href="/tools/text/" class="btn btn-sm btn-primary mt-3">Browse</a>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">💻</div>
+          <h3>Developer Tools</h3>
+          <p>10+ code formatting and validation tools</p>
+          <a href="/tools/developer/" class="btn btn-sm btn-primary mt-3">Browse</a>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔐</div>
+          <h3>Security Tools</h3>
+          <p>10+ encryption and security utilities</p>
+          <a href="/tools/security/" class="btn btn-sm btn-primary mt-3">Browse</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advertisement Space 2 -->
+  <div class="advertisement" style="text-align: center; padding: 2rem;">
+    <!-- AdSense placeholder -->
+    <div style="background-color: #f0f0f0; padding: 2rem; border-radius: 0.5rem; color: #999;">
+      Advertisement Space - Insert Google AdSense code here
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="py-8">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose SuperSEOToolkit?</h2>
+        <p>Trusted by professionals and businesses worldwide</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>⚡ Fast & Responsive</h3>
+          <p>All tools run instantly in your browser. No installation or signup required.</p>
+        </div>
+
+        <div class="card">
+          <h3>🔒 100% Private</h3>
+          <p>Your data never leaves your browser. We don't store or process any of your information.</p>
+        </div>
+
+        <div class="card">
+          <h3>🎨 Beautiful Design</h3>
+          <p>Modern, clean interface with dark mode support for comfortable use anytime.</p>
+        </div>
+
+        <div class="card">
+          <h3>📱 Mobile Friendly</h3>
+          <p>Works perfectly on phones, tablets, and desktops with responsive design.</p>
+        </div>
+
+        <div class="card">
+          <h3>♿ Accessible</h3>
+          <p>Built with WCAG guidelines in mind for users with different abilities.</p>
+        </div>
+
+        <div class="card">
+          <h3>🚀 SEO Optimized</h3>
+          <p>All tools are optimized for core web vitals and search engine visibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-8" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: white; text-align: center;">
+    <div class="container">
+      <h2>Start Using SuperSEOToolkit Today</h2>
+      <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem;">No credit card needed. No registration. 100% free forever.</p>
+      <button class="btn btn-primary btn-lg" onclick="document.getElementById('tools').scrollIntoView({behavior: 'smooth'})" style="background-color: white; color: #3b82f6;">
+        <i class="fas fa-arrow-right"></i> Explore All Tools
+      </button>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-8" style="background-color: #f9fafb;">
+    <div class="container max-w-2xl">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Are these tools really free?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! All tools on SuperSEOToolkit are completely free to use. No hidden charges, no premium plans. We support the project through AdSense ads.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do you store my data?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          No. All tools run entirely in your browser using JavaScript. Your data never leaves your device and is never sent to our servers. 100% private.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do I need to create an account?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          No account or registration is required. Just visit the tool you need and start using it immediately.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I use these tools offline?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! Since all tools run in your browser using JavaScript, they work offline as long as you've already visited the page. The CSS and JS files will be cached by your browser.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What tools do you recommend for SEO?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We recommend starting with our Keyword Density Checker, Meta Tag Analyzer, and Google SERP Preview tools to get a comprehensive analysis of your content.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How often are new tools added?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We regularly add new tools based on user feedback. Follow our blog and social media to stay updated about new releases.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advertisement Space 3 -->
+  <div class="advertisement" style="text-align: center; padding: 2rem;">
+    <!-- AdSense placeholder -->
+    <div style="background-color: #f0f0f0; padding: 2rem; border-radius: 0.5rem; color: #999;">
+      Advertisement Space - Insert Google AdSense code here
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>SuperSEOToolkit</h4>
+          <ul>
+            <li><a href="#tools">All Tools</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="/tools/seo/">SEO Tools</a></li>
+            <li><a href="/tools/text/">Text Tools</a></li>
+            <li><a href="/tools/developer/">Developer Tools</a></li>
+            <li><a href="/tools/security/">Security Tools</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+            <li><a href="/contact.html">Report Issue</a></li>
+            <li><a href="/contact.html">Feedback</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <div class="social-links">
+            <a href="https://twitter.com/superseotoolkit" title="Twitter" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://facebook.com/superseotoolkit" title="Facebook" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com/superseotoolkit" title="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/superseotoolkit" title="GitHub" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 SuperSEOToolkit. All rights reserved. Built with ❤️ for the web community.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/assets/js/main.js"></script>
+
+  <!-- Tools data for search -->
+  <script>
+    window.toolsData = [
+      // SEO Tools
+      { name: 'Keyword Density Checker', category: 'SEO', description: 'Analyze keyword frequency and density in your content', url: '/tools/keyword-density-checker.html' },
+      { name: 'Meta Tag Analyzer', category: 'SEO', description: 'Check and optimize your meta tags for SEO', url: '/tools/meta-tag-analyzer.html' },
+      { name: 'Robots.txt Generator', category: 'SEO', description: 'Generate an optimized robots.txt file', url: '/tools/robots-txt-generator.html' },
+      { name: 'XML Sitemap Generator', category: 'SEO', description: 'Create an XML sitemap for better indexing', url: '/tools/xml-sitemap-generator.html' },
+      { name: 'Google SERP Preview', category: 'SEO', description: 'Preview how your site appears in search results', url: '/tools/serp-preview.html' },
+      { name: 'Open Graph Checker', category: 'SEO', description: 'Check Open Graph meta tags for social sharing', url: '/tools/og-checker.html' },
+      { name: 'SEO Friendly URL Generator', category: 'SEO', description: 'Create SEO-optimized URLs', url: '/tools/seo-url-generator.html' },
+      { name: 'Canonical URL Generator', category: 'SEO', description: 'Generate canonical tags to prevent duplicate content', url: '/tools/canonical-generator.html' },
+      { name: 'Meta Description Generator', category: 'SEO', description: 'Create optimized meta descriptions', url: '/tools/meta-description-generator.html' },
+      { name: 'Title Tag Length Checker', category: 'SEO', description: 'Check title tag length and preview', url: '/tools/title-tag-checker.html' },
+
+      // Text Tools
+      { name: 'Word Counter', category: 'Text Tools', description: 'Count words, characters, paragraphs and more', url: '/tools/word-counter.html' },
+      { name: 'Character Counter', category: 'Text Tools', description: 'Count characters and spaces in text', url: '/tools/character-counter.html' },
+      { name: 'Text Case Converter', category: 'Text Tools', description: 'Convert text between different cases', url: '/tools/text-case-converter.html' },
+      { name: 'Remove Duplicate Lines', category: 'Text Tools', description: 'Remove duplicate lines from text', url: '/tools/remove-duplicates.html' },
+      { name: 'Text Sorter', category: 'Text Tools', description: 'Sort text lines alphabetically', url: '/tools/text-sorter.html' },
+      { name: 'Text Reverser', category: 'Text Tools', description: 'Reverse text or lines', url: '/tools/text-reverser.html' },
+      { name: 'Whitespace Remover', category: 'Text Tools', description: 'Remove extra spaces and whitespace', url: '/tools/whitespace-remover.html' },
+      { name: 'Paragraph Counter', category: 'Text Tools', description: 'Count paragraphs in text', url: '/tools/paragraph-counter.html' },
+      { name: 'Reading Time Calculator', category: 'Text Tools', description: 'Calculate estimated reading time', url: '/tools/reading-time.html' },
+      { name: 'Slug Generator', category: 'Text Tools', description: 'Generate SEO-friendly URL slugs', url: '/tools/slug-generator.html' },
+
+      // Developer Tools
+      { name: 'JSON Formatter', category: 'Developer', description: 'Format and validate JSON data', url: '/tools/json-formatter.html' },
+      { name: 'JSON Validator', category: 'Developer', description: 'Validate JSON syntax', url: '/tools/json-validator.html' },
+      { name: 'HTML Formatter', category: 'Developer', description: 'Format HTML code', url: '/tools/html-formatter.html' },
+      { name: 'CSS Formatter', category: 'Developer', description: 'Format CSS code', url: '/tools/css-formatter.html' },
+      { name: 'JavaScript Formatter', category: 'Developer', description: 'Format JavaScript code', url: '/tools/js-formatter.html' },
+      { name: 'CSS Minifier', category: 'Developer', description: 'Minify CSS code', url: '/tools/css-minifier.html' },
+      { name: 'JavaScript Minifier', category: 'Developer', description: 'Minify JavaScript code', url: '/tools/js-minifier.html' },
+      { name: 'HTML Minifier', category: 'Developer', description: 'Minify HTML code', url: '/tools/html-minifier.html' },
+      { name: 'URL Encoder', category: 'Developer', description: 'Encode URLs', url: '/tools/url-encoder.html' },
+      { name: 'URL Decoder', category: 'Developer', description: 'Decode URLs', url: '/tools/url-decoder.html' },
+
+      // Security Tools
+      { name: 'Password Generator', category: 'Security', description: 'Generate strong, secure passwords', url: '/tools/password-generator.html' },
+      { name: 'MD5 Hash Generator', category: 'Security', description: 'Generate MD5 hashes', url: '/tools/md5-generator.html' },
+      { name: 'SHA1 Hash Generator', category: 'Security', description: 'Generate SHA1 hashes', url: '/tools/sha1-generator.html' },
+      { name: 'SHA256 Hash Generator', category: 'Security', description: 'Generate SHA256 hashes', url: '/tools/sha256-generator.html' },
+      { name: 'Base64 Encode', category: 'Security', description: 'Encode text to Base64', url: '/tools/base64-encode.html' },
+      { name: 'Base64 Decode', category: 'Security', description: 'Decode Base64 text', url: '/tools/base64-decode.html' },
+      { name: 'UUID Generator', category: 'Security', description: 'Generate unique UUIDs', url: '/tools/uuid-generator.html' },
+      { name: 'Random String Generator', category: 'Security', description: 'Generate random strings', url: '/tools/random-string.html' },
+      { name: 'Random Number Generator', category: 'Security', description: 'Generate random numbers', url: '/tools/random-number.html' },
+      { name: 'Hash Generator', category: 'Security', description: 'Generate various types of hashes', url: '/tools/hash-generator.html' }
+    ];
+  </script>
+
+  <!-- Google Analytics placeholder -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script> -->
+
+  <!-- Google Tag Manager placeholder -->
+  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM_ID');</script> -->
+</body>
+</html>

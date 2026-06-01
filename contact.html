@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact SuperSEOToolkit - Send us your questions, feedback, or bug reports. We'd love to hear from you!">
+  <meta name="keywords" content="contact SuperSEOToolkit, support, feedback">
+  <link rel="canonical" href="https://superseotoolkit.com/contact.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Contact Us - SuperSEOToolkit</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container max-w-2xl" style="margin: 3rem 0;">
+    <h1>Contact Us</h1>
+    <p class="text-muted">Have a question, suggestion, or bug report? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+
+    <div class="card mt-4">
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject *</label>
+          <input type="text" id="subject" name="subject" placeholder="Question, suggestion, bug report, etc." required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" placeholder="Tell us more about your inquiry..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+
+      <div id="form-message"></div>
+    </div>
+
+    <div class="card mt-4">
+      <h2>Other Ways to Reach Us</h2>
+      <ul style="margin-left: 1.5rem;">
+        <li><strong>Email:</strong> support@superseotoolkit.com</li>
+        <li><strong>Twitter:</strong> @superseotoolkit</li>
+        <li><strong>GitHub:</strong> github.com/superseotoolkit</li>
+      </ul>
+    </div>
+
+    <div class="card mt-4">
+      <h2>Frequently Asked Responses</h2>
+      <p><strong>Response time:</strong> We typically respond within 24-48 hours.</p>
+      <p><strong>Feedback:</strong> We carefully review all suggestions and may implement popular feature requests.</p>
+      <p><strong>Bug reports:</strong> Please be as detailed as possible about the issue you encountered.</p>
+    </div>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        timestamp: new Date().toISOString()
+      };
+
+      // In a real application, you would send this to a server
+      // For now, we'll just store it in localStorage and show a message
+      const messages = JSON.parse(localStorage.getItem('contact_messages') || '[]');
+      messages.push(formData);
+      localStorage.setItem('contact_messages', JSON.stringify(messages));
+
+      document.getElementById('form-message').innerHTML = `
+        <div class="alert alert-success" style="margin-top: 1rem;">
+          <i class="fas fa-check-circle"></i>
+          <span><strong>Thank you!</strong> Your message has been received. We'll get back to you soon.</span>
+        </div>
+      `;
+
+      this.reset();
+
+      setTimeout(() => {
+        document.getElementById('form-message').innerHTML = '';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

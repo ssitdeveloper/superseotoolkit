@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Slug Generator. Create SEO-friendly URL slugs from your titles and text instantly.">
+  <meta name="keywords" content="slug generator, URL slug, SEO friendly URL, permalink generator">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/slug-generator.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Slug Generator - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>Slug Generator</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>Slug Generator</h1>
+      <p class="text-muted">Generate SEO-friendly URL slugs from your titles and text. Perfect for WordPress, blogs, and websites.</p>
+
+      <div class="card mt-4">
+        <div class="tool-interface">
+          <div class="input-section">
+            <label for="slug-input" class="form-label">Enter Title or Text</label>
+            <textarea id="slug-input" placeholder="Enter your page title or text here..." oninput="generateSlug()"></textarea>
+          </div>
+
+          <div class="output-section">
+            <label class="form-label">SEO-Friendly Slug</label>
+            <div style="display: flex; gap: 0.5rem;">
+              <input type="text" id="slug-output" readonly style="flex: 1; padding: 1rem; font-family: monospace; font-size: 1rem;">
+              <button class="copy-btn" data-target="slug-output" style="position: relative; width: auto;">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+              <input type="text" id="slug-url-example" readonly style="flex: 1; padding: 1rem; background-color: #f9fafb; border: 1px solid #ddd; border-radius: 0.5rem;">
+            </div>
+            <small style="color: #999;">Example URL</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>What is a Slug?</h3>
+        <p>A slug is a URL-friendly version of a string. It's typically used in the URL path of a web page or post.</p>
+
+        <h4 style="margin-top: 1.5rem;">Examples</h4>
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background-color: #f0f0f0;">
+              <th style="padding: 1rem; text-align: left;">Original Title</th>
+              <th style="padding: 1rem; text-align: left;">Generated Slug</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 1rem;">How to Write SEO-Friendly Content</td>
+              <td style="padding: 1rem; font-family: monospace;">how-to-write-seo-friendly-content</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 1rem;">Top 10 Digital Marketing Tips!</td>
+              <td style="padding: 1rem; font-family: monospace;">top-10-digital-marketing-tips</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem;">WordPress SEO Best Practices 2024</td>
+              <td style="padding: 1rem; font-family: monospace;">wordpress-seo-best-practices-2024</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Slug Best Practices</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li><strong>Use lowercase letters:</strong> Slugs should always be lowercase</li>
+          <li><strong>Use hyphens for word separation:</strong> Use - instead of spaces or underscores</li>
+          <li><strong>Keep it short:</strong> Shorter URLs are better for SEO</li>
+          <li><strong>Be descriptive:</strong> Include main keywords when possible</li>
+          <li><strong>Avoid special characters:</strong> Stick to letters, numbers, and hyphens</li>
+          <li><strong>Remove stop words:</strong> Consider removing articles like 'the', 'a', 'an'</li>
+          <li><strong>Use hyphens, not underscores:</strong> Google treats hyphens as word separators</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function generateSlug() {
+      const input = document.getElementById('slug-input').value;
+      if (!input) {
+        document.getElementById('slug-output').value = '';
+        document.getElementById('slug-url-example').value = '';
+        return;
+      }
+
+      const utilities = new TextUtilities();
+      const slug = utilities.slugify(input);
+
+      document.getElementById('slug-output').value = slug;
+      document.getElementById('slug-url-example').value = 'https://example.com/' + slug;
+    }
+  </script>
+</body>
+</html>

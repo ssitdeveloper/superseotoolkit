@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free URL Encoder and Decoder. Encode and decode URLs instantly. Parse URL components.">
+  <meta name="keywords" content="URL encoder, URL decoder, percent encoding, URL parsing">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/url-encoder.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>URL Encoder & Decoder - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>URL Encoder/Decoder</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>URL Encoder & Decoder</h1>
+      <p class="text-muted">Encode text for URLs or decode URL-encoded strings instantly.</p>
+
+      <div class="tabs" style="margin: 2rem 0;">
+        <button class="tab-btn active" data-tab="encode">Encode</button>
+        <button class="tab-btn" data-tab="decode">Decode</button>
+        <button class="tab-btn" data-tab="parse">Parse URL</button>
+      </div>
+
+      <!-- Encode Tab -->
+      <div class="tab-content active" data-tab-content="encode">
+        <div class="card">
+          <div class="tool-interface">
+            <div class="input-section">
+              <label for="url-encode-input" class="form-label">Text to Encode</label>
+              <textarea id="url-encode-input" placeholder="Enter text to encode..."></textarea>
+              <button class="btn btn-primary w-full" onclick="encodeURL()">
+                <i class="fas fa-code"></i> Encode
+              </button>
+            </div>
+            <div class="output-section">
+              <label class="form-label">Encoded Output</label>
+              <button class="copy-btn" data-target="url-encode-output">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+              <textarea id="url-encode-output" readonly></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decode Tab -->
+      <div class="tab-content" data-tab-content="decode">
+        <div class="card">
+          <div class="tool-interface">
+            <div class="input-section">
+              <label for="url-decode-input" class="form-label">Encoded URL</label>
+              <textarea id="url-decode-input" placeholder="Paste URL-encoded string..."></textarea>
+              <button class="btn btn-primary w-full" onclick="decodeURL()">
+                <i class="fas fa-code"></i> Decode
+              </button>
+            </div>
+            <div class="output-section">
+              <label class="form-label">Decoded Output</label>
+              <button class="copy-btn" data-target="url-decode-output">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+              <textarea id="url-decode-output" readonly></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parse Tab -->
+      <div class="tab-content" data-tab-content="parse">
+        <div class="card">
+          <div class="form-group">
+            <label for="url-parse-input">Enter Full URL</label>
+            <input type="text" id="url-parse-input" placeholder="https://example.com/page?query=value">
+            <button class="btn btn-primary w-full mt-2" onclick="parseURL()">
+              <i class="fas fa-link"></i> Parse URL
+            </button>
+          </div>
+          <div id="parse-result"></div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>URL Encoding Reference</h3>
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background-color: #f0f0f0;">
+              <th style="padding: 1rem; text-align: left;">Character</th>
+              <th style="padding: 1rem; text-align: left;">Encoded</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 1rem;">Space</td>
+              <td style="padding: 1rem; font-family: monospace;">%20</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 1rem;">!</td>
+              <td style="padding: 1rem; font-family: monospace;">%21</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 1rem;">#</td>
+              <td style="padding: 1rem; font-family: monospace;">%23</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem;">&</td>
+              <td style="padding: 1rem; font-family: monospace;">%26</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function encodeURL() {
+      const input = document.getElementById('url-encode-input').value;
+      if (!input) {
+        showAlert('Please enter text to encode', 'warning');
+        return;
+      }
+
+      const coder = new URLCoder();
+      try {
+        const encoded = coder.encode(input);
+        document.getElementById('url-encode-output').value = encoded;
+        showAlert('Encoded successfully!', 'success');
+      } catch (error) {
+        showAlert(error.message, 'error');
+      }
+    }
+
+    function decodeURL() {
+      const input = document.getElementById('url-decode-input').value;
+      if (!input) {
+        showAlert('Please enter URL-encoded text to decode', 'warning');
+        return;
+      }
+
+      const coder = new URLCoder();
+      try {
+        const decoded = coder.decode(input);
+        document.getElementById('url-decode-output').value = decoded;
+        showAlert('Decoded successfully!', 'success');
+      } catch (error) {
+        showAlert(error.message, 'error');
+      }
+    }
+
+    function parseURL() {
+      const input = document.getElementById('url-parse-input').value;
+      if (!input) {
+        showAlert('Please enter a URL to parse', 'warning');
+        return;
+      }
+
+      const coder = new URLCoder();
+      try {
+        const parsed = coder.parse(input);
+        const html = `
+          <div style="background-color: #f9fafb; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+            <p><strong>Protocol:</strong> <code>${parsed.protocol}</code></p>
+            <p><strong>Hostname:</strong> <code>${parsed.hostname}</code></p>
+            <p><strong>Port:</strong> <code>${parsed.port}</code></p>
+            <p><strong>Pathname:</strong> <code>${parsed.pathname}</code></p>
+            <p><strong>Query:</strong> <code>${parsed.search || '(none)'}</code></p>
+            <p><strong>Hash:</strong> <code>${parsed.hash || '(none)'}</code></p>
+          </div>
+        `;
+        document.getElementById('parse-result').innerHTML = html;
+      } catch (error) {
+        showAlert(error.message, 'error');
+        document.getElementById('parse-result').innerHTML = '';
+      }
+    }
+  </script>
+</body>
+</html>

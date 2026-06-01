@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Word Counter tool. Count words, characters, paragraphs, sentences, and calculate reading time instantly.">
+  <meta name="keywords" content="word counter, character counter, text statistics, reading time calculator">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/word-counter.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Word Counter - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>Word Counter</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>Word Counter</h1>
+      <p class="text-muted">Count words, characters, paragraphs, sentences, and calculate reading time for your content.</p>
+
+      <div class="card mt-4">
+        <div class="tool-interface">
+          <div class="input-section">
+            <label for="word-input" class="form-label">Enter Your Text</label>
+            <textarea id="word-input" placeholder="Paste or type your text here..." oninput="updateStats()"></textarea>
+          </div>
+
+          <div class="output-section">
+            <label class="form-label">Statistics</label>
+            <div id="stats-display" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+              <div style="background-color: #f0f0f0; padding: 1rem; border-radius: 0.5rem;">
+                <div style="font-size: 0.9rem; color: #666;">Words</div>
+                <div style="font-size: 2rem; font-weight: bold; color: #3b82f6;" id="word-count">0</div>
+              </div>
+              <div style="background-color: #f0f0f0; padding: 1rem; border-radius: 0.5rem;">
+                <div style="font-size: 0.9rem; color: #666;">Characters</div>
+                <div style="font-size: 2rem; font-weight: bold; color: #3b82f6;" id="char-count">0</div>
+              </div>
+              <div style="background-color: #f0f0f0; padding: 1rem; border-radius: 0.5rem;">
+                <div style="font-size: 0.9rem; color: #666;">Paragraphs</div>
+                <div style="font-size: 2rem; font-weight: bold; color: #3b82f6;" id="para-count">0</div>
+              </div>
+              <div style="background-color: #f0f0f0; padding: 1rem; border-radius: 0.5rem;">
+                <div style="font-size: 0.9rem; color: #666;">Reading Time</div>
+                <div style="font-size: 2rem; font-weight: bold; color: #3b82f6;" id="read-time">0 min</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Detailed Statistics</h3>
+        <div id="detailed-stats">
+          <p style="color: #999;">Start typing to see detailed statistics...</p>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>How to Use</h3>
+        <ol style="margin-left: 1.5rem;">
+          <li>Paste or type your text in the input area</li>
+          <li>Statistics update automatically in real-time</li>
+          <li>Use the data for content planning and SEO optimization</li>
+        </ol>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function updateStats() {
+      const text = document.getElementById('word-input').value;
+      const counter = new WordCounter();
+      const stats = counter.count(text);
+
+      document.getElementById('word-count').textContent = stats.words;
+      document.getElementById('char-count').textContent = stats.characters;
+      document.getElementById('para-count').textContent = stats.paragraphs;
+      document.getElementById('read-time').textContent = stats.readingTime;
+
+      const detailed = `
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 0.75rem;">Words</td>
+            <td style="padding: 0.75rem; font-weight: bold;">${stats.words}</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 0.75rem;">Characters (including spaces)</td>
+            <td style="padding: 0.75rem; font-weight: bold;">${stats.characters}</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 0.75rem;">Characters (without spaces)</td>
+            <td style="padding: 0.75rem; font-weight: bold;">${stats.charactersNoSpaces}</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 0.75rem;">Paragraphs</td>
+            <td style="padding: 0.75rem; font-weight: bold;">${stats.paragraphs}</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem;">Sentences</td>
+            <td style="padding: 0.75rem; font-weight: bold;">${stats.sentences}</td>
+          </tr>
+        </table>
+      `;
+      document.getElementById('detailed-stats').innerHTML = detailed;
+    }
+  </script>
+</body>
+</html>

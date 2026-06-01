@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free SHA1 Hash Generator. Generate SHA1 hashes from text instantly in your browser.">
+  <meta name="keywords" content="SHA1, hash generator, checksum, cryptographic hash">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/sha1-generator.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>SHA1 Hash Generator - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>SHA1 Generator</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>SHA1 Hash Generator</h1>
+      <p class="text-muted">Generate SHA1 hashes from text instantly. All processing happens in your browser.</p>
+
+      <div class="card mt-4">
+        <div class="tool-interface">
+          <div class="input-section">
+            <label for="sha1-input" class="form-label">Enter Text to Hash</label>
+            <textarea id="sha1-input" placeholder="Enter text, password, or any string..." oninput="generateSHA1()"></textarea>
+          </div>
+
+          <div class="output-section">
+            <label class="form-label">SHA1 Hash</label>
+            <button class="copy-btn" data-target="sha1-output">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+            <textarea id="sha1-output" readonly style="font-family: monospace;"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>What is SHA1?</h3>
+        <p>SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function that produces a 160-bit (20-byte) hash value. Uses include:</p>
+        <ul style="margin-left: 1.5rem;">
+          <li>Git commit hash verification</li>
+          <li>Digital signatures (deprecated)</li>
+          <li>File integrity checking</li>
+          <li>TLS/SSL certificates (deprecated)</li>
+        </ul>
+
+        <h4 style="margin-top: 1.5rem;">⚠️ Security Status</h4>
+        <p><strong>SHA-1 is deprecated for cryptographic purposes!</strong> Collision attacks are practical and have been demonstrated. Use SHA-256 or SHA-512 for new implementations.</p>
+
+        <h4 style="margin-top: 1.5rem;">Characteristics</h4>
+        <ul style="margin-left: 1.5rem;">
+          <li><strong>Hash Output:</strong> 160-bit (20-byte) hash</li>
+          <li><strong>Format:</strong> 40 hexadecimal characters</li>
+          <li><strong>Speed:</strong> Fast to compute</li>
+          <li><strong>Security:</strong> Deprecated ⚠️</li>
+        </ul>
+
+        <h4 style="margin-top: 1.5rem;">Example</h4>
+        <p><strong>Input:</strong> Hello World</p>
+        <p style="font-family: monospace; background-color: #f9fafb; padding: 1rem; border-radius: 0.5rem;">
+          0a4d55a8d778e5022fab701977c5d840bbc486d0
+        </p>
+      </div>
+
+      <div class="card mt-4">
+        <h3>SHA1 vs SHA256 vs MD5</h3>
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background-color: #f0f0f0;">
+              <th style="padding: 1rem; text-align: left;">Algorithm</th>
+              <th style="padding: 1rem; text-align: left;">Output Size</th>
+              <th style="padding: 1rem; text-align: left;">Security</th>
+              <th style="padding: 1rem; text-align: left;">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 1rem;">MD5</td>
+              <td style="padding: 1rem;">128-bit (32 hex)</td>
+              <td style="padding: 1rem;">Broken</td>
+              <td style="padding: 1rem;">❌ Avoid</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 1rem;">SHA1</td>
+              <td style="padding: 1rem;">160-bit (40 hex)</td>
+              <td style="padding: 1rem;">Weak</td>
+              <td style="padding: 1rem;">⚠️ Deprecated</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem;">SHA256</td>
+              <td style="padding: 1rem;">256-bit (64 hex)</td>
+              <td style="padding: 1rem;">Strong</td>
+              <td style="padding: 1rem;">✅ Recommended</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Use Cases</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+          <div>
+            <h4>Git Version Control</h4>
+            <p>SHA1 hashes identify commits in Git repositories</p>
+          </div>
+          <div>
+            <h4>Legacy Systems</h4>
+            <p>Still used in legacy systems, but being phased out</p>
+          </div>
+          <div>
+            <h4>File Verification</h4>
+            <p>Verify downloaded files (though SHA256 is preferred)</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.0/crypto-js.min.js"></script>
+  <script>
+    function generateSHA1() {
+      const input = document.getElementById('sha1-input').value;
+      if (!input) {
+        document.getElementById('sha1-output').value = '';
+        return;
+      }
+
+      try {
+        const hash = CryptoJS.SHA1(input).toString();
+        document.getElementById('sha1-output').value = hash;
+      } catch (error) {
+        showAlert(error.message, 'error');
+      }
+    }
+  </script>
+</body>
+</html>

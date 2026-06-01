@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Keyword Density Checker tool. Analyze keyword frequency and density in your content to optimize for SEO. Completely free and runs in your browser.">
+  <meta name="keywords" content="keyword density checker, keyword frequency analyzer, SEO tool, content optimization">
+  <meta name="author" content="SuperSEOToolkit">
+
+  <meta property="og:title" content="Keyword Density Checker - Free SEO Tool">
+  <meta property="og:description" content="Analyze keyword frequency and density in your content for better SEO optimization.">
+  <meta property="og:type" content="website">
+
+  <link rel="canonical" href="https://superseotoolkit.com/tools/keyword-density-checker.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Keyword Density Checker",
+    "description": "Free tool to analyze keyword frequency and density in your content",
+    "applicationCategory": "UtilityApplication",
+    "url": "https://superseotoolkit.com/tools/keyword-density-checker.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://superseotoolkit.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "SEO Tools",
+        "item": "https://superseotoolkit.com/tools/seo/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Keyword Density Checker",
+        "item": "https://superseotoolkit.com/tools/keyword-density-checker.html"
+      }
+    ]
+  }
+  </script>
+
+  <title>Keyword Density Checker - Free Online Tool</title>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span>
+      <a href="/">Tools</a> <span>/</span>
+      <span>Keyword Density Checker</span>
+    </div>
+
+    <!-- Main Content -->
+    <main style="margin: 3rem 0;">
+      <h1>Keyword Density Checker</h1>
+      <p class="text-muted">Analyze keyword frequency and optimize your content for better SEO performance. Check the density of all keywords in your text instantly.</p>
+
+      <!-- Tool Interface -->
+      <div class="card mt-4">
+        <div class="tool-interface">
+          <div class="input-section">
+            <label for="keyword-input" class="form-label">Paste Your Content</label>
+            <textarea id="keyword-input" placeholder="Enter the text you want to analyze..."></textarea>
+            <button class="btn btn-primary w-full" onclick="checkKeywordDensity()">
+              <i class="fas fa-check"></i> Analyze
+            </button>
+          </div>
+
+          <div class="output-section">
+            <label class="form-label">Keyword Density Results</label>
+            <button class="copy-btn" data-target="keyword-output">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+            <textarea id="keyword-output" readonly style="background-color: #f9fafb; cursor: default;"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Table -->
+      <div class="card mt-4">
+        <h3>Top Keywords by Frequency</h3>
+        <div id="results-table"></div>
+      </div>
+
+      <!-- Advertisement -->
+      <div class="card mt-4" style="background-color: #f9fafb; text-align: center; padding: 2rem;">
+        Advertisement Space
+      </div>
+
+      <!-- Information Sections -->
+      <div class="grid grid-2 mt-6 gap-4">
+        <div class="card">
+          <h3>📋 How It Works</h3>
+          <ol style="margin-left: 1.5rem;">
+            <li>Paste your text or content in the input field</li>
+            <li>Click the "Analyze" button</li>
+            <li>View keyword frequency and density percentages</li>
+            <li>Use the results to optimize your content</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h3>💡 Tips for SEO</h3>
+          <ul style="margin-left: 1.5rem;">
+            <li>Keep primary keywords at 1-2% density</li>
+            <li>Avoid keyword stuffing (>3% density)</li>
+            <li>Use LSI keywords for better results</li>
+            <li>Focus on natural, readable content</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="card mt-4">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is keyword density?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Keyword density is the percentage of times a keyword appears in your content compared to the total word count. It's calculated as (keyword count / total words) × 100.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What's the ideal keyword density?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            The ideal keyword density is typically 1-2% for your primary keyword. Anything above 3% may be considered keyword stuffing, which can harm your SEO rankings.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is this tool accurate?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! This tool accurately counts all words and keywords in your text. It filters out common stop words and provides precise density calculations.
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      <div class="card mt-4">
+        <h3>Related Tools</h3>
+        <div class="grid grid-3 gap-3">
+          <a href="/tools/meta-tag-analyzer.html" class="btn btn-outline btn-block">Meta Tag Analyzer</a>
+          <a href="/tools/serp-preview.html" class="btn btn-outline btn-block">SERP Preview</a>
+          <a href="/tools/word-counter.html" class="btn btn-outline btn-block">Word Counter</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer style="margin-top: 4rem;">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>SuperSEOToolkit</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Tools</h4>
+          <ul>
+            <li><a href="/tools/seo/">SEO Tools</a></li>
+            <li><a href="/tools/text/">Text Tools</a></li>
+            <li><a href="/tools/developer/">Developer Tools</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy</a></li>
+            <li><a href="/terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function checkKeywordDensity() {
+      const input = document.getElementById('keyword-input').value;
+
+      if (!input.trim()) {
+        showAlert('Please enter some text to analyze', 'warning');
+        return;
+      }
+
+      const checker = new KeywordDensityChecker();
+      const results = checker.check(input);
+
+      // Display results in textarea
+      let outputText = results.map(r =>
+        `${r.word}: ${r.count} times (${r.density}%)`
+      ).join('\n');
+
+      document.getElementById('keyword-output').value = outputText;
+
+      // Display in table
+      const table = document.getElementById('results-table');
+      table.innerHTML = `
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background-color: #f0f0f0; border-bottom: 2px solid #ddd;">
+              <th style="padding: 1rem; text-align: left;">Keyword</th>
+              <th style="padding: 1rem; text-align: center;">Count</th>
+              <th style="padding: 1rem; text-align: center;">Density %</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${results.map(r => `
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 1rem;">${r.word}</td>
+                <td style="padding: 1rem; text-align: center;">${r.count}</td>
+                <td style="padding: 1rem; text-align: center;">${r.density}%</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+
+    // Allow Enter key in textarea
+    document.getElementById('keyword-input').addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'Enter') {
+        checkKeywordDensity();
+      }
+    });
+  </script>
+</body>
+</html>

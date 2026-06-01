@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free JSON Formatter and Validator tool. Format, validate, and minify JSON instantly in your browser.">
+  <meta name="keywords" content="JSON formatter, JSON validator, JSON minifier, code formatter">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/json-formatter.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>JSON Formatter & Validator - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>JSON Formatter</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>JSON Formatter & Validator</h1>
+      <p class="text-muted">Format, validate, and minify JSON instantly. Check for errors and beautify your JSON data.</p>
+
+      <div class="tabs" style="margin: 2rem 0;">
+        <button class="tab-btn active" data-tab="format">Format</button>
+        <button class="tab-btn" data-tab="minify">Minify</button>
+        <button class="tab-btn" data-tab="validate">Validate</button>
+      </div>
+
+      <!-- Format Tab -->
+      <div class="tab-content active" data-tab-content="format" style="display: block;">
+        <div class="card">
+          <div class="tool-interface">
+            <div class="input-section">
+              <label for="json-input" class="form-label">Paste JSON</label>
+              <textarea id="json-input" placeholder='Paste your JSON here...'></textarea>
+              <button class="btn btn-primary w-full" onclick="formatJSON()">
+                <i class="fas fa-wand-magic-sparkles"></i> Format
+              </button>
+            </div>
+            <div class="output-section">
+              <label class="form-label">Formatted JSON</label>
+              <button class="copy-btn" data-target="json-output">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+              <textarea id="json-output" readonly></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minify Tab -->
+      <div class="tab-content" data-tab-content="minify">
+        <div class="card">
+          <div class="tool-interface">
+            <div class="input-section">
+              <label for="json-minify-input" class="form-label">Paste JSON</label>
+              <textarea id="json-minify-input" placeholder='Paste your JSON here...'></textarea>
+              <button class="btn btn-primary w-full" onclick="minifyJSON()">
+                <i class="fas fa-compress"></i> Minify
+              </button>
+            </div>
+            <div class="output-section">
+              <label class="form-label">Minified JSON</label>
+              <button class="copy-btn" data-target="json-minify-output">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+              <textarea id="json-minify-output" readonly></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Validate Tab -->
+      <div class="tab-content" data-tab-content="validate">
+        <div class="card">
+          <div class="tool-interface">
+            <div class="input-section">
+              <label for="json-validate-input" class="form-label">Paste JSON</label>
+              <textarea id="json-validate-input" placeholder='Paste your JSON here...'></textarea>
+              <button class="btn btn-primary w-full" onclick="validateJSON()">
+                <i class="fas fa-check-circle"></i> Validate
+              </button>
+            </div>
+            <div class="output-section">
+              <label class="form-label">Validation Result</label>
+              <div id="validation-result" style="padding: 1rem; border-radius: 0.5rem;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Tips</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li>Use Format to beautify and indent JSON</li>
+          <li>Use Minify to reduce file size</li>
+          <li>Use Validate to check for syntax errors</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function formatJSON() {
+      const input = document.getElementById('json-input').value;
+      const formatter = new JSONFormatter();
+      try {
+        const formatted = formatter.format(input);
+        document.getElementById('json-output').value = formatted;
+        showAlert('JSON formatted successfully!', 'success');
+      } catch (error) {
+        showAlert(error.message, 'error');
+        document.getElementById('json-output').value = '';
+      }
+    }
+
+    function minifyJSON() {
+      const input = document.getElementById('json-minify-input').value;
+      const formatter = new JSONFormatter();
+      try {
+        const minified = formatter.minify(input);
+        document.getElementById('json-minify-output').value = minified;
+        showAlert('JSON minified successfully!', 'success');
+      } catch (error) {
+        showAlert(error.message, 'error');
+        document.getElementById('json-minify-output').value = '';
+      }
+    }
+
+    function validateJSON() {
+      const input = document.getElementById('json-validate-input').value;
+      const formatter = new JSONFormatter();
+      const result = formatter.validate(input);
+      const resultDiv = document.getElementById('validation-result');
+
+      if (result.valid) {
+        resultDiv.innerHTML = `
+          <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>Valid JSON!</strong> Your JSON syntax is correct.</span>
+          </div>
+        `;
+      } else {
+        resultDiv.innerHTML = `
+          <div class="alert alert-error">
+            <i class="fas fa-times-circle"></i>
+            <span><strong>Invalid JSON!</strong> ${result.error}</span>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

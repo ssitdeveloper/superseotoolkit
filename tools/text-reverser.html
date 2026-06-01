@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Text Reverser Tool. Reverse text, words, or characters instantly.">
+  <meta name="keywords" content="text reverser, reverse text, reverse words, reverse characters">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/text-reverser.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Text Reverser - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>Text Reverser</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>Text Reverser</h1>
+      <p class="text-muted">Reverse text, words, or characters. Perfect for palindromes and creative writing.</p>
+
+      <div class="card mt-4">
+        <div class="form-group">
+          <label for="reverse-mode">Reverse Mode:</label>
+          <select id="reverse-mode" onchange="updatePreview()" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem;">
+            <option value="characters" selected>Reverse Characters</option>
+            <option value="words">Reverse Words</option>
+            <option value="lines">Reverse Lines</option>
+          </select>
+        </div>
+
+        <div class="tool-interface">
+          <div class="input-section">
+            <label for="text-reverser-input" class="form-label">Original Text</label>
+            <textarea id="text-reverser-input" placeholder="Enter text to reverse..." oninput="updatePreview()"></textarea>
+          </div>
+
+          <div class="output-section">
+            <label class="form-label">Reversed Text</label>
+            <button class="copy-btn" data-target="text-reverser-output">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+            <textarea id="text-reverser-output" readonly></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Reversal Methods</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+          <div>
+            <h4>Reverse Characters</h4>
+            <p><strong>Input:</strong> Hello World</p>
+            <p><strong>Output:</strong> dlroW olleH</p>
+          </div>
+
+          <div>
+            <h4>Reverse Words</h4>
+            <p><strong>Input:</strong> Hello World</p>
+            <p><strong>Output:</strong> World Hello</p>
+          </div>
+
+          <div>
+            <h4>Reverse Lines</h4>
+            <p><strong>Input:</strong></p>
+            <p style="font-family: monospace; font-size: 0.9rem;">Line 1<br>Line 2</p>
+            <p><strong>Output:</strong></p>
+            <p style="font-family: monospace; font-size: 0.9rem;">Line 2<br>Line 1</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Use Cases</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li><strong>Palindromes:</strong> Check if text reads the same forwards and backwards</li>
+          <li><strong>Anagrams:</strong> Find letter combinations</li>
+          <li><strong>Puzzle Games:</strong> Create word puzzles</li>
+          <li><strong>Creative Writing:</strong> Experiment with text</li>
+          <li><strong>Data Processing:</strong> Reverse order of data</li>
+        </ul>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Famous Palindromes</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li>A man, a plan, a canal: Panama</li>
+          <li>Was it a car or a cat I saw?</li>
+          <li>Madam</li>
+          <li>Radar</li>
+          <li>Level</li>
+          <li>Noon</li>
+          <li>Refer</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function updatePreview() {
+      const input = document.getElementById('text-reverser-input').value;
+      const mode = document.getElementById('reverse-mode').value;
+      const output = document.getElementById('text-reverser-output');
+
+      if (!input) {
+        output.value = '';
+        return;
+      }
+
+      let result = '';
+
+      if (mode === 'characters') {
+        result = input.split('').reverse().join('');
+      } else if (mode === 'words') {
+        result = input.split(/\s+/).reverse().join(' ');
+      } else if (mode === 'lines') {
+        result = input.split('\n').reverse().join('\n');
+      }
+
+      output.value = result;
+    }
+
+    // Initialize copy button
+    document.addEventListener('DOMContentLoaded', function() {
+      const copyBtn = document.querySelector('.copy-btn');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+          const target = this.getAttribute('data-target');
+          const textarea = document.getElementById(target);
+          textarea.select();
+          document.execCommand('copy');
+          showAlert('Copied to clipboard!', 'success');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

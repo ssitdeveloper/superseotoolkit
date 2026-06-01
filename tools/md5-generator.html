@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free MD5 Hash Generator. Generate MD5 hashes from text instantly in your browser.">
+  <meta name="keywords" content="MD5, hash generator, checksum, cryptographic hash">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/md5-generator.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>MD5 Hash Generator - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>MD5 Generator</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>MD5 Hash Generator</h1>
+      <p class="text-muted">Generate MD5 hashes from text instantly. All processing happens in your browser.</p>
+
+      <div class="card mt-4">
+        <div class="tool-interface">
+          <div class="input-section">
+            <label for="md5-input" class="form-label">Enter Text to Hash</label>
+            <textarea id="md5-input" placeholder="Enter text, password, or any string..." oninput="generateMD5()"></textarea>
+          </div>
+
+          <div class="output-section">
+            <label class="form-label">MD5 Hash</label>
+            <button class="copy-btn" data-target="md5-output">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+            <textarea id="md5-output" readonly style="font-family: monospace;"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>What is MD5?</h3>
+        <p>MD5 (Message Digest Algorithm 5) is a widely used cryptographic hash function that produces a 128-bit hash value (32 hexadecimal characters). Uses include:</p>
+        <ul style="margin-left: 1.5rem;">
+          <li>File integrity checking</li>
+          <li>Data checksums</li>
+          <li>Password hashing (deprecated for security)</li>
+          <li>Cache busting</li>
+        </ul>
+
+        <h4 style="margin-top: 1.5rem;">⚠️ Security Warning</h4>
+        <p><strong>MD5 is cryptographically broken!</strong> It should NOT be used for further authenticating cryptographic purposes. For password storage, use bcrypt, Argon2, or scrypt instead.</p>
+
+        <h4 style="margin-top: 1.5rem;">Characteristics</h4>
+        <ul style="margin-left: 1.5rem;">
+          <li><strong>Hash Output:</strong> 128-bit (16-byte) hash</li>
+          <li><strong>Format:</strong> 32 hexadecimal characters</li>
+          <li><strong>Speed:</strong> Very fast to compute</li>
+          <li><strong>Security:</strong> Cryptographically broken ⚠️</li>
+        </ul>
+
+        <h4 style="margin-top: 1.5rem;">Example</h4>
+        <p><strong>Input:</strong> Hello World</p>
+        <p style="font-family: monospace; background-color: #f9fafb; padding: 1rem; border-radius: 0.5rem;">
+          3e25960a79dbc69b674ce2606f5a75bc
+        </p>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Why MD5 is No Longer Secure</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li>Collision attacks found (2004)</li>
+          <li>Hash collisions are computationally feasible</li>
+          <li>Deprecated by NIST (2011)</li>
+          <li>Should only be used for non-cryptographic checksums</li>
+          <li>Use SHA-256 or SHA-512 for security-critical applications</li>
+        </ul>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Common Use Cases</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+          <div>
+            <h4>File Checksums</h4>
+            <p>Verify downloaded files for integrity</p>
+          </div>
+          <div>
+            <h4>Cache Busting</h4>
+            <p>Add MD5 hash to asset URLs for cache invalidation</p>
+          </div>
+          <div>
+            <h4>Data Verification</h4>
+            <p>Quick checksums for non-critical data</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.0/crypto-js.min.js"></script>
+  <script>
+    function generateMD5() {
+      const input = document.getElementById('md5-input').value;
+      if (!input) {
+        document.getElementById('md5-output').value = '';
+        return;
+      }
+
+      try {
+        const hash = CryptoJS.MD5(input).toString();
+        document.getElementById('md5-output').value = hash;
+      } catch (error) {
+        showAlert(error.message, 'error');
+      }
+    }
+  </script>
+</body>
+</html>

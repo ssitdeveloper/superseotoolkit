@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free HTML Formatter and Beautifier. Format, indent, and beautify HTML code instantly.">
+  <meta name="keywords" content="HTML formatter, HTML beautifier, code beautifier, indent HTML">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/html-formatter.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>HTML Formatter & Beautifier - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>HTML Formatter</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>HTML Formatter & Beautifier</h1>
+      <p class="text-muted">Format and beautify HTML code with proper indentation and readability.</p>
+
+      <div class="card mt-4">
+        <div class="form-group">
+          <label for="html-indent">Indent Size:</label>
+          <select id="html-indent" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem;">
+            <option value="2">2 Spaces</option>
+            <option value="4" selected>4 Spaces</option>
+            <option value="tab">Tab</option>
+          </select>
+        </div>
+
+        <div class="tool-interface">
+          <div class="input-section">
+            <label for="html-input" class="form-label">Unformatted HTML</label>
+            <textarea id="html-input" placeholder="Paste your HTML code here..."></textarea>
+            <button class="btn btn-primary w-full mt-2" onclick="formatHTML()">
+              <i class="fas fa-magic"></i> Format HTML
+            </button>
+          </div>
+
+          <div class="output-section">
+            <label class="form-label">Formatted HTML</label>
+            <button class="copy-btn" data-target="html-output">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+            <textarea id="html-output" readonly style="font-family: monospace;"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Features</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li>Automatic indentation</li>
+          <li>Proper tag nesting</li>
+          <li>Readable code structure</li>
+          <li>Error detection</li>
+          <li>Customizable indentation</li>
+        </ul>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Example</h3>
+        <p><strong>Before:</strong></p>
+        <pre style="background-color: #f9fafb; padding: 1rem; border-radius: 0.5rem; overflow-x: auto;"><code>&lt;div&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;</code></pre>
+
+        <p style="margin-top: 1rem;"><strong>After:</strong></p>
+        <pre style="background-color: #f9fafb; padding: 1rem; border-radius: 0.5rem; overflow-x: auto;"><code>&lt;div&gt;
+    &lt;p&gt;Hello&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-beautify/1.0.4/beautify.min.js"></script>
+  <script>
+    function formatHTML() {
+      const input = document.getElementById('html-input').value;
+      if (!input) {
+        showAlert('Please enter HTML code to format', 'warning');
+        return;
+      }
+
+      const indentSize = document.getElementById('html-indent').value;
+      const options = {
+        indent_size: indentSize === 'tab' ? 1 : parseInt(indentSize),
+        indent_char: indentSize === 'tab' ? '\t' : ' '
+      };
+
+      try {
+        const formatted = html_beautify(input, options);
+        document.getElementById('html-output').value = formatted;
+        showAlert('HTML formatted successfully!', 'success');
+      } catch (error) {
+        showAlert('Error: ' + error.message, 'error');
+      }
+    }
+  </script>
+</body>
+</html>

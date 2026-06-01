@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Text Case Converter. Convert text between uppercase, lowercase, title case, sentence case, and more.">
+  <meta name="keywords" content="text case converter, uppercase, lowercase, title case, case converter">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/text-case-converter.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Text Case Converter - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>Text Case Converter</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>Text Case Converter</h1>
+      <p class="text-muted">Convert your text to different cases: uppercase, lowercase, title case, sentence case, and more.</p>
+
+      <div class="card mt-4">
+        <div class="form-group">
+          <label for="case-input">Enter Your Text</label>
+          <textarea id="case-input" placeholder="Type or paste your text here..." oninput="updateAllCases()"></textarea>
+        </div>
+
+        <div class="grid grid-2 gap-3">
+          <button class="btn btn-outline" onclick="copyCase('uppercase')">
+            <i class="fas fa-copy"></i> Copy UPPERCASE
+          </button>
+          <button class="btn btn-outline" onclick="copyCase('lowercase')">
+            <i class="fas fa-copy"></i> Copy lowercase
+          </button>
+          <button class="btn btn-outline" onclick="copyCase('titlecase')">
+            <i class="fas fa-copy"></i> Copy Title Case
+          </button>
+          <button class="btn btn-outline" onclick="copyCase('sentencecase')">
+            <i class="fas fa-copy"></i> Copy Sentence case
+          </button>
+        </div>
+      </div>
+
+      <div id="case-results" class="mt-4"></div>
+
+      <div class="card mt-4">
+        <h3>Case Conversion Types</h3>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background-color: #f0f0f0;">
+                <th style="padding: 1rem; text-align: left;">Type</th>
+                <th style="padding: 1rem; text-align: left;">Description</th>
+                <th style="padding: 1rem; text-align: left;">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 1rem;"><strong>UPPERCASE</strong></td>
+                <td style="padding: 1rem;">All letters are capital</td>
+                <td style="padding: 1rem;">HELLO WORLD</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 1rem;"><strong>lowercase</strong></td>
+                <td style="padding: 1rem;">All letters are small</td>
+                <td style="padding: 1rem;">hello world</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 1rem;"><strong>Title Case</strong></td>
+                <td style="padding: 1rem;">First letter of each word is capital</td>
+                <td style="padding: 1rem;">Hello World</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 1rem;"><strong>Sentence case</strong></td>
+                <td style="padding: 1rem;">Only first letter is capital</td>
+                <td style="padding: 1rem;">Hello world</td>
+              </tr>
+              <tr>
+                <td style="padding: 1rem;"><strong>aLtErNaTiNg</strong></td>
+                <td style="padding: 1rem;">Alternates between cases</td>
+                <td style="padding: 1rem;">HeLoO WoRlD</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function updateAllCases() {
+      const input = document.getElementById('case-input').value;
+      if (!input) {
+        document.getElementById('case-results').innerHTML = '';
+        return;
+      }
+
+      const converter = new TextCaseConverter();
+      const results = {
+        uppercase: converter.uppercase(input),
+        lowercase: converter.lowercase(input),
+        titlecase: converter.titleCase(input),
+        sentencecase: converter.sentenceCase(input),
+        alternating: converter.alternatingCase(input),
+        inverse: converter.inverseCase(input)
+      };
+
+      let html = '<div class="grid grid-2 gap-3">';
+      html += `<div class="card"><h4>UPPERCASE</h4><textarea readonly style="min-height: 100px; background-color: #f9fafb;">${results.uppercase}</textarea></div>`;
+      html += `<div class="card"><h4>lowercase</h4><textarea readonly style="min-height: 100px; background-color: #f9fafb;">${results.lowercase}</textarea></div>`;
+      html += `<div class="card"><h4>Title Case</h4><textarea readonly style="min-height: 100px; background-color: #f9fafb;">${results.titlecase}</textarea></div>`;
+      html += `<div class="card"><h4>Sentence case</h4><textarea readonly style="min-height: 100px; background-color: #f9fafb;">${results.sentencecase}</textarea></div>`;
+      html += `<div class="card"><h4>aLtErNaTiNg</h4><textarea readonly style="min-height: 100px; background-color: #f9fafb;">${results.alternating}</textarea></div>`;
+      html += `<div class="card"><h4>InVeRsE</h4><textarea readonly style="min-height: 100px; background-color: #f9fafb;">${results.inverse}</textarea></div>`;
+      html += '</div>';
+
+      document.getElementById('case-results').innerHTML = html;
+    }
+
+    function copyCase(type) {
+      const input = document.getElementById('case-input').value;
+      if (!input) {
+        showAlert('Please enter some text first', 'warning');
+        return;
+      }
+
+      const converter = new TextCaseConverter();
+      let text = '';
+
+      switch(type) {
+        case 'uppercase': text = converter.uppercase(input); break;
+        case 'lowercase': text = converter.lowercase(input); break;
+        case 'titlecase': text = converter.titleCase(input); break;
+        case 'sentencecase': text = converter.sentenceCase(input); break;
+      }
+
+      navigator.clipboard.writeText(text).then(() => {
+        showAlert('Copied to clipboard!', 'success');
+      });
+    }
+  </script>
+</body>
+</html>

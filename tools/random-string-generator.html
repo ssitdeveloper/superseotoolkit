@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Random String Generator. Generate random strings, passwords, and codes instantly.">
+  <meta name="keywords" content="random string generator, random password, random code">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/random-string-generator.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Random String Generator - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>Random String Generator</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>Random String Generator</h1>
+      <p class="text-muted">Generate random strings for passwords, API keys, tokens, and other uses.</p>
+
+      <div class="card mt-4">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div class="form-group">
+            <label for="string-length">String Length:</label>
+            <input type="number" id="string-length" value="16" min="1" max="1000" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem;">
+          </div>
+          <div class="form-group">
+            <label for="string-count">Number of Strings:</label>
+            <input type="number" id="string-count" value="1" min="1" max="100" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem;">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="use-uppercase" checked>
+            <span>A-Z</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="use-lowercase" checked>
+            <span>a-z</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="use-numbers" checked>
+            <span>0-9</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="use-symbols" checked>
+            <span>!@#$%^&*</span>
+          </label>
+        </div>
+
+        <button class="btn btn-primary w-full" onclick="generateRandomStrings()">
+          <i class="fas fa-random"></i> Generate
+        </button>
+
+        <div id="string-results" style="margin-top: 1rem;"></div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Use Cases</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li>Generate secure passwords</li>
+          <li>Create API keys and tokens</li>
+          <li>Generate access codes</li>
+          <li>Create unique identifiers</li>
+          <li>Test data generation</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function generateRandomStrings() {
+      const length = parseInt(document.getElementById('string-length').value);
+      const count = parseInt(document.getElementById('string-count').value);
+      const useUpper = document.getElementById('use-uppercase').checked;
+      const useLower = document.getElementById('use-lowercase').checked;
+      const useNumbers = document.getElementById('use-numbers').checked;
+      const useSymbols = document.getElementById('use-symbols').checked;
+
+      if (!useUpper && !useLower && !useNumbers && !useSymbols) {
+        showAlert('Select at least one character type', 'warning');
+        return;
+      }
+
+      let charset = '';
+      if (useUpper) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      if (useLower) charset += 'abcdefghijklmnopqrstuvwxyz';
+      if (useNumbers) charset += '0123456789';
+      if (useSymbols) charset += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+
+      let html = '<div style="display: grid; grid-template-columns: 1fr auto; gap: 0.5rem; align-items: center;">';
+
+      for (let i = 0; i < count; i++) {
+        let result = '';
+        for (let j = 0; j < length; j++) {
+          result += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
+        html += `
+          <input type="text" value="${result}" readonly style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 0.25rem; font-family: monospace;">
+          <button class="btn btn-small" onclick="copyToClipboard('${result}')" style="padding: 0.5rem 1rem;">
+            <i class="fas fa-copy"></i>
+          </button>
+        `;
+      }
+
+      html += '</div>';
+      document.getElementById('string-results').innerHTML = html;
+      showAlert('Strings generated successfully!', 'success');
+    }
+
+    function copyToClipboard(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      showAlert('Copied to clipboard!', 'success');
+    }
+  </script>
+</body>
+</html>

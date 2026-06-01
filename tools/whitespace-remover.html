@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Whitespace Remover Tool. Remove spaces, tabs, and line breaks from text instantly.">
+  <meta name="keywords" content="whitespace remover, remove spaces, remove tabs, remove line breaks">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/whitespace-remover.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Whitespace Remover - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>Whitespace Remover</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>Whitespace Remover</h1>
+      <p class="text-muted">Remove spaces, tabs, line breaks, and other whitespace from text.</p>
+
+      <div class="card mt-4">
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="remove-spaces" checked>
+            <span>Remove Spaces</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="remove-tabs" checked>
+            <span>Remove Tabs</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="remove-breaks" checked>
+            <span>Remove Line Breaks</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="remove-extra" checked>
+            <span>Remove Extra Spaces</span>
+          </label>
+        </div>
+
+        <div class="tool-interface">
+          <div class="input-section">
+            <label for="whitespace-input" class="form-label">Text with Whitespace</label>
+            <textarea id="whitespace-input" placeholder="Enter text with whitespace..."></textarea>
+            <button class="btn btn-primary w-full mt-2" onclick="removeWhitespace()">
+              <i class="fas fa-eraser"></i> Remove Whitespace
+            </button>
+          </div>
+
+          <div class="output-section">
+            <label class="form-label">Cleaned Text</label>
+            <button class="copy-btn" data-target="whitespace-output">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+            <textarea id="whitespace-output" readonly></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Whitespace Types</h3>
+
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background-color: #f0f0f0;">
+              <th style="padding: 1rem; text-align: left;">Type</th>
+              <th style="padding: 1rem; text-align: left;">Description</th>
+              <th style="padding: 1rem; text-align: left;">Symbol</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 1rem;">Space</td>
+              <td style="padding: 1rem;">Regular space character</td>
+              <td style="padding: 1rem; font-family: monospace;"> </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 1rem;">Tab</td>
+              <td style="padding: 1rem;">Tab indentation</td>
+              <td style="padding: 1rem; font-family: monospace;">\t</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 1rem;">Line Break</td>
+              <td style="padding: 1rem;">New line character</td>
+              <td style="padding: 1rem; font-family: monospace;">\n</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem;">Carriage Return</td>
+              <td style="padding: 1rem;">Windows line ending</td>
+              <td style="padding: 1rem; font-family: monospace;">\r</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Use Cases</h3>
+        <ul style="margin-left: 1.5rem;">
+          <li>Clean up copied text</li>
+          <li>Prepare text for processing</li>
+          <li>Compress text for storage</li>
+          <li>Fix formatting issues</li>
+          <li>Prepare code for minification</li>
+        </ul>
+      </div>
+
+      <div class="card mt-4">
+        <h3>Example</h3>
+        <p><strong>Before:</strong></p>
+        <pre style="background-color: #f9fafb; padding: 1rem; border-radius: 0.5rem; white-space: pre-wrap;">Hello    World
+This    is    a    test</pre>
+
+        <p style="margin-top: 1rem;"><strong>After (Remove Extra Spaces):</strong></p>
+        <pre style="background-color: #f9fafb; padding: 1rem; border-radius: 0.5rem; white-space: pre-wrap;">Hello World
+This is a test</pre>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function removeWhitespace() {
+      const input = document.getElementById('whitespace-input').value;
+      if (!input) {
+        showAlert('Please enter text to process', 'warning');
+        return;
+      }
+
+      const removeSpaces = document.getElementById('remove-spaces').checked;
+      const removeTabs = document.getElementById('remove-tabs').checked;
+      const removeBreaks = document.getElementById('remove-breaks').checked;
+      const removeExtra = document.getElementById('remove-extra').checked;
+
+      let output = input;
+
+      if (removeSpaces) {
+        output = output.replace(/ /g, '');
+      }
+
+      if (removeTabs) {
+        output = output.replace(/\t/g, '');
+      }
+
+      if (removeBreaks) {
+        output = output.replace(/\n/g, '').replace(/\r/g, '');
+      }
+
+      if (removeExtra) {
+        output = output.replace(/\s+/g, ' ').trim();
+      }
+
+      document.getElementById('whitespace-output').value = output;
+      showAlert('Whitespace removed successfully!', 'success');
+    }
+  </script>
+</body>
+</html>

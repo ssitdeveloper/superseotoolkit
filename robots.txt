@@ -1,0 +1,37 @@
+# SuperSEOToolkit - robots.txt
+# Allows all search engines to crawl all pages
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Allow: /assets/
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl delay and rate
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://superseotoolkit.com/sitemap.xml
+Sitemap: https://superseotoolkit.com/sitemap-tools.xml
+Sitemap: https://superseotoolkit.com/sitemap-blog.xml
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

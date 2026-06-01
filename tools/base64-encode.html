@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Base64 Encoder and Decoder. Encode and decode text to/from Base64 instantly.">
+  <meta name="keywords" content="Base64 encoder, Base64 decoder, encoding, decoding">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/base64-encode.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Base64 Encoder & Decoder - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>Base64 Encoder/Decoder</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>Base64 Encoder & Decoder</h1>
+      <p class="text-muted">Encode text to Base64 or decode Base64 strings instantly in your browser.</p>
+
+      <div class="tabs" style="margin: 2rem 0;">
+        <button class="tab-btn active" data-tab="encode">Encode</button>
+        <button class="tab-btn" data-tab="decode">Decode</button>
+      </div>
+
+      <!-- Encode Tab -->
+      <div class="tab-content active" data-tab-content="encode">
+        <div class="card">
+          <div class="tool-interface">
+            <div class="input-section">
+              <label for="encode-input" class="form-label">Text to Encode</label>
+              <textarea id="encode-input" placeholder="Enter text to encode..."></textarea>
+              <button class="btn btn-primary w-full" onclick="encodeBase64()">
+                <i class="fas fa-lock"></i> Encode to Base64
+              </button>
+            </div>
+            <div class="output-section">
+              <label class="form-label">Base64 Output</label>
+              <button class="copy-btn" data-target="encode-output">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+              <textarea id="encode-output" readonly></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decode Tab -->
+      <div class="tab-content" data-tab-content="decode">
+        <div class="card">
+          <div class="tool-interface">
+            <div class="input-section">
+              <label for="decode-input" class="form-label">Base64 to Decode</label>
+              <textarea id="decode-input" placeholder="Paste Base64 string here..."></textarea>
+              <button class="btn btn-primary w-full" onclick="decodeBase64()">
+                <i class="fas fa-unlock"></i> Decode Base64
+              </button>
+            </div>
+            <div class="output-section">
+              <label class="form-label">Decoded Text</label>
+              <button class="copy-btn" data-target="decode-output">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+              <textarea id="decode-output" readonly></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <h3>What is Base64?</h3>
+        <p>Base64 is a binary-to-text encoding scheme that represents binary data using a 64-character alphabet. It's commonly used for:</p>
+        <ul style="margin-left: 1.5rem;">
+          <li>Transmitting binary data over text-only protocols</li>
+          <li>Embedding images in HTML/CSS</li>
+          <li>Data transmission in APIs and emails</li>
+          <li>Simple obfuscation (not encryption)</li>
+        </ul>
+
+        <h4 style="margin-top: 1.5rem;">Example</h4>
+        <p><strong>Original:</strong> Hello World</p>
+        <p><strong>Base64:</strong> SGVsbG8gV29ybGQ=</strong></p>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function encodeBase64() {
+      const input = document.getElementById('encode-input').value;
+      if (!input) {
+        showAlert('Please enter text to encode', 'warning');
+        return;
+      }
+
+      const coder = new Base64Coder();
+      try {
+        const encoded = coder.encode(input);
+        document.getElementById('encode-output').value = encoded;
+        showAlert('Encoded successfully!', 'success');
+      } catch (error) {
+        showAlert(error.message, 'error');
+      }
+    }
+
+    function decodeBase64() {
+      const input = document.getElementById('decode-input').value;
+      if (!input) {
+        showAlert('Please enter Base64 string to decode', 'warning');
+        return;
+      }
+
+      const coder = new Base64Coder();
+      try {
+        const decoded = coder.decode(input);
+        document.getElementById('decode-output').value = decoded;
+        showAlert('Decoded successfully!', 'success');
+      } catch (error) {
+        showAlert(error.message, 'error');
+      }
+    }
+  </script>
+</body>
+</html>

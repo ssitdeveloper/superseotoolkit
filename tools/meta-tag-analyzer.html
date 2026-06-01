@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Meta Tag Analyzer tool. Check and optimize your meta tags, title tags, and Open Graph tags for SEO.">
+  <meta name="keywords" content="meta tag analyzer, SEO analyzer, meta tag checker, title tag checker">
+  <link rel="canonical" href="https://superseotoolkit.com/tools/meta-tag-analyzer.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Meta Tag Analyzer - Free Online Tool</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">⚙️ SuperSEOToolkit</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2">
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+          <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb mt-4">
+      <a href="/">Home</a> <span>/</span> <a href="/">Tools</a> <span>/</span> <span>Meta Tag Analyzer</span>
+    </div>
+
+    <main style="margin: 3rem 0;">
+      <h1>Meta Tag Analyzer</h1>
+      <p class="text-muted">Analyze and optimize your meta tags, title tags, and meta descriptions for better SEO performance.</p>
+
+      <button class="btn btn-primary mb-4" onclick="analyzeCurrent()">
+        <i class="fas fa-search"></i> Analyze This Page
+      </button>
+
+      <div id="analysis-result"></div>
+
+      <div class="card mt-4">
+        <h3>Meta Tags Guide</h3>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Title Tag</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <strong>Ideal Length:</strong> 50-60 characters<br>
+            <strong>Purpose:</strong> Appears as the clickable headline in search results<br>
+            <strong>Best Practices:</strong> Include your main keyword, be descriptive and compelling
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Meta Description</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <strong>Ideal Length:</strong> 120-160 characters<br>
+            <strong>Purpose:</strong> Appears as the snippet under the title in search results<br>
+            <strong>Best Practices:</strong> Include keywords, be specific, include a call-to-action
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>H1 Tag</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <strong>Ideal Count:</strong> Exactly 1 per page<br>
+            <strong>Purpose:</strong> Main heading that defines page content<br>
+            <strong>Best Practices:</strong> Include main keyword, be descriptive
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Open Graph Tags</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <strong>Purpose:</strong> Controls how content appears when shared on social media<br>
+            <strong>Key Tags:</strong> og:title, og:description, og:image, og:url<br>
+            <strong>Best Practices:</strong> Include all four for best social sharing
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>SuperSEOToolkit</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SuperSEOToolkit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function analyzeCurrent() {
+      const analyzer = new MetaTagAnalyzer();
+      const analysis = analyzer.analyze();
+
+      let html = '<div class="card"><h3>Analysis Results</h3>';
+
+      // Title Tag
+      html += `<div style="margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <strong>Title Tag</strong>
+          <span class="badge ${analysis.titleOk ? 'badge-success' : 'badge-warning'}">
+            ${analysis.titleLength}/60
+          </span>
+        </div>
+        <p style="color: #666;">${analysis.title}</p>
+        <p style="font-size: 0.9rem; color: #999;">Status: ${analysis.titleOk ? '✓ Good' : '⚠ Needs improvement'}</p>
+      </div>`;
+
+      // Meta Description
+      html += `<div style="margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <strong>Meta Description</strong>
+          <span class="badge ${analysis.descriptionOk ? 'badge-success' : 'badge-warning'}">
+            ${analysis.descriptionLength}/160
+          </span>
+        </div>
+        <p style="color: #666;">${analysis.description || 'Not found'}</p>
+        <p style="font-size: 0.9rem; color: #999;">Status: ${analysis.descriptionOk ? '✓ Good' : '⚠ Needs improvement'}</p>
+      </div>`;
+
+      // H1 Count
+      html += `<div style="margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <strong>H1 Tags</strong>
+          <span class="badge ${analysis.h1Ok ? 'badge-success' : 'badge-warning'}">
+            ${analysis.h1Count}
+          </span>
+        </div>
+        <p style="font-size: 0.9rem; color: #999;">Status: ${analysis.h1Ok ? '✓ Good (exactly 1)' : '⚠ Should be exactly 1'}</p>
+      </div>`;
+
+      // Viewport
+      html += `<div style="margin-bottom: 1.5rem;">
+        <strong>Viewport Meta Tag</strong>
+        <span class="badge ${analysis.viewport ? 'badge-success' : 'badge-warning'}">
+          ${analysis.viewport ? '✓ Found' : '✗ Missing'}
+        </span>
+      </div>`;
+
+      // Canonical
+      html += `<div style="margin-bottom: 1.5rem;">
+        <strong>Canonical URL</strong>
+        <p style="color: #666; font-size: 0.9rem;">${analysis.canonical || 'Not found'}</p>
+      </div>`;
+
+      // Open Graph
+      html += `<div style="margin-bottom: 1.5rem;">
+        <strong>Open Graph Tags</strong>
+        <p style="font-size: 0.9rem; color: #666;">
+          og:title: ${analysis.ogTitle ? '✓' : '✗'}<br>
+          og:image: ${analysis.ogImageOk ? '✓' : '✗'}<br>
+          Status: ${analysis.ogImageOk ? '✓ Good' : '⚠ Missing or incomplete'}
+        </p>
+      </div>`;
+
+      html += '</div>';
+      document.getElementById('analysis-result').innerHTML = html;
+    }
+  </script>
+</body>
+</html>
