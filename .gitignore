@@ -34,3 +34,7 @@ ehthumbs.db
 # Build
 .turbo/
 dist/
+
+
+#md
+*.md
