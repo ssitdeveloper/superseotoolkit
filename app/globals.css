@@ -21,11 +21,11 @@
   --destructive: #ef4444;
   --border: #1a1a1a;
   --border-light: #262626;
-  
+
   /* Fonts */
   --font-heading: "Sora", system-ui, -apple-system, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
