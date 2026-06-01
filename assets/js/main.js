@@ -28,17 +28,27 @@ class ThemeManager {
   applyTheme(theme) {
     if (theme === 'dark') {
       document.body.classList.add('dark-mode');
-      this.updateToggleIcon('☀️');
+      this.updateToggleIcon(true);
     } else {
       document.body.classList.remove('dark-mode');
-      this.updateToggleIcon('🌙');
+      this.updateToggleIcon(false);
     }
   }
 
-  updateToggleIcon(icon) {
+  updateToggleIcon(isDark) {
     const toggle = document.getElementById('theme-toggle');
     if (toggle) {
-      toggle.textContent = icon;
+      const sunIcon = toggle.querySelector('.sun-icon');
+      const moonIcon = toggle.querySelector('.moon-icon');
+      if (sunIcon && moonIcon) {
+        if (isDark) {
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'block';
+        } else {
+          sunIcon.style.display = 'block';
+          moonIcon.style.display = 'none';
+        }
+      }
     }
   }
 }

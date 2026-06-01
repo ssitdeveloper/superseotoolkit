@@ -1,5 +1,5 @@
-/* SuperSEOToolkit - Main Stylesheet */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* SuperSEOToolkit - Modern Professional Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 * {
   margin: 0;
@@ -8,30 +8,50 @@
 }
 
 :root {
-  --primary-color: #3b82f6;
+  /* Modern Color Palette */
+  --primary: #3b82f6;
   --primary-dark: #1e40af;
   --primary-light: #60a5fa;
-  --secondary-color: #8b5cf6;
-  --success-color: #10b981;
-  --danger-color: #ef4444;
-  --warning-color: #f59e0b;
-  --info-color: #06b6d4;
+  --primary-lighter: #93c5fd;
+  --secondary: #8b5cf6;
+  --secondary-dark: #6d28d9;
+  --accent: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --info: #06b6d4;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --gradient-accent: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  --gradient-dark: linear-gradient(135deg, #1e3a8a 0%, #5b21b6 100%);
 
-  /* Light Mode Colors */
-  --bg-light: #ffffff;
-  --bg-light-secondary: #f9fafb;
-  --bg-light-tertiary: #f3f4f6;
-  --text-light: #1f2937;
-  --text-light-secondary: #6b7280;
-  --border-light: #e5e7eb;
+  /* Light Mode */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-hover: #eff6ff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.15);
 
-  /* Dark Mode Colors */
-  --bg-dark: #0f172a;
+  /* Dark Mode */
+  --bg-dark-primary: #0f172a;
   --bg-dark-secondary: #1e293b;
   --bg-dark-tertiary: #334155;
-  --text-dark: #f1f5f9;
+  --bg-dark-hover: #1e40af;
+  --text-dark-primary: #f8fafc;
   --text-dark-secondary: #cbd5e1;
-  --border-dark: #475569;
+  --text-dark-tertiary: #94a3b8;
+  --border-dark: #334155;
+  --border-dark-light: #475569;
+  --shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-dark-lg: 0 10px 28px rgba(0, 0, 0, 0.5);
 }
 
 body {
