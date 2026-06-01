@@ -15,7 +15,7 @@ export function AnimatedCounter({
   prefix = "",
   duration = 2,
 }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(value);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 

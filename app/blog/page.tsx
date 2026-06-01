@@ -3,61 +3,7 @@ import { Navbar } from "@/components/common/navbar";
 import { Footer } from "@/components/common/footer";
 import { SectionHeader } from "@/components/common/section-header";
 import { Calendar, User, ArrowRight } from "lucide-react";
-
-const blogPosts = [
-  {
-    id: 1,
-    slug: "seo-basics-2024",
-    title: "SEO Basics: What Changed in 2024",
-    excerpt:
-      "A comprehensive guide to the latest SEO trends and algorithm changes that every digital marketer should know.",
-    image: "🔍",
-    date: "June 1, 2024",
-    author: "Sarah Johnson",
-    readingTime: "8 min",
-    category: "SEO",
-    content: "Full article content here...",
-  },
-  {
-    id: 2,
-    slug: "keyword-research-guide",
-    title: "The Complete Guide to Keyword Research",
-    excerpt:
-      "Learn how to find high-value keywords that drive traffic and conversions with our step-by-step approach.",
-    image: "🎯",
-    date: "May 28, 2024",
-    author: "Mike Chen",
-    readingTime: "12 min",
-    category: "Strategy",
-    content: "Full article content here...",
-  },
-  {
-    id: 3,
-    slug: "technical-seo-checklist",
-    title: "Technical SEO Checklist 2024",
-    excerpt:
-      "Everything you need to know about optimizing your website's technical foundation for search engines.",
-    image: "⚙️",
-    date: "May 20, 2024",
-    author: "Emma Rodriguez",
-    readingTime: "10 min",
-    category: "Technical",
-    content: "Full article content here...",
-  },
-  {
-    id: 4,
-    slug: "link-building-strategies",
-    title: "Modern Link Building Strategies",
-    excerpt:
-      "Build high-quality backlinks with these proven strategies that work in 2024.",
-    image: "🔗",
-    date: "May 15, 2024",
-    author: "John Smith",
-    readingTime: "9 min",
-    category: "Strategy",
-    content: "Full article content here...",
-  },
-];
+import { blogPosts } from "@/lib/blog-data";
 
 export default function BlogPage() {
   return (
