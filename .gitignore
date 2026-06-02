@@ -4,12 +4,14 @@ npm-debug.log
 yarn-error.log
 package-lock.json
 yarn.lock
+bun.lockb
 
 # Build outputs
 dist/
 build/
 .next/
 out/
+.wrangler/
 
 # IDE
 .vscode/
@@ -28,11 +30,13 @@ Thumbs.db
 .env.local
 .env.*.local
 
-# Cloudflare
-.wrangler/
-wrangler.toml
+# Logs
+*.log
+buildlog
+debug.log
 
 # Temporary
 *.tmp
 *.bak
 .cache/
+

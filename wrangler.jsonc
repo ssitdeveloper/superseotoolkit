@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/wrangler.json",
+  "name": "superseotoolkit",
+  "type": "javascript",
+  "main": "src/index.js",
+  "compatibility_date": "2026-06-02",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "include": [
+      "*.html",
+      "*.js",
+      "*.css",
+      "*.json",
+      "*.png",
+      "*.jpg",
+      "*.jpeg",
+      "*.gif",
+      "*.svg",
+      "*.webp",
+      "*.ico",
+      "*.md"
+    ],
+    "exclude": [
+      "node_modules/**/*",
+      ".git/**/*",
+      ".gitignore",
+      "package.json",
+      "package-lock.json",
+      "yarn.lock",
+      "buildlog",
+      "wrangler.jsonc",
+      "*.log",
+      ".DS_Store",
+      "Thumbs.db"
+    ]
+  }
+}

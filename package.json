@@ -6,7 +6,8 @@
   "scripts": {
     "build:cf": "echo 'Static site - no build needed'",
     "dev": "python -m http.server 8000",
-    "preview": "python -m http.server 8000"
+    "preview": "python -m http.server 8000",
+    "deploy": "echo 'Deploy via Cloudflare Pages dashboard or git push'"
   },
   "keywords": [
     "seo",
