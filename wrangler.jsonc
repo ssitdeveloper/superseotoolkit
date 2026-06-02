@@ -1,0 +1,14 @@
+{
+  "type": "javascript",
+  "name": "superseotoolkit",
+  "main": "functions/index.js",
+  "compatibility_date": "2026-06-03",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  }
+}
