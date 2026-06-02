@@ -1,0 +1,11 @@
+# Cloudflare Pages Static Site Configuration
+# This file ensures proper routing and caching headers
+
+# Route all requests to index.html (for SPA)
+/* /index.html 200
+
+# Cache static assets for 1 year
+/icon-*.png Cache-Control: max-age=31536000, immutable
+/manifest.json Cache-Control: max-age=86400
+/index.html Cache-Control: max-age=3600
+/sw.js Cache-Control: max-age=3600
