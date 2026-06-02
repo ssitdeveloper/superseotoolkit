@@ -1,0 +1,22 @@
+{
+  "name": "super-seo-toolkit",
+  "version": "1.0.0",
+  "description": "Free, fast, browser-based SEO tools for professionals",
+  "private": true,
+  "scripts": {
+    "build:cf": "echo 'Static site - no build needed'",
+    "dev": "python -m http.server 8000",
+    "preview": "python -m http.server 8000"
+  },
+  "keywords": [
+    "seo",
+    "meta tags",
+    "title checker",
+    "keyword density",
+    "robots.txt",
+    "schema markup",
+    "tools"
+  ],
+  "author": "Super SEO Toolkit",
+  "license": "MIT"
+}
