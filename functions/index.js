@@ -1,29 +1,18 @@
 /**
- * Super SEO Toolkit - Cloudflare Pages Static Site Handler
- * This Worker serves the static site correctly on Cloudflare Pages
+ * Super SEO Toolkit - Static Site Server
+ * Serves index.html and all static assets
  */
 
-export default {
-  async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-    let pathname = url.pathname;
+export async function onRequest(context) {
+  const { request, env } = context;
+  const url = new URL(request.url);
 
-    // Handle root
-    if (pathname === '/' || pathname === '') {
-      return env.ASSETS.fetch(new Request(new URL('/index.html', url).toString()));
-    }
-
-    // Try to serve the requested file
-    try {
-      const response = await env.ASSETS.fetch(request);
-      if (response.status === 404 && !pathname.includes('.')) {
-        // If file not found and no extension, serve index.html for SPA routing
-        return env.ASSETS.fetch(new Request(new URL('/index.html', url).toString()));
-      }
-      return response;
-    } catch (error) {
-      // Fallback to index.html
-      return env.ASSETS.fetch(new Request(new URL('/index.html', url).toString()));
-    }
-  },
-};
+  try {
+    // Try to get the requested file
+    const response = await env.ASSETS.fetch(request);
+    return response;
+  } catch (e) {
+    // If not found, serve index.html (for SPA routing)
+    return env.ASSETS.fetch(new Request(new URL('/index.html', url).toString()));
+  }
+}
